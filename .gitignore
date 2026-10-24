@@ -1,0 +1,7 @@
+node_modules
+dist
+.DS_Store
+*.log
+# Exclude the 43MB source video (the optimized <=2.5MB files in public/assets are tracked)
+Generated Video October 24, 2026 - 8_34PM.mp4
+index.evolve-backup.html

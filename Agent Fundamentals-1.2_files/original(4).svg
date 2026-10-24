@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="graphics" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 1200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#blue_green_gradient);
+      }
+
+      .cls-2 {
+        fill: url(#blue_green_gradient-21);
+      }
+
+      .cls-3 {
+        fill: url(#blue_green_gradient-5);
+      }
+
+      .cls-4 {
+        fill: url(#blue_green_gradient-18);
+      }
+
+      .cls-5 {
+        stroke: #dadce0;
+      }
+
+      .cls-5, .cls-6 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 9px;
+      }
+
+      .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-8 {
+        fill: url(#blue_green_gradient-16);
+      }
+
+      .cls-9 {
+        fill: url(#blue_green_gradient-23);
+      }
+
+      .cls-10 {
+        fill: url(#blue_green_gradient-11);
+      }
+
+      .cls-11 {
+        fill: url(#blue_green_gradient-20);
+      }
+
+      .cls-12 {
+        fill: url(#blue_green_gradient-4);
+      }
+
+      .cls-13 {
+        fill: url(#blue_green_gradient-14);
+      }
+
+      .cls-14 {
+        fill: url(#blue_green_gradient-13);
+      }
+
+      .cls-15 {
+        fill: url(#blue_green_gradient-17);
+      }
+
+      .cls-16 {
+        fill: url(#blue_green_gradient-19);
+      }
+
+      .cls-17 {
+        fill: url(#blue_green_gradient-8);
+      }
+
+      .cls-18 {
+        fill: url(#blue_green_gradient-9);
+      }
+
+      .cls-19 {
+        fill: url(#blue_green_gradient-10);
+      }
+
+      .cls-20 {
+        fill: url(#blue_green_gradient-3);
+      }
+
+      .cls-21 {
+        fill: #f1f3f4;
+      }
+
+      .cls-22 {
+        fill: url(#blue_green_gradient-12);
+      }
+
+      .cls-6 {
+        stroke: #bdc1c6;
+      }
+
+      .cls-23 {
+        fill: url(#blue_green_gradient-15);
+      }
+
+      .cls-24 {
+        fill: url(#blue_green_gradient-6);
+      }
+
+      .cls-25 {
+        fill: url(#blue_green_gradient-7);
+      }
+
+      .cls-26 {
+        fill: url(#blue_green_gradient-22);
+      }
+
+      .cls-27 {
+        fill: url(#blue_green_gradient-2);
+      }
+    </style>
+    <linearGradient id="blue_green_gradient" x1="328.99" y1="554.41" x2="1073.33" y2="554.41" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2d81f9"/>
+      <stop offset="1" stop-color="#73cb8a"/>
+    </linearGradient>
+    <linearGradient id="blue_green_gradient-2" data-name="blue_green_gradient" x1="328.99" y1="449.79" x2="1073.33" y2="449.79" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-3" data-name="blue_green_gradient" x1="328.99" y1="571.13" x2="1073.33" y2="571.13" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-4" data-name="blue_green_gradient" x1="328.99" y1="709.2" x2="1073.33" y2="709.2" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-5" data-name="blue_green_gradient" x1="355.21" y1="760.52" x2="1099.55" y2="760.52" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-6" data-name="blue_green_gradient" x1="328.99" y1="484.67" x2="1073.33" y2="484.67" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-7" data-name="blue_green_gradient" x1="328.99" y1="335.83" x2="1073.33" y2="335.83" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-8" data-name="blue_green_gradient" x1="328.99" y1="794.07" x2="1073.33" y2="794.07" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-9" data-name="blue_green_gradient" x1="328.99" y1="451.78" x2="1073.33" y2="451.78" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-10" data-name="blue_green_gradient" x1="328.99" y1="439.75" x2="1073.33" y2="439.75" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-11" data-name="blue_green_gradient" x1="328.99" y1="369.83" x2="1073.33" y2="369.83" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-12" data-name="blue_green_gradient" x1="328.99" y1="647.32" x2="1073.33" y2="647.32" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-13" data-name="blue_green_gradient" x1="328.99" y1="364.49" x2="1073.33" y2="364.49" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-14" data-name="blue_green_gradient" x1="328.99" y1="687.45" x2="1073.33" y2="687.45" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-15" data-name="blue_green_gradient" x1="328.99" y1="650.29" x2="1073.33" y2="650.29" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-16" data-name="blue_green_gradient" x1="328.99" y1="756.02" x2="1073.33" y2="756.02" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-17" data-name="blue_green_gradient" x1="328.99" y1="476.17" x2="1073.33" y2="476.17" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-18" data-name="blue_green_gradient" x1="328.99" y1="594.17" x2="1073.33" y2="594.17" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-19" data-name="blue_green_gradient" x1="328.99" y1="573.92" x2="1073.33" y2="573.92" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-20" data-name="blue_green_gradient" x1="328.99" y1="661.63" x2="1073.33" y2="661.63" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-21" data-name="blue_green_gradient" x1="328.99" y1="553.1" x2="1073.33" y2="553.1" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-22" data-name="blue_green_gradient" x1="328.99" y1="669.06" x2="1073.33" y2="669.06" xlink:href="#blue_green_gradient"/>
+    <linearGradient id="blue_green_gradient-23" data-name="blue_green_gradient" x1="328.99" y1="773.49" x2="1073.33" y2="773.49" xlink:href="#blue_green_gradient"/>
+  </defs>
+  <circle class="cls-7" cx="720" cy="600" r="600"/>
+  <path class="cls-21" d="M1161.49,440.07c-2.17-143.15-57.38-225.87-123.92-224.86-45.96.7-85.29,41.17-104.51,113.3-21.41-71.51-61.95-110.77-107.9-110.07-66.54,1.01-119.21,85.37-117.04,228.52,2.17,143.15,57.38,225.87,123.92,224.86,45.96-.7,85.29-41.17,104.51-113.3,21.41,71.51,61.95,110.77,107.9,110.07,66.54-1.01,119.21-85.37,117.04-228.52Z"/>
+  <path class="cls-21" d="M679.31,617.02l-35.59,55.33c-4.92,7.63-3.51,17.73,3.31,23.76l49.28,43.55c10.75,9.52,6.99,27.15-6.74,31.4l-62.81,19.51c-8.69,2.69-14.11,11.33-12.76,20.31l9.74,65.05c2.14,14.21-12.08,25.28-25.32,19.71l-60.66-25.43c-8.4-3.5-18.08-.37-22.83,7.37l-34.35,56.1c-7.49,12.26-25.52,11.58-32.09-1.18l-30.11-58.48c-4.16-8.09-13.62-11.9-22.22-9.03l-62.37,20.9c-13.63,4.57-26.99-7.53-23.84-21.52l14.52-64.15c2.01-8.87-2.76-17.89-11.21-21.21l-61.21-24.09c-13.37-5.25-15.85-23.1-4.42-31.8l52.37-39.81c7.22-5.52,9.39-15.47,5.04-23.47l-31.42-57.8c-6.85-12.62,2.71-27.88,17.06-27.2l65.71,3.18c9.09.42,17.13-5.83,18.93-14.74l13.09-64.48c2.86-14.05,20-19.59,30.56-9.85l48.29,44.64c6.68,6.18,16.87,6.56,23.99.89l51.47-40.97c11.23-8.95,27.91-2.16,29.73,12.07l8.3,65.27c1.15,9.02,8.7,15.86,17.79,16.1l65.77,1.7c14.34.35,22.77,16.28,15,28.37Z"/>
+  <g>
+    <line class="cls-5" x1="430.75" y1="439.75" x2="547.4" y2="363.24"/>
+    <line class="cls-6" x1="649.77" y1="449.44" x2="547.4" y2="363.24"/>
+    <line class="cls-5" x1="430.75" y1="439.75" x2="555.83" y2="475.36"/>
+    <line class="cls-5" x1="359.26" y1="553.89" x2="430.75" y2="439.75"/>
+    <line class="cls-5" x1="422.39" y1="648.94" x2="521.06" y2="574.38"/>
+    <line class="cls-5" x1="359.26" y1="553.89" x2="422.39" y2="648.94"/>
+    <line class="cls-6" x1="521.06" y1="574.38" x2="359.26" y2="553.89"/>
+    <line class="cls-5" x1="555.83" y1="475.36" x2="633.95" y2="594.03"/>
+    <line class="cls-5" x1="521.06" y1="574.38" x2="555.83" y2="475.36"/>
+    <line class="cls-5" x1="649.77" y1="449.44" x2="555.83" y2="475.36"/>
+    <line class="cls-6" x1="700.43" y1="570.2" x2="649.77" y2="449.44"/>
+    <line class="cls-5" x1="753.53" y1="334.67" x2="649.77" y2="449.44"/>
+    <line class="cls-6" x1="833.8" y1="452.16" x2="753.53" y2="334.67"/>
+    <line class="cls-5" x1="753.53" y1="334.67" x2="909.62" y2="369.93"/>
+    <line class="cls-6" x1="700.43" y1="570.2" x2="833.8" y2="452.16"/>
+    <line class="cls-6" x1="937.49" y1="553.06" x2="700.43" y2="570.2"/>
+    <line class="cls-5" x1="633.95" y1="594.03" x2="700.43" y2="570.2"/>
+    <line class="cls-5" x1="632.77" y1="709.32" x2="633.95" y2="594.03"/>
+    <line class="cls-5" x1="531.1" y1="660.93" x2="632.77" y2="709.32"/>
+    <line class="cls-5" x1="561.71" y1="760.38" x2="531.1" y2="660.93"/>
+    <line class="cls-5" x1="632.77" y1="709.32" x2="561.71" y2="760.38"/>
+    <line class="cls-5" x1="900.46" y1="668.76" x2="746.92" y2="687.35"/>
+    <line class="cls-5" x1="1054.14" y1="646.71" x2="900.46" y2="668.76"/>
+    <line class="cls-5" x1="909.62" y1="369.93" x2="1034.35" y2="484.35"/>
+    <line class="cls-5" x1="937.49" y1="553.06" x2="1034.35" y2="484.35"/>
+    <line class="cls-6" x1="1054.14" y1="646.71" x2="937.49" y2="553.06"/>
+    <line class="cls-5" x1="913.76" y1="755.42" x2="900.46" y2="668.76"/>
+    <line class="cls-5" x1="746.92" y1="687.35" x2="913.76" y2="755.42"/>
+    <line class="cls-5" x1="825.34" y1="794.3" x2="746.92" y2="687.35"/>
+    <line class="cls-6" x1="632.77" y1="709.32" x2="720.6" y2="773.29"/>
+    <line class="cls-5" x1="746.92" y1="687.35" x2="720.6" y2="773.29"/>
+    <line class="cls-5" x1="825.34" y1="794.3" x2="913.76" y2="755.42"/>
+    <line class="cls-5" x1="720.6" y1="773.29" x2="825.34" y2="794.3"/>
+    <line class="cls-6" x1="700.43" y1="570.2" x2="746.92" y2="687.35"/>
+    <line class="cls-5" x1="720.6" y1="773.29" x2="561.71" y2="760.38"/>
+    <circle class="cls-1" cx="359.95" cy="554.41" r="27.59"/>
+    <circle class="cls-27" cx="648.91" cy="449.79" r="27.59"/>
+    <circle class="cls-20" cx="700.2" cy="571.13" r="27.59"/>
+    <circle class="cls-12" cx="632.74" cy="709.2" r="27.59"/>
+    <circle class="cls-3" cx="562.71" cy="760.52" r="27.59"/>
+    <circle class="cls-24" cx="1034.8" cy="484.67" r="27.59"/>
+    <circle class="cls-25" cx="753.83" cy="335.83" r="27.59"/>
+    <circle class="cls-17" cx="826.58" cy="794.07" r="27.59"/>
+    <line class="cls-5" x1="833.8" y1="452.16" x2="649.77" y2="449.44"/>
+    <line class="cls-5" x1="937.49" y1="553.06" x2="833.8" y2="452.16"/>
+    <circle class="cls-18" cx="834.67" cy="451.78" r="27.59"/>
+    <line class="cls-5" x1="700.43" y1="570.2" x2="900.46" y2="668.76"/>
+    <circle class="cls-19" cx="430.75" cy="439.75" r="27.59"/>
+    <line class="cls-5" x1="521.06" y1="574.38" x2="430.75" y2="439.75"/>
+    <line class="cls-5" x1="909.62" y1="369.93" x2="833.8" y2="452.16"/>
+    <circle class="cls-10" cx="910.48" cy="369.83" r="27.59"/>
+    <line class="cls-5" x1="1034.35" y1="484.35" x2="1054.14" y2="646.71"/>
+    <circle class="cls-22" cx="1053.48" cy="647.32" r="27.59"/>
+    <line class="cls-5" x1="753.53" y1="334.67" x2="547.4" y2="363.24"/>
+    <circle class="cls-14" cx="547.08" cy="364.49" r="27.59"/>
+    <line class="cls-5" x1="746.92" y1="687.35" x2="632.77" y2="709.32"/>
+    <circle class="cls-13" cx="747.02" cy="687.45" r="27.59"/>
+    <circle class="cls-23" cx="422.58" cy="650.29" r="27.59"/>
+    <line class="cls-5" x1="913.76" y1="755.42" x2="1054.14" y2="646.71"/>
+    <circle class="cls-8" cx="914.67" cy="756.02" r="27.59"/>
+    <line class="cls-5" x1="937.49" y1="553.06" x2="909.62" y2="369.93"/>
+    <circle class="cls-15" cx="555.81" cy="476.17" r="27.59"/>
+    <line class="cls-5" x1="555.83" y1="475.36" x2="547.4" y2="363.24"/>
+    <line class="cls-5" x1="633.95" y1="594.03" x2="521.06" y2="574.38"/>
+    <circle class="cls-4" cx="634.23" cy="594.17" r="27.59"/>
+    <circle class="cls-16" cx="521.25" cy="573.92" r="27.59"/>
+    <line class="cls-5" x1="521.06" y1="574.38" x2="531.1" y2="660.93"/>
+    <circle class="cls-11" cx="531.65" cy="661.63" r="27.59"/>
+    <line class="cls-5" x1="422.39" y1="648.94" x2="531.1" y2="660.93"/>
+    <circle class="cls-2" cx="935.85" cy="553.1" r="27.59"/>
+    <line class="cls-5" x1="937.49" y1="553.06" x2="900.46" y2="668.76"/>
+    <circle class="cls-26" cx="901.29" cy="669.06" r="27.59"/>
+    <polyline class="cls-5" points="825.34 794.3 883.14 901.06 823.61 902.55 720.6 773.29"/>
+    <circle class="cls-9" cx="719.89" cy="773.49" r="27.59"/>
+  </g>
+</svg>

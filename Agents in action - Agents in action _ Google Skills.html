@@ -1,0 +1,3236 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://www.skills.google/paths/3546/course_templates/1562/documents/647698 -->
+<html lang="en" class="mdl-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.turbo-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 2147483647;
+  transition:
+    width 300ms ease-out,
+    opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}
+</style><style type="text/css" data-tag-name="trix-editor">trix-editor {
+    display: block;
+}
+
+trix-editor:empty:not(:focus)::before {
+    content: attr(placeholder);
+    color: graytext;
+    cursor: text;
+    pointer-events: none;
+    white-space: pre-line;
+}
+
+trix-editor a[contenteditable=false] {
+    cursor: text;
+}
+
+trix-editor img {
+    max-width: 100%;
+    height: auto;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea {
+    resize: none;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
+    position: absolute;
+    left: -9999px;
+    max-height: 0px;
+}
+
+trix-editor [data-trix-attachment] figcaption[data-trix-placeholder]:empty::before {
+    content: attr(data-trix-placeholder);
+    color: graytext;
+}
+
+trix-editor [data-trix-cursor-target] {
+    display: inline-block !important;
+    width: 1px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+trix-editor [data-trix-cursor-target=left] {
+    vertical-align: top !important;
+    margin-left: -1px !important;
+}
+
+trix-editor [data-trix-cursor-target=right] {
+    vertical-align: bottom !important;
+    margin-right: -1px !important;
+}</style><style type="text/css" data-tag-name="trix-toolbar">trix-toolbar {
+  display: block;
+}
+
+trix-toolbar {
+  white-space: nowrap;
+}
+
+trix-toolbar [data-trix-dialog] {
+  display: none;
+}
+
+trix-toolbar [data-trix-dialog][data-trix-active] {
+  display: block;
+}
+
+trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
+  background-color: #ffdddd;
+}</style>
+<title>Agents in action - Agents in action | Google Skills</title>
+<link crossorigin="" href="https://cdn.qwiklabs.com/" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect">
+<link crossorigin="" href="https://fonts.googleapis.com/" rel="preconnect">
+<link as="font" crossorigin="anonymous" href="https://cdn.qwiklabs.com/fonts/google-symbols.woff2" rel="preload" type="font/woff2">
+<link as="font" crossorigin="anonymous" href="https://cdn.qwiklabs.com/fonts/material-icons.woff2" rel="preload" type="font/woff2">
+<link as="font" crossorigin="anonymous" href="https://cdn.qwiklabs.com/fonts/google-material-icons.woff2" rel="preload" type="font/woff2">
+<style>
+  @mixin font_face_props {
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+  }
+  
+  @font-face {
+    @include font_face_props;
+  
+    font-family: 'Google Material Icons';
+    src: url('https://cdn.qwiklabs.com/fonts/google-material-icons.woff2') format('woff2');
+  }
+  
+  @font-face {
+    @include font_face_props;
+  
+    font-family: 'Material Icons';
+    src: url('https://cdn.qwiklabs.com/fonts/material-icons.woff2') format('woff2');
+  }
+  
+  @font-face {
+    @include font_face_props;
+  
+    font-family: 'Google Symbols';
+    src: url('https://cdn.qwiklabs.com/fonts/google-symbols.woff2') format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+  }
+  
+  .google-symbols {
+    font-family: 'Google Symbols';
+  }
+  
+  .google-material-icons {
+    font-family: 'Google Material Icons';
+  }
+  
+  .material-icons,
+  .google-symbols,
+  .google-material-icons {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+</style>
+
+<meta name="action-cable-url" content="/cable">
+<script type="text/javascript" async="" src="./Agents in action - Agents in action _ Google Skills_files/js"></script><script async="" src="./Agents in action - Agents in action _ Google Skills_files/gtm.js.download"></script><script>
+//<![CDATA[
+window.gon={};gon.deployment="google-run";
+//]]>
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  const properties = JSON.parse(atob('eyJsb2NhbGUiOiJlbiIsInVzZXJfcm9sZXMiOiJzdHVkZW50IiwiZmVhdHVyZV9sZWFybmVyX2dyYWNlX3BlcmlvZF91cGdyYWRlIjp0cnVlLCJmZWF0dXJlX3NpdGVtYXBfcG9jIjp0cnVlLCJmZWF0dXJlX3plbmRlc2tfdG9fY2FzZXMiOnRydWUsImZlYXR1cmVfYXV0b19jb3Vyc2VfdXBncmFkZSI6ZmFsc2UsImZlYXR1cmVfcmVjZXJ0Ijp0cnVlLCJmZWF0dXJlX3NlYXJjaF9hdXRvY29tcGxldGUiOnRydWUsImZlYXR1cmVfc3NvX3JlZGlyZWN0Ijp0cnVlLCJmZWF0dXJlX2N1c3RvbWVyX2xlYXJuaW5nX3BhdGhfaW1wcm92ZW1lbnQiOmZhbHNlLCJmZWF0dXJlX2Zyb250X2Rvb3JfbGFuZGluZ19wYWdlIjp0cnVlLCJmZWF0dXJlX2Fibl9zdXJ2ZXlfZmVlZGJhY2siOmZhbHNlLCJmZWF0dXJlX3VzZV9tb3NhaWMiOnRydWUsImZlYXR1cmVfZ2FtaWZpY2F0aW9uX2FjaGlldmVtZW50cyI6dHJ1ZSwiZmVhdHVyZV9kb2NlYm9fc3luY19vcmdfc3VwcG9ydCI6dHJ1ZSwiZmVhdHVyZV9ub19sdGlfc2Vzc2lvbl9yZWRpcmVjdCI6ZmFsc2UsImZlYXR1cmVfb2ZmYm9hcmRfZ3dnX3NlcHQiOnRydWUsImZlYXR1cmVfY2F0YWxvZ19maWx0ZXJzX2J1dHRvbiI6dHJ1ZSwiZmVhdHVyZV9yZWxhdW5jaF9leHRyYSI6dHJ1ZSwiZmVhdHVyZV9kaXNjb3ZlcnlfbGFiX2R1cmF0aW9uX2VzdGltYXRlIjp0cnVlLCJmZWF0dXJlX2dhbWlmaWNhdGlvbiI6dHJ1ZSwiZmVhdHVyZV9yZWNlcnRfZmlsdGVyX3VzZWRfYWN0aXZpdGllc19ieV9jZXJ0Ijp0cnVlLCJmZWF0dXJlX29yZ19pbnZpdGVfbGluayI6dHJ1ZSwiZmVhdHVyZV9jZG5fZm9udHMiOnRydWUsImZlYXR1cmVfYmFubmVyX2JyZWFkY3J1bWJzIjp0cnVlLCJmZWF0dXJlX2NhdGFsb2dfZmlsdGVyX2NoaXBzIjp0cnVlLCJmZWF0dXJlX2dhbWlmaWNhdGlvbl9sZWFndWVzIjp0cnVlLCJmZWF0dXJlX2dhbWlmaWNhdGlvbl9sZWFkZXJib2FyZHMiOnRydWUsImZlYXR1cmVfd2lwZW91dF9oYXJkX2RlbGV0ZSI6dHJ1ZSwiZmVhdHVyZV9oeWJyaWRfY2VydCI6dHJ1ZSwiZmVhdHVyZV9jb25jdXJyZW50X2hvdGxhYl9hbGxvY2F0aW9uIjpmYWxzZSwiZmVhdHVyZV9mZWVkYmFjayI6dHJ1ZSwiZmVhdHVyZV9uZXh0XzIwMjZfZW5hYmxlZCI6ZmFsc2UsImZlYXR1cmVfcmVtb3ZlX2dkcF9zdWJzY3JpcHRpb24iOnRydWUsImZlYXR1cmVfZGFzaGJvYXJkX2pvYnMiOnRydWUsImZlYXR1cmVfcmVwb3J0X3BhcmVudHMiOmZhbHNlLCJmZWF0dXJlX29mZmJvYXJkX2d3Z19hdWciOnRydWUsImZlYXR1cmVfbmV3X3Byb2dyYW1fZGFzaGJvYXJkIjp0cnVlLCJmZWF0dXJlX2xlYXJuaW5nX3BsYW5fc2VhcmNoIjp0cnVlLCJmZWF0dXJlX3N1YnNjcmlwdGlvbl91eCI6dHJ1ZSwiZmVhdHVyZV9hbGV4YW5kcmlhX3Nob3dfYnVuZGxlX2Vycm9ycyI6ZmFsc2UsImZlYXR1cmVfZG9jZWJvX3N5bmMiOnRydWUsImZlYXR1cmVfc3dpdGNoX3BhdGhfYW5kX2V4cGxvcmVfaGVhZGVycyI6dHJ1ZSwiZmVhdHVyZV9hbGV4YW5kcmlhX3N1YnNjcmlwdGlvbnNfcGFnaW5hdGlvbiI6dHJ1ZSwiZmVhdHVyZV9vbmVfdGFwIjp0cnVlLCJmZWF0dXJlX25leHRfMjAyNl9jb2xsZWN0aW9ucyI6dHJ1ZSwiZmVhdHVyZV9zaG93X29yZ19jYXRhbG9nX2J1dHRvbiI6dHJ1ZSwiZmVhdHVyZV9hdXRvX3VwZ3JhZGVfZ2FtZV9sYWJzIjp0cnVlLCJmZWF0dXJlX2dhbWlmaWNhdGlvbl9zdHJlYWtzIjp0cnVlLCJmZWF0dXJlX3JlbGF1bmNoX3N1YnNjcmlwdGlvbnMiOnRydWUsImZlYXR1cmVfc2hvd19uZXdfY291cnNlX2V4YW1zIjp0cnVlLCJmZWF0dXJlX2NyZWRseV9tYW5hZ2VtZW50IjpmYWxzZSwiZmVhdHVyZV9nd2dfY2F0YWxvZyI6dHJ1ZSwiZmVhdHVyZV9yZWxhdW5jaF9mb3Jfc3NvIjp0cnVlLCJmZWF0dXJlX25ld19zaWRlbmF2Ijp0cnVlLCJmZWF0dXJlX2NhY2hlX2V4cGxvcmVfcGFnZV9yZXN1bHQiOnRydWUsImZlYXR1cmVfcGF0aGZpbmRlcl9vcmdfb25ib2FyZGluZyI6ZmFsc2UsImZlYXR1cmVfYWlfc2VhcmNoX3N1bW1hcnkiOmZhbHNlLCJmZWF0dXJlX2xhYl9wYWdlX3JlZGVzaWduIjp0cnVlLCJmZWF0dXJlX29ucmFtcCI6dHJ1ZSwiZmVhdHVyZV90dXJibyI6ZmFsc2UsImZlYXR1cmVfb2F1dGhfcmlzY19zaHV0b2ZmIjp0cnVlLCJmZWF0dXJlX2xlYXJuaW5nX3BsYW5fc2x1ZyI6dHJ1ZSwiZmVhdHVyZV9yZWNhbGN1bGF0ZV9hY3Rpdml0aWVzIjp0cnVlLCJmZWF0dXJlX25rX3JvbGxiYWNrX3ZlcnNpb24iOmZhbHNlLCJmZWF0dXJlX25ld19vcmdfZGFzaGJvYXJkIjp0cnVlLCJmZWF0dXJlX2luX2NvbnRleHRfdmlldyI6dHJ1ZSwiZmVhdHVyZV9lbnRpdHlfYXBpX2tleXMiOnRydWUsImZlYXR1cmVfcGF0aGZpbmRlcl9qb3VybmV5X3ZpZXciOmZhbHNlLCJmZWF0dXJlX29mZmJvYXJkX2d3Z19qdW5lIjp0cnVlLCJmZWF0dXJlX2lubm92YXRvcl9nZWFyX3NpZ25faW4iOnRydWUsImZlYXR1cmVfcmVsYXVuY2hfY3JlZGVudGlhbHMiOnRydWUsImZlYXR1cmVfc2VhcmNoX3NvcnRfYnkiOnRydWUsImZlYXR1cmVfZGlzYWxsb3dfaW5ub3ZhdG9yX2NyZWRpdF9zaGFyaW5nIjp0cnVlLCJmZWF0dXJlX3Jlcm91dGVfbmV3X2ludGVydmlld193YXJtdXAiOnRydWUsImZlYXR1cmVfZXhwZXJpbWVudGF0aW9uIjp0cnVlLCJmZWF0dXJlX2lsdF9jb250ZW50X3Byb2dyYW0iOmZhbHNlLCJmZWF0dXJlX2NoYWxsZW5nZV9sYWJfZmFzdF90cmFjayI6dHJ1ZSwiZmVhdHVyZV91c2VfcmVjb21tZW5kZXJfYWdlbnQiOnRydWUsImZlYXR1cmVfbmV3X29yZ19kYXNoYm9hcmRfYW5ub3VuY2VtZW50Ijp0cnVlLCJmZWF0dXJlX2d3Z19wYWlkX2NoaXAiOnRydWUsImZlYXR1cmVfcmVsYXVuY2giOnRydWUsImZlYXR1cmVfb25lX3N0b3BfaHViIjp0cnVlLCJmZWF0dXJlX2dhbWlmaWNhdGlvbl91aV9kYXRhIjp0cnVlLCJmZWF0dXJlX2ludGVydmlld193YXJtdXBfdHVybmRvd24iOnRydWUsImZlYXR1cmVfZ3Vlc3RfdXNlciI6ZmFsc2UsImZlYXR1cmVfaGlkZV91bnBvcHVsYXJfZmlsdGVycyI6dHJ1ZSwiZmVhdHVyZV9yZWxhdW5jaF9ncmlkX2xpc3QiOnRydWUsImZlYXR1cmVfc2VhcmNoX2FzeW5jIjp0cnVlLCJmZWF0dXJlX2xlYXJuX3dpdGhfYWkiOnRydWUsImZlYXR1cmVfcmVjZXJ0X3F1ZXJ5X2FsbF91c2VkX2NlcnRfYWN0aXZpdGllcyI6dHJ1ZSwiZmVhdHVyZV9jcmVkbHkiOnRydWUsImZlYXR1cmVfY291cnNlX2V4YW1zIjp0cnVlLCJmZWF0dXJlX2FuYWx5dGljc192MiI6dHJ1ZSwiZmVhdHVyZV9zc29faW50ZWdyYXRpb25fYWNjZXNzX2FsbG93bGlzdCI6ZmFsc2UsImZlYXR1cmVfdXBkYXRlZF9yZWNhbGN1bGF0aW9uX3V4Ijp0cnVlLCJmZWF0dXJlX2dhbWlmaWNhdGlvbl91aSI6dHJ1ZSwiZmVhdHVyZV9hZ2VfZ2F0ZV9yZXNldCI6ZmFsc2UsImZlYXR1cmVfcXVvdGFfc2VydmljZV91c2VfbHVhIjp0cnVlLCJmZWF0dXJlX2xhbmRpbmdfcGFnZSI6dHJ1ZSwiZmVhdHVyZV9nb29nbGVfZGV2X3BheW1lbnQiOnRydWUsImZlYXR1cmVfY2hpbWVfdXNlX2FidXNlX2RldGFpbHMiOnRydWUsImZlYXR1cmVfZ2FtaWZpY2F0aW9uX3hwIjp0cnVlLCJmZWF0dXJlX2djc2JvX2RvbWFpbl9yZWRpcmVjdCI6ZmFsc2UsImZlYXR1cmVfc2VhcmNoX3N1Z2dlc3Rpb25zIjp0cnVlLCJmZWF0dXJlX2xhYl9leHBhbmRlZF9oaW50IjpmYWxzZSwiZmVhdHVyZV9sYWJfc2VhcmNoX2RhdGEiOnRydWUsImZlYXR1cmVfZGFzaGJvYXJkX3Byb2dyZXNzX2dyYXBoIjpmYWxzZSwiZmVhdHVyZV9yZWxhdW5jaF9lbWVyZ2VuY3lfYnV0dG9uIjpmYWxzZSwiZmVhdHVyZV9pbm5vdmF0b3Jfc2lnbl9pbiI6dHJ1ZSwiZmVhdHVyZV9jcmVkbHlfaW50ZWdyYXRpb25fYW5ub3VuY2VtZW50X21vZGFsIjp0cnVlLCJmZWF0dXJlX3BhdGhmaW5kZXJfb25ib2FyZGluZyI6ZmFsc2UsImZlYXR1cmVfbG9nX3JlZGlzX21lbW9yeV9zdGF0cyI6dHJ1ZSwiZmVhdHVyZV9yZWxhdW5jaF9jb2xsZWN0aW9uX2FpIjp0cnVlLCJmZWF0dXJlX21vc2FpY19za2lsbHNfbGFiX3JlY29tbWVuZGF0aW9uIjpmYWxzZSwiZmVhdHVyZV9jYW5vbmljYWxfZG9tYWluX3JlZGlyZWN0Ijp0cnVlLCJmZWF0dXJlX2NvdXJzZV9idWlsZGVyIjpmYWxzZSwiZmVhdHVyZV9kb2NlYm9fdXgiOnRydWUsImZlYXR1cmVfbGFiX2FpX2hpbnRzIjpmYWxzZSwiZmVhdHVyZV91c2VfZG9jZWJvX2ZlYXR1cmVzIjp0cnVlLCJmZWF0dXJlX2dvbGRlbl9sYWJfYXV0b19sb2NhdGlvbnNfcGlsb3QiOmZhbHNlLCJmZWF0dXJlX2luX2NvbnRleHRfYWxsX2xhYnMiOnRydWUsImZlYXR1cmVfcmVjZXJ0X2V4cGFuZGVkX2NhdGFsb2ciOmZhbHNlLCJmZWF0dXJlX2RpYWxvZ19xdWV1ZSI6dHJ1ZSwiZ3JvdXBfc3VhZG1pbnMiOmZhbHNlLCJncm91cF9ub25fc3VhZG1pbnMiOnRydWUsImdyb3VwX2FkbWlucyI6ZmFsc2UsImdyb3VwX3RyYWluZXJzIjpmYWxzZSwiZ3JvdXBfY29vcmRpbmF0b3JzIjpmYWxzZSwiZ3JvdXBfY3JlYXRvcnMiOmZhbHNlLCJncm91cF9zdHVkZW50cyI6dHJ1ZSwiZ3JvdXBfbm9uX29yZ2FuaXphdGlvbiI6dHJ1ZSwiZ3JvdXBfb3JnYW5pemF0aW9uX21lbWJlcnMiOmZhbHNlLCJncm91cF9ub25fcHJvZ3JhbSI6dHJ1ZSwiZ3JvdXBfZ29vZ2xlcnMiOmZhbHNlLCJncm91cF9DTFMiOmZhbHNlLCJncm91cF9lbmdfcHJvZHVjdCI6ZmFsc2UsImdyb3VwX2dhbWlmaWNhdGlvbl9iZXRhX3Rlc3RlcnMiOmZhbHNlfQ=='));
+  properties.event = 'user_properties';
+  dataLayer.push(properties);
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    if (arguments[0] === 'event') {
+      dataLayer.push({ event: arguments[1], eventParams: arguments[2] }, { eventParams: undefined });
+    } else {
+      dataLayer.push(arguments);
+    }
+  }
+  let gtmLoaded = false;
+  function glueCookieNotificationBarLoaded() {
+    if (!gtmLoaded) {
+      dataLayerInit(
+        true,
+        false,
+        false,
+        false,
+        'google-run'
+      );
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer',"GTM-MBRHNDG7");
+      pushPageEvent();
+      if (typeof sessEvent !== 'undefined') {
+        pushSessionEvent(sessEvent, sessLoginStatus, sessPreviousPath);
+      }
+      gtmLoaded = true;
+    }
+  }
+</script>
+<script src="./Agents in action - Agents in action _ Google Skills_files/webcomponents-loader-2e147cb1679d97581f981243bfc2d1c03dc34a58.js.download"></script>
+<script src="./Agents in action - Agents in action _ Google Skills_files/head_scripts-78121e337319c81329ed63eb61196ea57f74a57d.js.download"></script>
+<script src="./Agents in action - Agents in action _ Google Skills_files/vendor-1c75122c864db561eb016ef97dbd4eb4a740856f.js.download"></script>
+<script src="./Agents in action - Agents in action _ Google Skills_files/application-8eab935e5bbf8f934664dfc46f2864d2cd0efd7f.js.download"></script><script src="./Agents in action - Agents in action _ Google Skills_files/loader.js.download"></script><style>:root {
+  --game-color: #E52592;
+  --classroom-color: #01877E;
+  --external-course-color: #D56E0C;
+  --certification-color: #C5221F;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  border-bottom: none !important;
+}
+
+label abbr[title] {
+  color: var(--primary-text-on-surface-color);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--hairline-color);
+  display: block;
+  height: 1px;
+  margin: 24px 0;
+  padding: 0;
+}
+
+mark {
+  background-color: #F9AB00;
+  border-radius: 2px;
+  color: inherit;
+  padding: 2px 0px;
+}
+
+p, li {
+  font: var(--md-sys-typescale-body-large);
+}
+
+._small-label_rop5s_37,
+._label--small_rop5s_38 {
+  font: var(--md-sys-typescale-body-medium);
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+._mdl-typography--small-title_rop5s_47 {
+  color: #202124;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+._text--blue_rop5s_53 {
+  color: var(--primary-text-on-surface-color);
+}
+
+._text--center_rop5s_57 {
+  text-align: center;
+}
+
+._text--capitalize_rop5s_61 {
+  text-transform: capitalize;
+}
+
+._text--code_rop5s_65 {
+  font-family: "Roboto Mono", monospace;
+}
+
+._text--copy_rop5s_69 {
+  font-family: var(--md-ref-typeface-plain);
+}
+
+._text--error_rop5s_73 {
+  color: var(--warn-color);
+}
+
+._text--free_rop5s_77 {
+  color: var(--success-color);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+._text--gray_rop5s_83 {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+._text--light_rop5s_87 {
+  color: var(--light-text-on-surface-color) !important;
+}
+
+._text--right_rop5s_91 {
+  text-align: right;
+}
+
+._text--sign_rop5s_95 {
+  font-family: "Oswald", sans-serif;
+}
+
+._text--small_rop5s_99 {
+  font-size: 14px !important;
+}
+
+._text--large_rop5s_103 {
+  font-size: 20px !important;
+}
+
+._text--success_rop5s_107 {
+  color: var(--success-color) !important;
+}
+
+._text--yellow_rop5s_111 {
+  color: #F9AB00;
+}
+
+._text--red_rop5s_115 {
+  color: #D93025;
+}
+
+._text--green_rop5s_119 {
+  color: #34A853;
+}
+
+u {
+  text-decoration: none;
+}
+
+._material-icons_rop5s_127 {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+._ellipsis_rop5s_149 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+._text--rtl_rop5s_155 {
+  direction: rtl;
+}
+
+._body-wrapper_rop5s_159 {
+  max-width: 800px;
+}
+
+._text--button_rop5s_163 {
+  font: var(--md-sys-typescale-label-large);
+}
+
+._text--nowrap_rop5s_167 {
+  white-space: nowrap;
+}
+
+._video-button-outline_rop5s_171 {
+  --md-focus-ring-color: transparent;
+  position: relative;
+}
+._video-button-outline_rop5s_171:focus-within::after {
+  border: 3px solid var(--md-sys-color-secondary);
+  border-radius: calc(var(--icon-size) * 0.18);
+  content: "";
+  height: calc(var(--icon-size) * 0.59);
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, calc(-50% - 11px));
+  width: calc(var(--icon-size) * 0.86);
+}</style>
+<script src="./Agents in action - Agents in action _ Google Skills_files/hallofmirrors-0ca4baaf26e513667565aad0391795faf3c19908.js.download"></script>
+<custom-style>
+  <style is="custom-style">[hidden] {
+  display: none !important;
+}
+
+</style>
+</custom-style>
+<custom-style>
+  <style is="custom-style">html {
+  --layout_-_display:  flex;;
+
+      --layout-inline_-_display:  inline-flex;;
+
+      --layout-horizontal_-_display:  var(--layout_-_display); --layout-horizontal_-_-ms-flex-direction:  row; --layout-horizontal_-_-webkit-flex-direction:  row; --layout-horizontal_-_flex-direction:  row;;
+
+      --layout-horizontal-reverse_-_display:  var(--layout_-_display); --layout-horizontal-reverse_-_-ms-flex-direction:  row-reverse; --layout-horizontal-reverse_-_-webkit-flex-direction:  row-reverse; --layout-horizontal-reverse_-_flex-direction:  row-reverse;;
+
+      --layout-vertical_-_display:  var(--layout_-_display); --layout-vertical_-_-ms-flex-direction:  column; --layout-vertical_-_-webkit-flex-direction:  column; --layout-vertical_-_flex-direction:  column;;
+
+      --layout-vertical-reverse_-_display:  var(--layout_-_display); --layout-vertical-reverse_-_-ms-flex-direction:  column-reverse; --layout-vertical-reverse_-_-webkit-flex-direction:  column-reverse; --layout-vertical-reverse_-_flex-direction:  column-reverse;;
+
+      --layout-wrap_-_-ms-flex-wrap:  wrap; --layout-wrap_-_-webkit-flex-wrap:  wrap; --layout-wrap_-_flex-wrap:  wrap;;
+
+      --layout-wrap-reverse_-_-ms-flex-wrap:  wrap-reverse; --layout-wrap-reverse_-_-webkit-flex-wrap:  wrap-reverse; --layout-wrap-reverse_-_flex-wrap:  wrap-reverse;;
+
+      --layout-flex-auto_-_-ms-flex:  1 1 auto; --layout-flex-auto_-_-webkit-flex:  1 1 auto; --layout-flex-auto_-_flex:  1 1 auto;;
+
+      --layout-flex-none_-_-ms-flex:  none; --layout-flex-none_-_-webkit-flex:  none; --layout-flex-none_-_flex:  none;;
+
+      --layout-flex_-_-ms-flex:  1 1 0.000000001px; --layout-flex_-_-webkit-flex:  1; --layout-flex_-_flex:  1; --layout-flex_-_-webkit-flex-basis:  0.000000001px; --layout-flex_-_flex-basis:  0.000000001px;;
+
+      --layout-flex-2_-_-ms-flex:  2; --layout-flex-2_-_-webkit-flex:  2; --layout-flex-2_-_flex:  2;;
+
+      --layout-flex-3_-_-ms-flex:  3; --layout-flex-3_-_-webkit-flex:  3; --layout-flex-3_-_flex:  3;;
+
+      --layout-flex-4_-_-ms-flex:  4; --layout-flex-4_-_-webkit-flex:  4; --layout-flex-4_-_flex:  4;;
+
+      --layout-flex-5_-_-ms-flex:  5; --layout-flex-5_-_-webkit-flex:  5; --layout-flex-5_-_flex:  5;;
+
+      --layout-flex-6_-_-ms-flex:  6; --layout-flex-6_-_-webkit-flex:  6; --layout-flex-6_-_flex:  6;;
+
+      --layout-flex-7_-_-ms-flex:  7; --layout-flex-7_-_-webkit-flex:  7; --layout-flex-7_-_flex:  7;;
+
+      --layout-flex-8_-_-ms-flex:  8; --layout-flex-8_-_-webkit-flex:  8; --layout-flex-8_-_flex:  8;;
+
+      --layout-flex-9_-_-ms-flex:  9; --layout-flex-9_-_-webkit-flex:  9; --layout-flex-9_-_flex:  9;;
+
+      --layout-flex-10_-_-ms-flex:  10; --layout-flex-10_-_-webkit-flex:  10; --layout-flex-10_-_flex:  10;;
+
+      --layout-flex-11_-_-ms-flex:  11; --layout-flex-11_-_-webkit-flex:  11; --layout-flex-11_-_flex:  11;;
+
+      --layout-flex-12_-_-ms-flex:  12; --layout-flex-12_-_-webkit-flex:  12; --layout-flex-12_-_flex:  12;;
+
+      
+
+      --layout-start_-_-ms-flex-align:  start; --layout-start_-_-webkit-align-items:  flex-start; --layout-start_-_align-items:  flex-start;;
+
+      --layout-center_-_-ms-flex-align:  center; --layout-center_-_-webkit-align-items:  center; --layout-center_-_align-items:  center;;
+
+      --layout-end_-_-ms-flex-align:  end; --layout-end_-_-webkit-align-items:  flex-end; --layout-end_-_align-items:  flex-end;;
+
+      --layout-baseline_-_-ms-flex-align:  baseline; --layout-baseline_-_-webkit-align-items:  baseline; --layout-baseline_-_align-items:  baseline;;
+
+      
+
+      --layout-start-justified_-_-ms-flex-pack:  start; --layout-start-justified_-_-webkit-justify-content:  flex-start; --layout-start-justified_-_justify-content:  flex-start;;
+
+      --layout-center-justified_-_-ms-flex-pack:  center; --layout-center-justified_-_-webkit-justify-content:  center; --layout-center-justified_-_justify-content:  center;;
+
+      --layout-end-justified_-_-ms-flex-pack:  end; --layout-end-justified_-_-webkit-justify-content:  flex-end; --layout-end-justified_-_justify-content:  flex-end;;
+
+      --layout-around-justified_-_-ms-flex-pack:  distribute; --layout-around-justified_-_-webkit-justify-content:  space-around; --layout-around-justified_-_justify-content:  space-around;;
+
+      --layout-justified_-_-ms-flex-pack:  justify; --layout-justified_-_-webkit-justify-content:  space-between; --layout-justified_-_justify-content:  space-between;;
+
+      --layout-center-center_-_-ms-flex-align:  var(--layout-center_-_-ms-flex-align); --layout-center-center_-_-webkit-align-items:  var(--layout-center_-_-webkit-align-items); --layout-center-center_-_align-items:  var(--layout-center_-_align-items); --layout-center-center_-_-ms-flex-pack:  var(--layout-center-justified_-_-ms-flex-pack); --layout-center-center_-_-webkit-justify-content:  var(--layout-center-justified_-_-webkit-justify-content); --layout-center-center_-_justify-content:  var(--layout-center-justified_-_justify-content);;
+
+      
+
+      --layout-self-start_-_-ms-align-self:  flex-start; --layout-self-start_-_-webkit-align-self:  flex-start; --layout-self-start_-_align-self:  flex-start;;
+
+      --layout-self-center_-_-ms-align-self:  center; --layout-self-center_-_-webkit-align-self:  center; --layout-self-center_-_align-self:  center;;
+
+      --layout-self-end_-_-ms-align-self:  flex-end; --layout-self-end_-_-webkit-align-self:  flex-end; --layout-self-end_-_align-self:  flex-end;;
+
+      --layout-self-stretch_-_-ms-align-self:  stretch; --layout-self-stretch_-_-webkit-align-self:  stretch; --layout-self-stretch_-_align-self:  stretch;;
+
+      --layout-self-baseline_-_-ms-align-self:  baseline; --layout-self-baseline_-_-webkit-align-self:  baseline; --layout-self-baseline_-_align-self:  baseline;;
+
+      
+
+      --layout-start-aligned_-_-ms-flex-line-pack:  start; --layout-start-aligned_-_-ms-align-content:  flex-start; --layout-start-aligned_-_-webkit-align-content:  flex-start; --layout-start-aligned_-_align-content:  flex-start;;
+
+      --layout-end-aligned_-_-ms-flex-line-pack:  end; --layout-end-aligned_-_-ms-align-content:  flex-end; --layout-end-aligned_-_-webkit-align-content:  flex-end; --layout-end-aligned_-_align-content:  flex-end;;
+
+      --layout-center-aligned_-_-ms-flex-line-pack:  center; --layout-center-aligned_-_-ms-align-content:  center; --layout-center-aligned_-_-webkit-align-content:  center; --layout-center-aligned_-_align-content:  center;;
+
+      --layout-between-aligned_-_-ms-flex-line-pack:  justify; --layout-between-aligned_-_-ms-align-content:  space-between; --layout-between-aligned_-_-webkit-align-content:  space-between; --layout-between-aligned_-_align-content:  space-between;;
+
+      --layout-around-aligned_-_-ms-flex-line-pack:  distribute; --layout-around-aligned_-_-ms-align-content:  space-around; --layout-around-aligned_-_-webkit-align-content:  space-around; --layout-around-aligned_-_align-content:  space-around;;
+
+      
+
+      --layout-block_-_display:  block;;
+
+      --layout-invisible_-_visibility:  hidden !important;;
+
+      --layout-relative_-_position:  relative;;
+
+      --layout-fit_-_position:  absolute; --layout-fit_-_top:  0; --layout-fit_-_right:  0; --layout-fit_-_bottom:  0; --layout-fit_-_left:  0;;
+
+      --layout-scroll_-_-webkit-overflow-scrolling:  touch; --layout-scroll_-_overflow:  auto;;
+
+      --layout-fullbleed_-_margin:  0; --layout-fullbleed_-_height:  100vh;;
+
+      
+
+      --layout-fixed-top_-_position:  fixed; --layout-fixed-top_-_top:  0; --layout-fixed-top_-_left:  0; --layout-fixed-top_-_right:  0;;
+
+      --layout-fixed-right_-_position:  fixed; --layout-fixed-right_-_top:  0; --layout-fixed-right_-_right:  0; --layout-fixed-right_-_bottom:  0;;
+
+      --layout-fixed-bottom_-_position:  fixed; --layout-fixed-bottom_-_right:  0; --layout-fixed-bottom_-_bottom:  0; --layout-fixed-bottom_-_left:  0;;
+
+      --layout-fixed-left_-_position:  fixed; --layout-fixed-left_-_top:  0; --layout-fixed-left_-_bottom:  0; --layout-fixed-left_-_left:  0;;
+}
+
+</style>
+</custom-style><style>[hidden] { display: none !important; }</style><custom-style>
+  <style is="custom-style">html {
+  --google-red-100: #f4c7c3;
+      --google-red-300: #e67c73;
+      --google-red-500: #db4437;
+      --google-red-700: #c53929;
+
+      --google-blue-100: #c6dafc;
+      --google-blue-300: #7baaf7;
+      --google-blue-500: #4285f4;
+      --google-blue-700: #3367d6;
+
+      --google-green-100: #b7e1cd;
+      --google-green-300: #57bb8a;
+      --google-green-500: #0f9d58;
+      --google-green-700: #0b8043;
+
+      --google-yellow-100: #fce8b2;
+      --google-yellow-300: #f7cb4d;
+      --google-yellow-500: #f4b400;
+      --google-yellow-700: #f09300;
+
+      --google-grey-100: #f5f5f5;
+      --google-grey-300: #e0e0e0;
+      --google-grey-500: #9e9e9e;
+      --google-grey-700: #616161;
+
+      
+
+      --paper-red-50: #ffebee;
+      --paper-red-100: #ffcdd2;
+      --paper-red-200: #ef9a9a;
+      --paper-red-300: #e57373;
+      --paper-red-400: #ef5350;
+      --paper-red-500: #f44336;
+      --paper-red-600: #e53935;
+      --paper-red-700: #d32f2f;
+      --paper-red-800: #c62828;
+      --paper-red-900: #b71c1c;
+      --paper-red-a100: #ff8a80;
+      --paper-red-a200: #ff5252;
+      --paper-red-a400: #ff1744;
+      --paper-red-a700: #d50000;
+
+      --paper-pink-50: #fce4ec;
+      --paper-pink-100: #f8bbd0;
+      --paper-pink-200: #f48fb1;
+      --paper-pink-300: #f06292;
+      --paper-pink-400: #ec407a;
+      --paper-pink-500: #e91e63;
+      --paper-pink-600: #d81b60;
+      --paper-pink-700: #c2185b;
+      --paper-pink-800: #ad1457;
+      --paper-pink-900: #880e4f;
+      --paper-pink-a100: #ff80ab;
+      --paper-pink-a200: #ff4081;
+      --paper-pink-a400: #f50057;
+      --paper-pink-a700: #c51162;
+
+      --paper-purple-50: #f3e5f5;
+      --paper-purple-100: #e1bee7;
+      --paper-purple-200: #ce93d8;
+      --paper-purple-300: #ba68c8;
+      --paper-purple-400: #ab47bc;
+      --paper-purple-500: #9c27b0;
+      --paper-purple-600: #8e24aa;
+      --paper-purple-700: #7b1fa2;
+      --paper-purple-800: #6a1b9a;
+      --paper-purple-900: #4a148c;
+      --paper-purple-a100: #ea80fc;
+      --paper-purple-a200: #e040fb;
+      --paper-purple-a400: #d500f9;
+      --paper-purple-a700: #aa00ff;
+
+      --paper-deep-purple-50: #ede7f6;
+      --paper-deep-purple-100: #d1c4e9;
+      --paper-deep-purple-200: #b39ddb;
+      --paper-deep-purple-300: #9575cd;
+      --paper-deep-purple-400: #7e57c2;
+      --paper-deep-purple-500: #673ab7;
+      --paper-deep-purple-600: #5e35b1;
+      --paper-deep-purple-700: #512da8;
+      --paper-deep-purple-800: #4527a0;
+      --paper-deep-purple-900: #311b92;
+      --paper-deep-purple-a100: #b388ff;
+      --paper-deep-purple-a200: #7c4dff;
+      --paper-deep-purple-a400: #651fff;
+      --paper-deep-purple-a700: #6200ea;
+
+      --paper-indigo-50: #e8eaf6;
+      --paper-indigo-100: #c5cae9;
+      --paper-indigo-200: #9fa8da;
+      --paper-indigo-300: #7986cb;
+      --paper-indigo-400: #5c6bc0;
+      --paper-indigo-500: #3f51b5;
+      --paper-indigo-600: #3949ab;
+      --paper-indigo-700: #303f9f;
+      --paper-indigo-800: #283593;
+      --paper-indigo-900: #1a237e;
+      --paper-indigo-a100: #8c9eff;
+      --paper-indigo-a200: #536dfe;
+      --paper-indigo-a400: #3d5afe;
+      --paper-indigo-a700: #304ffe;
+
+      --paper-blue-50: #e3f2fd;
+      --paper-blue-100: #bbdefb;
+      --paper-blue-200: #90caf9;
+      --paper-blue-300: #64b5f6;
+      --paper-blue-400: #42a5f5;
+      --paper-blue-500: #2196f3;
+      --paper-blue-600: #1e88e5;
+      --paper-blue-700: #1976d2;
+      --paper-blue-800: #1565c0;
+      --paper-blue-900: #0d47a1;
+      --paper-blue-a100: #82b1ff;
+      --paper-blue-a200: #448aff;
+      --paper-blue-a400: #2979ff;
+      --paper-blue-a700: #2962ff;
+
+      --paper-light-blue-50: #e1f5fe;
+      --paper-light-blue-100: #b3e5fc;
+      --paper-light-blue-200: #81d4fa;
+      --paper-light-blue-300: #4fc3f7;
+      --paper-light-blue-400: #29b6f6;
+      --paper-light-blue-500: #03a9f4;
+      --paper-light-blue-600: #039be5;
+      --paper-light-blue-700: #0288d1;
+      --paper-light-blue-800: #0277bd;
+      --paper-light-blue-900: #01579b;
+      --paper-light-blue-a100: #80d8ff;
+      --paper-light-blue-a200: #40c4ff;
+      --paper-light-blue-a400: #00b0ff;
+      --paper-light-blue-a700: #0091ea;
+
+      --paper-cyan-50: #e0f7fa;
+      --paper-cyan-100: #b2ebf2;
+      --paper-cyan-200: #80deea;
+      --paper-cyan-300: #4dd0e1;
+      --paper-cyan-400: #26c6da;
+      --paper-cyan-500: #00bcd4;
+      --paper-cyan-600: #00acc1;
+      --paper-cyan-700: #0097a7;
+      --paper-cyan-800: #00838f;
+      --paper-cyan-900: #006064;
+      --paper-cyan-a100: #84ffff;
+      --paper-cyan-a200: #18ffff;
+      --paper-cyan-a400: #00e5ff;
+      --paper-cyan-a700: #00b8d4;
+
+      --paper-teal-50: #e0f2f1;
+      --paper-teal-100: #b2dfdb;
+      --paper-teal-200: #80cbc4;
+      --paper-teal-300: #4db6ac;
+      --paper-teal-400: #26a69a;
+      --paper-teal-500: #009688;
+      --paper-teal-600: #00897b;
+      --paper-teal-700: #00796b;
+      --paper-teal-800: #00695c;
+      --paper-teal-900: #004d40;
+      --paper-teal-a100: #a7ffeb;
+      --paper-teal-a200: #64ffda;
+      --paper-teal-a400: #1de9b6;
+      --paper-teal-a700: #00bfa5;
+
+      --paper-green-50: #e8f5e9;
+      --paper-green-100: #c8e6c9;
+      --paper-green-200: #a5d6a7;
+      --paper-green-300: #81c784;
+      --paper-green-400: #66bb6a;
+      --paper-green-500: #4caf50;
+      --paper-green-600: #43a047;
+      --paper-green-700: #388e3c;
+      --paper-green-800: #2e7d32;
+      --paper-green-900: #1b5e20;
+      --paper-green-a100: #b9f6ca;
+      --paper-green-a200: #69f0ae;
+      --paper-green-a400: #00e676;
+      --paper-green-a700: #00c853;
+
+      --paper-light-green-50: #f1f8e9;
+      --paper-light-green-100: #dcedc8;
+      --paper-light-green-200: #c5e1a5;
+      --paper-light-green-300: #aed581;
+      --paper-light-green-400: #9ccc65;
+      --paper-light-green-500: #8bc34a;
+      --paper-light-green-600: #7cb342;
+      --paper-light-green-700: #689f38;
+      --paper-light-green-800: #558b2f;
+      --paper-light-green-900: #33691e;
+      --paper-light-green-a100: #ccff90;
+      --paper-light-green-a200: #b2ff59;
+      --paper-light-green-a400: #76ff03;
+      --paper-light-green-a700: #64dd17;
+
+      --paper-lime-50: #f9fbe7;
+      --paper-lime-100: #f0f4c3;
+      --paper-lime-200: #e6ee9c;
+      --paper-lime-300: #dce775;
+      --paper-lime-400: #d4e157;
+      --paper-lime-500: #cddc39;
+      --paper-lime-600: #c0ca33;
+      --paper-lime-700: #afb42b;
+      --paper-lime-800: #9e9d24;
+      --paper-lime-900: #827717;
+      --paper-lime-a100: #f4ff81;
+      --paper-lime-a200: #eeff41;
+      --paper-lime-a400: #c6ff00;
+      --paper-lime-a700: #aeea00;
+
+      --paper-yellow-50: #fffde7;
+      --paper-yellow-100: #fff9c4;
+      --paper-yellow-200: #fff59d;
+      --paper-yellow-300: #fff176;
+      --paper-yellow-400: #ffee58;
+      --paper-yellow-500: #ffeb3b;
+      --paper-yellow-600: #fdd835;
+      --paper-yellow-700: #fbc02d;
+      --paper-yellow-800: #f9a825;
+      --paper-yellow-900: #f57f17;
+      --paper-yellow-a100: #ffff8d;
+      --paper-yellow-a200: #ffff00;
+      --paper-yellow-a400: #ffea00;
+      --paper-yellow-a700: #ffd600;
+
+      --paper-amber-50: #fff8e1;
+      --paper-amber-100: #ffecb3;
+      --paper-amber-200: #ffe082;
+      --paper-amber-300: #ffd54f;
+      --paper-amber-400: #ffca28;
+      --paper-amber-500: #ffc107;
+      --paper-amber-600: #ffb300;
+      --paper-amber-700: #ffa000;
+      --paper-amber-800: #ff8f00;
+      --paper-amber-900: #ff6f00;
+      --paper-amber-a100: #ffe57f;
+      --paper-amber-a200: #ffd740;
+      --paper-amber-a400: #ffc400;
+      --paper-amber-a700: #ffab00;
+
+      --paper-orange-50: #fff3e0;
+      --paper-orange-100: #ffe0b2;
+      --paper-orange-200: #ffcc80;
+      --paper-orange-300: #ffb74d;
+      --paper-orange-400: #ffa726;
+      --paper-orange-500: #ff9800;
+      --paper-orange-600: #fb8c00;
+      --paper-orange-700: #f57c00;
+      --paper-orange-800: #ef6c00;
+      --paper-orange-900: #e65100;
+      --paper-orange-a100: #ffd180;
+      --paper-orange-a200: #ffab40;
+      --paper-orange-a400: #ff9100;
+      --paper-orange-a700: #ff6500;
+
+      --paper-deep-orange-50: #fbe9e7;
+      --paper-deep-orange-100: #ffccbc;
+      --paper-deep-orange-200: #ffab91;
+      --paper-deep-orange-300: #ff8a65;
+      --paper-deep-orange-400: #ff7043;
+      --paper-deep-orange-500: #ff5722;
+      --paper-deep-orange-600: #f4511e;
+      --paper-deep-orange-700: #e64a19;
+      --paper-deep-orange-800: #d84315;
+      --paper-deep-orange-900: #bf360c;
+      --paper-deep-orange-a100: #ff9e80;
+      --paper-deep-orange-a200: #ff6e40;
+      --paper-deep-orange-a400: #ff3d00;
+      --paper-deep-orange-a700: #dd2c00;
+
+      --paper-brown-50: #efebe9;
+      --paper-brown-100: #d7ccc8;
+      --paper-brown-200: #bcaaa4;
+      --paper-brown-300: #a1887f;
+      --paper-brown-400: #8d6e63;
+      --paper-brown-500: #795548;
+      --paper-brown-600: #6d4c41;
+      --paper-brown-700: #5d4037;
+      --paper-brown-800: #4e342e;
+      --paper-brown-900: #3e2723;
+
+      --paper-grey-50: #fafafa;
+      --paper-grey-100: #f5f5f5;
+      --paper-grey-200: #eeeeee;
+      --paper-grey-300: #e0e0e0;
+      --paper-grey-400: #bdbdbd;
+      --paper-grey-500: #9e9e9e;
+      --paper-grey-600: #757575;
+      --paper-grey-700: #616161;
+      --paper-grey-800: #424242;
+      --paper-grey-900: #212121;
+
+      --paper-blue-grey-50: #eceff1;
+      --paper-blue-grey-100: #cfd8dc;
+      --paper-blue-grey-200: #b0bec5;
+      --paper-blue-grey-300: #90a4ae;
+      --paper-blue-grey-400: #78909c;
+      --paper-blue-grey-500: #607d8b;
+      --paper-blue-grey-600: #546e7a;
+      --paper-blue-grey-700: #455a64;
+      --paper-blue-grey-800: #37474f;
+      --paper-blue-grey-900: #263238;
+
+      
+      --dark-divider-opacity: 0.12;
+      --dark-disabled-opacity: 0.38; 
+      --dark-secondary-opacity: 0.54;
+      --dark-primary-opacity: 0.87;
+
+      
+      --light-divider-opacity: 0.12;
+      --light-disabled-opacity: 0.3; 
+      --light-secondary-opacity: 0.7;
+      --light-primary-opacity: 1.0;
+}
+
+</style>
+</custom-style><custom-style>
+  <style is="custom-style">html {
+  --primary-text-color: var(--light-theme-text-color);
+      --primary-background-color: var(--light-theme-background-color);
+      --secondary-text-color: var(--light-theme-secondary-color);
+      --disabled-text-color: var(--light-theme-disabled-color);
+      --divider-color: var(--light-theme-divider-color);
+      --error-color: var(--paper-deep-orange-a700);
+
+      
+      --primary-color: var(--paper-indigo-500);
+      --light-primary-color: var(--paper-indigo-100);
+      --dark-primary-color: var(--paper-indigo-700);
+
+      --accent-color: var(--paper-pink-a200);
+      --light-accent-color: var(--paper-pink-a100);
+      --dark-accent-color: var(--paper-pink-a400);
+
+
+      
+      --light-theme-background-color: #ffffff;
+      --light-theme-base-color: #000000;
+      --light-theme-text-color: var(--paper-grey-900);
+      --light-theme-secondary-color: #737373;  
+      --light-theme-disabled-color: #9b9b9b;  
+      --light-theme-divider-color: #dbdbdb;
+
+      
+      --dark-theme-background-color: var(--paper-grey-900);
+      --dark-theme-base-color: #ffffff;
+      --dark-theme-text-color: #ffffff;
+      --dark-theme-secondary-color: #bcbcbc;  
+      --dark-theme-disabled-color: #646464;  
+      --dark-theme-divider-color: #3c3c3c;
+
+      
+      --text-primary-color: var(--dark-theme-text-color);
+      --default-primary-color: var(--primary-color);
+}
+
+</style>
+</custom-style><script async="" src="./Agents in action - Agents in action _ Google Skills_files/lazy.min.js.download"></script>
+<script src="./Agents in action - Agents in action _ Google Skills_files/index.js.download"></script>
+<script src="./Agents in action - Agents in action _ Google Skills_files/api.js.download"></script>
+
+
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="HzQVnuXLt-T-GE-N-hrTFrBBHMb9PO8Y2CAWjx_AsfLlqv1vHzouaQedZ-4IbO1pEYNIEQg2ekHps2nG3i8NxQ">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport">
+<meta content="1rRsY0INj8RvwB5EF5pwdxt2A2P9aDgAlsICaJ0d5w0" name="google-site-verification">
+<meta content="max-snippet:-1, max-image-preview:large" name="robots">
+<meta content="#3681E4" property="msapplication-TileColor">
+<meta content="/super_G_optimized.png" property="msapplication-TileImage">
+<meta content="{&quot;userId&quot;:142983572,&quot;experimentIds&quot;:[&quot;learner_grace_period_upgrade&quot;,&quot;sitemap_poc&quot;,&quot;zendesk_to_cases&quot;,&quot;recert&quot;,&quot;search_autocomplete&quot;,&quot;sso_redirect&quot;,&quot;front_door_landing_page&quot;,&quot;use_mosaic&quot;,&quot;gamification_achievements&quot;,&quot;docebo_sync_org_support&quot;,&quot;offboard_gwg_sept&quot;,&quot;catalog_filters_button&quot;,&quot;relaunch_extra&quot;,&quot;discovery_lab_duration_estimate&quot;,&quot;gamification&quot;,&quot;recert_filter_used_activities_by_cert&quot;,&quot;org_invite_link&quot;,&quot;cdn_fonts&quot;,&quot;banner_breadcrumbs&quot;,&quot;catalog_filter_chips&quot;,&quot;gamification_leagues&quot;,&quot;gamification_leaderboards&quot;,&quot;wipeout_hard_delete&quot;,&quot;hybrid_cert&quot;,&quot;feedback&quot;,&quot;remove_gdp_subscription&quot;,&quot;dashboard_jobs&quot;,&quot;offboard_gwg_aug&quot;,&quot;new_program_dashboard&quot;,&quot;learning_plan_search&quot;,&quot;subscription_ux&quot;,&quot;docebo_sync&quot;,&quot;switch_path_and_explore_headers&quot;,&quot;alexandria_subscriptions_pagination&quot;,&quot;one_tap&quot;,&quot;next_2026_collections&quot;,&quot;show_org_catalog_button&quot;,&quot;auto_upgrade_game_labs&quot;,&quot;gamification_streaks&quot;,&quot;relaunch_subscriptions&quot;,&quot;show_new_course_exams&quot;,&quot;gwg_catalog&quot;,&quot;relaunch_for_sso&quot;,&quot;new_sidenav&quot;,&quot;cache_explore_page_result&quot;,&quot;lab_page_redesign&quot;,&quot;onramp&quot;,&quot;oauth_risc_shutoff&quot;,&quot;learning_plan_slug&quot;,&quot;recalculate_activities&quot;,&quot;new_org_dashboard&quot;,&quot;in_context_view&quot;,&quot;entity_api_keys&quot;,&quot;offboard_gwg_june&quot;,&quot;innovator_gear_sign_in&quot;,&quot;relaunch_credentials&quot;,&quot;search_sort_by&quot;,&quot;disallow_innovator_credit_sharing&quot;,&quot;reroute_new_interview_warmup&quot;,&quot;experimentation&quot;,&quot;challenge_lab_fast_track&quot;,&quot;use_recommender_agent&quot;,&quot;new_org_dashboard_announcement&quot;,&quot;gwg_paid_chip&quot;,&quot;relaunch&quot;,&quot;one_stop_hub&quot;,&quot;gamification_ui_data&quot;,&quot;interview_warmup_turndown&quot;,&quot;hide_unpopular_filters&quot;,&quot;relaunch_grid_list&quot;,&quot;search_async&quot;,&quot;learn_with_ai&quot;,&quot;recert_query_all_used_cert_activities&quot;,&quot;credly&quot;,&quot;course_exams&quot;,&quot;analytics_v2&quot;,&quot;updated_recalculation_ux&quot;,&quot;gamification_ui&quot;,&quot;quota_service_use_lua&quot;,&quot;landing_page&quot;,&quot;google_dev_payment&quot;,&quot;chime_use_abuse_details&quot;,&quot;gamification_xp&quot;,&quot;search_suggestions&quot;,&quot;lab_search_data&quot;,&quot;innovator_sign_in&quot;,&quot;credly_integration_announcement_modal&quot;,&quot;log_redis_memory_stats&quot;,&quot;relaunch_collection_ai&quot;,&quot;canonical_domain_redirect&quot;,&quot;docebo_ux&quot;,&quot;use_docebo_features&quot;,&quot;in_context_all_labs&quot;,&quot;dialog_queue&quot;]}" name="help-api-product-data">
+<meta content="{&quot;groupIds&quot;:[&quot;non_suadmins&quot;,&quot;students&quot;,&quot;non_organization&quot;,&quot;non_program&quot;]}" name="help-api-custom-data">
+<meta content="Learn and earn with Google Skills, a platform that provides  free training and certifications for Google Cloud partners and beginners. Explore now." name="description">
+<meta content="Google Skills" name="author">
+<meta content="https://www.skills.google/paths/3546/course_templates/1562/documents/647698" property="og:url">
+<meta content="Agents in action - Agents in action | Google Skills" property="og:title">
+<meta content="website" property="og:type">
+<meta content="/super_G_optimized.png" property="og:image">
+<meta content="1200" property="og:image:width">
+<meta content="630" property="og:image:height">
+<meta content="image/png" property="og:image:type">
+<meta content="Google Skills" property="og:site_name">
+<meta content="Learn and earn with Google Skills, a platform that provides  free training and certifications for Google Cloud partners and beginners. Explore now." property="og:description">
+
+
+<link href="https://cdn.qwiklabs.com/X46FrQX4iLxHW5MxL8jICvgZM0evMEKscCeQO%2BazGdo%3D" rel="icon" type="image/x-icon">
+<link href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698" rel="canonical">
+
+
+<link rel="stylesheet" href="./Agents in action - Agents in action _ Google Skills_files/css">
+
+<link rel="stylesheet" href="./Agents in action - Agents in action _ Google Skills_files/application-d77a3e8847a1d113e3030869752f75d60e5a0614.css" media="all">
+<link rel="stylesheet" href="./Agents in action - Agents in action _ Google Skills_files/cookienotificationbar.min.css">
+
+
+<style>
+  :root {
+    --primary-text-on-surface-color: #355d9c;
+    --primary-text-on-surface-color-dark: #2f538b;
+    --primary-text-on-surface-color-darker: #29497a;
+    --primary-text-on-surface-color-darkest: #243e69;
+    --primary-surface-color: #586d8d;
+    --primary-surface-color-rgb: 88,109,141;
+    --primary-surface-color-light: #e0e4eb;
+    --primary-surface-color-lightest: #eff2f5;
+    --text-on-primary-color: #ffffff;
+    --accent-text-on-surface-color: #f000e8;
+    --accent-surface-color: #f9ab00;
+    --accent-surface-color-rgb: 249,171,0;
+    --accent-surface-color-light: #ffefcc;
+    --text-on-accent-color: #000000;
+  }
+</style>
+
+
+
+</head>
+<body class="document-body course-layout-body l-full relaunch  learner-layout-body relaunch ">
+<div class="body-container" relaunch="">
+<div class="body-header">
+<ql-toolbar class="app-toolbar" jumpenabled="" role="banner"><template shadowrootmode="open"><!---->
+      <!--?lit$118375517$-->
+      <div class=" jump-container ">
+        <ql-button outlined="" class="jump-to-content" href="#jump-content" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-outlined-button part="button" href="#jump-content" class=" ql-button default outlined size--small " data-aria-busy="false" value="" data-aria-label="Jump to content"><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$--><div class="outline"></div>
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Jump to content" href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698#jump-content"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$--><!--?lit$118375517$--><slot></slot><!--?--><!--?-->
+        </md-outlined-button>
+      </div>
+     <!--?lit$118375517$--> </template>
+          <!--?lit$118375517$-->Jump to content
+        </ql-button>
+      </div>
+    
+      <span class="navigation">
+        <slot name="navigation"></slot>
+      </span>
+      <span class="title">
+        <slot name="title"></slot>
+      </span>
+      <span class="tabs">
+        <slot name="tabs"></slot>
+      </span>
+      <span class="search">
+        <slot name="search"></slot>
+      </span>
+      <span class="actions">
+        <slot name="action"></slot>
+      </span>
+    </template>
+<div class="toolbar-navigation" slot="navigation">
+<ql-toggle-button animatedtoggle="" class="always-show" data-tooltip-text="Menu" for="app-nav" icon="menu" id="menu-toggle" label="Menu" officon="menu" onicon="menu_open" translate="no" type="button" data-original-title="Menu"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class="ql-icon-button icon-toggle-animation" data-aria-label="Menu" data-aria-expanded="false" data-aria-busy="false" data-aria-pressed="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="Menu" aria-expanded="false">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$-->menu</ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-toggle-button>
+
+</div>
+<div class="toolbar-title gs-logo" slot="title">
+<a class="custom-logo" aria-label="Google Skills" href="https://www.skills.google/"><div class="custom-logo"><img alt="Google Skills" height="24" aria-label="Google Skills" src="./Agents in action - Agents in action _ Google Skills_files/lqJbxogu4tSLez1OvjDcIO8rwow6cPLwvrfIdmQLf6U="></div></a>
+
+</div>
+<div class="search-bar tablet-hide" slot="search"><div class="search-bar-container visible-search-header">
+<form class="header-search-form" action="https://www.skills.google/catalog" accept-charset="UTF-8" method="get">
+<input aria-autocomplete="list" aria-controls="searchbar-autocomplete-menu-center" aria-expanded="false" autocomplete="off" class="header-search-input" id="searchbar-autocomplete-center" name="keywords" placeholder="What do you want to learn today?" role="combobox" style="transition: none; border-radius: 28px;">
+<div class="elevation-3" id="searchbar-autocomplete-loading-icon-center">
+<ql-spinner><template shadowrootmode="open"><!---->
+      <md-circular-progress indeterminate="" data-aria-label="Loading..." style="--md-circular-progress-size: 36px;"><template shadowrootmode="open"><!---->
+      <div role="progressbar" aria-valuemin="0" class="progress  indeterminate " aria-label="Loading..." aria-valuemax="1"><!--?lit$118375517$--> <div class="spinner">
+      <div class="left">
+        <div class="circle"></div>
+      </div>
+      <div class="right">
+        <div class="circle"></div>
+      </div>
+    </div></div>
+    </template>
+      </md-circular-progress>
+    </template></ql-spinner>
+<div class="ql-body-small">Loading...</div>
+</div>
+<div class="elevation-3" id="searchbar-autocomplete-no-results-center">
+<div class="ql-body-small">No results found.</div>
+</div>
+<ul aria-hidden="true" aria-live="polite" class="hide" id="searchbar-autocomplete-menu-center" role="listbox"></ul>
+<ql-icon-button class="search-bar-button search-button" icon="search" label="Search" type="submit" translate="no"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-label="Search" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="Search">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$-->search</ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-icon-button>
+</form>
+
+<ql-icon-button class="exit-search-button show-tablet" icon="close" inert="" label="Exit search" translate="no" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-label="Exit search" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="Exit search">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$-->close</ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-icon-button>
+</div>
+</div>
+<div class="toolbar-actions" slot="action">
+<div class="hide-under-390">
+<ql-icon-button class="header-search-button show-tablet" data-toggle="tooltip" icon="search" label="Search for Google Skills content" title="Search" translate="no" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-label="Search for Google Skills content" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="Search for Google Skills content">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$-->search</ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-icon-button>
+
+</div>
+<div class="toolbar-actions__points hide-under-390">
+<ql-user-points data-tooltip-text="Experience points" points="132" data-original-title="Experience points"><template shadowrootmode="open"><!---->
+      <div class="container   "><!--?lit$118375517$-->
+      <div class="points">
+        <span class="non-visible-screen-reader-description">
+          <!--?lit$118375517$-->Current points:
+        </span>
+        <ql-icon size="20" class="star" fill="" aria-hidden="true" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols filled " style="font-size: 20px;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>star</ql-icon>
+        <span aria-live="polite"><!--?lit$118375517$-->132</span>
+      </div>
+    </div>
+    </template></ql-user-points>
+</div>
+<div class="toolbar-actions__streak-count mobile-hide hide-under-390" data-tooltip-text="Current streak count" data-original-title="Current streak count">
+<img alt="Current streak count" src="./Agents in action - Agents in action _ Google Skills_files/streak_icon-21476b37c13f49828a5aaa2d86c4d3378cca4117.svg">
+<div class="ql-body-large count-label">0</div>
+</div>
+<ql-icon-button class="mobile-hide" data-tooltip-text="Help" icon="help_outline" id="help-menu-button" label="Help options" translate="no" type="button" data-original-title="Help" aria-controls="help-menu" aria-haspopup="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-label="Help options" data-aria-busy="false" value="" data-aria-haspopup="true"><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="Help options" aria-haspopup="true">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$-->help_outline</ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-icon-button>
+<ql-menu for="help-menu-button" id="help-menu" tabindex="-1" inert="" style="left: -1000px; top: -1000px; opacity: 0; visibility: hidden;" exportparts="body" role="menu" aria-labelledby="help-menu-button"><template shadowrootmode="open"><!---->
+      <ql-card elevation="3" exportparts="body"><template shadowrootmode="open"><!---->
+      <div part="body" class="card  no-header ">
+        <!--?lit$118375517$-->
+      <div part="header" class="header  hidden ">
+        <slot name="header" part="header-text"></slot>
+        <!--?lit$118375517$-->
+      </div>
+    
+        <div part="body-content" class="content  no-header ">
+          <!--?lit$118375517$--><slot></slot>
+        </div>
+      </div>
+    </template>
+        <slot></slot>
+      </ql-card>
+    </template>
+<ql-menu-item data-analytics-action="opened_help" data-analytics-label="course" label="Help Center" onclick="hallofmirrors.helpService.startHelp({&quot;productData&quot;:{&quot;userId&quot;:142983572},&quot;context&quot;:&quot;course&quot;})" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" menu-item " role="menuitem" lang="" aria-label="Help Center" aria-busy="false">
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Help Center<!--?-->
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item href="https://support.google.com/qwiklabs/contact/Google_Skills" label="Contact Us" target="_blank" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://support.google.com/qwiklabs/contact/Google_Skills" lang="" target="_blank" role="menuitem" class=" menu-item " aria-label="Contact Us">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Contact Us<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item label="Send feedback" onclick="userfeedback.api.startFeedback(
+{
+'productId': '5080217',
+'enableAnonymousFeedback': true,
+'authuser': 'undefined',
+'locale': 'en'
+},
+{
+'user_id': '142983572',
+'current_organization': ''
+})" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" menu-item " role="menuitem" lang="" aria-label="Send feedback" aria-busy="false">
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Send feedback<!--?-->
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item href="https://reportingwidget.google.com/widget/54?cid=1&amp;url=https://www.skills.google/paths/3546/course_templates/1562/documents/647698?" label="Report Illegal Content" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://reportingwidget.google.com/widget/54?cid=1&amp;url=https://www.skills.google/paths/3546/course_templates/1562/documents/647698?" lang="" role="menuitem" class=" menu-item " aria-label="Report Illegal Content">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Report Illegal Content<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+</ql-menu>
+
+<ql-icon-button class="mobile-hide" data-tooltip-text="Language" icon="language" id="language" label="Language options" translate="no" type="button" data-original-title="Language" aria-controls="" aria-haspopup="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-label="Language options" data-aria-busy="false" value="" data-aria-haspopup="true"><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="Language options" aria-haspopup="true">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface"></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$-->language</ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-icon-button>
+<ql-menu for="language" tabindex="-1" inert="" style="left: -1000px; top: -1000px; opacity: 0; visibility: hidden;" exportparts="body" role="menu" aria-labelledby="language"><template shadowrootmode="open"><!---->
+      <ql-card elevation="3" exportparts="body"><template shadowrootmode="open"><!---->
+      <div part="body" class="card  no-header ">
+        <!--?lit$118375517$-->
+      <div part="header" class="header  hidden ">
+        <slot name="header" part="header-text"></slot>
+        <!--?lit$118375517$-->
+      </div>
+    
+        <div part="body-content" class="content  no-header ">
+          <!--?lit$118375517$--><slot></slot>
+        </div>
+      </div>
+    </template>
+        <slot></slot>
+      </ql-card>
+    </template>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="ar" href="/paths/3546/course_templates/1562/documents/647698?locale=ar" label="العربية‬‎" lang="ar" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=ar" lang="ar" role="menuitem" class=" menu-item " aria-label="العربية‬‎">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->العربية‬‎<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="de" href="/paths/3546/course_templates/1562/documents/647698?locale=de" label="Deutsch" lang="de" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=de" lang="de" role="menuitem" class=" menu-item " aria-label="Deutsch">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Deutsch<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="en" href="/paths/3546/course_templates/1562/documents/647698?locale=en" label="English" lang="en" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=en" lang="en" role="menuitem" class=" menu-item " aria-label="English">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->English<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="es" href="/paths/3546/course_templates/1562/documents/647698?locale=es" label="español (Latinoamérica)" lang="es" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=es" lang="es" role="menuitem" class=" menu-item " aria-label="español (Latinoamérica)">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->español (Latinoamérica)<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="fr" href="/paths/3546/course_templates/1562/documents/647698?locale=fr" label="français" lang="fr" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=fr" lang="fr" role="menuitem" class=" menu-item " aria-label="français">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->français<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="fr_CA" href="/paths/3546/course_templates/1562/documents/647698?locale=fr_CA" label="français (Canada)" lang="fr-CA" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=fr_CA" lang="fr-CA" role="menuitem" class=" menu-item " aria-label="français (Canada)">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->français (Canada)<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="he" href="/paths/3546/course_templates/1562/documents/647698?locale=he" label="עברית" lang="he" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=he" lang="he" role="menuitem" class=" menu-item " aria-label="עברית">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->עברית<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="id" href="/paths/3546/course_templates/1562/documents/647698?locale=id" label="bahasa Indonesia" lang="id" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=id" lang="id" role="menuitem" class=" menu-item " aria-label="bahasa Indonesia">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->bahasa Indonesia<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="it" href="/paths/3546/course_templates/1562/documents/647698?locale=it" label="italiano" lang="it" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=it" lang="it" role="menuitem" class=" menu-item " aria-label="italiano">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->italiano<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="ja" href="/paths/3546/course_templates/1562/documents/647698?locale=ja" label="日本語" lang="ja" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=ja" lang="ja" role="menuitem" class=" menu-item " aria-label="日本語">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->日本語<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="ko" href="/paths/3546/course_templates/1562/documents/647698?locale=ko" label="한국어" lang="ko" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=ko" lang="ko" role="menuitem" class=" menu-item " aria-label="한국어">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->한국어<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="pl" href="/paths/3546/course_templates/1562/documents/647698?locale=pl" label="polski" lang="pl" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=pl" lang="pl" role="menuitem" class=" menu-item " aria-label="polski">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->polski<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="pt_BR" href="/paths/3546/course_templates/1562/documents/647698?locale=pt_BR" label="português (Brasil)" lang="pt-BR" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=pt_BR" lang="pt-BR" role="menuitem" class=" menu-item " aria-label="português (Brasil)">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->português (Brasil)<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="pt_PT" href="/paths/3546/course_templates/1562/documents/647698?locale=pt_PT" label="português (Portugal)" lang="pt-PT" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=pt_PT" lang="pt-PT" role="menuitem" class=" menu-item " aria-label="português (Portugal)">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->português (Portugal)<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="ru" href="/paths/3546/course_templates/1562/documents/647698?locale=ru" label="русский" lang="ru" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=ru" lang="ru" role="menuitem" class=" menu-item " aria-label="русский">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->русский<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="tr" href="/paths/3546/course_templates/1562/documents/647698?locale=tr" label="Türkçe" lang="tr" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=tr" lang="tr" role="menuitem" class=" menu-item " aria-label="Türkçe">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Türkçe<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="uk" href="/paths/3546/course_templates/1562/documents/647698?locale=uk" label="українська" lang="uk" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=uk" lang="uk" role="menuitem" class=" menu-item " aria-label="українська">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->українська<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="zh" href="/paths/3546/course_templates/1562/documents/647698?locale=zh" label="简体中文" lang="zh" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=zh" lang="zh" role="menuitem" class=" menu-item " aria-label="简体中文">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->简体中文<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="zh_TW" href="/paths/3546/course_templates/1562/documents/647698?locale=zh_TW" label="繁體中文" lang="zh-TW" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=zh_TW" lang="zh-TW" role="menuitem" class=" menu-item " aria-label="繁體中文">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->繁體中文<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+</ql-menu>
+
+<ql-icon-button aria-expanded="false" aria-haspopup="true" aria-label="More options" class="mobile-show" data-toggle="tooltip" icon="more_vert" id="mobile-more-menu-button" title="More options" translate="no" type="button" aria-controls="mobile-more-menu"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-label="more_vert" data-aria-busy="false" value="" data-aria-haspopup="true"><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="more_vert" aria-haspopup="true">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$-->more_vert</ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-icon-button>
+<ql-menu class="mobile-show" for="mobile-more-menu-button" id="mobile-more-menu" tabindex="-1" inert="" style="left: -1000px; top: -1000px; opacity: 0; visibility: hidden;" exportparts="body" role="menu" aria-labelledby="mobile-more-menu-button"><template shadowrootmode="open"><!---->
+      <ql-card elevation="3" exportparts="body"><template shadowrootmode="open"><!---->
+      <div part="body" class="card  no-header ">
+        <!--?lit$118375517$-->
+      <div part="header" class="header  hidden ">
+        <slot name="header" part="header-text"></slot>
+        <!--?lit$118375517$-->
+      </div>
+    
+        <div part="body-content" class="content  no-header ">
+          <!--?lit$118375517$--><slot></slot>
+        </div>
+      </div>
+    </template>
+        <slot></slot>
+      </ql-card>
+    </template>
+
+
+<ql-menu-item class="show-under-390 search-submenu" label="Search" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" menu-item " role="menuitem" lang="" aria-label="Search" aria-busy="false">
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Search<!--?-->
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item class="show-under-390 points-display-item" label="132 Points" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" menu-item " role="menuitem" lang="" aria-label="132 Points" aria-busy="false">
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->132 Points<!--?-->
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item aria-controls="help-submenu" aria-expanded="false" aria-haspopup="true" id="help-submenu-button" label="Help" role="button" tabindex="0" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" menu-item " role="menuitem" lang="" aria-label="Help" aria-busy="false" aria-haspopup="true">
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Help<!--?-->
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item aria-controls="language-submenu" aria-expanded="false" aria-haspopup="true" id="language-submenu-button" label="Language" role="button" tabindex="0" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" menu-item " role="menuitem" lang="" aria-label="Language" aria-busy="false" aria-haspopup="true">
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Language<!--?-->
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+</ql-menu>
+
+<ql-menu class="submenu" for="help-submenu-button" id="help-submenu" tabindex="-1" inert="" style="left: -1000px; top: -1000px; opacity: 0; visibility: hidden;" exportparts="body" role="menu" aria-labelledby="help-submenu-button"><template shadowrootmode="open"><!---->
+      <ql-card elevation="3" exportparts="body"><template shadowrootmode="open"><!---->
+      <div part="body" class="card  no-header ">
+        <!--?lit$118375517$-->
+      <div part="header" class="header  hidden ">
+        <slot name="header" part="header-text"></slot>
+        <!--?lit$118375517$-->
+      </div>
+    
+        <div part="body-content" class="content  no-header ">
+          <!--?lit$118375517$--><slot></slot>
+        </div>
+      </div>
+    </template>
+        <slot></slot>
+      </ql-card>
+    </template>
+<ql-menu-item data-analytics-action="opened_help" data-analytics-label="course" label="Help Center" onclick="hallofmirrors.helpService.startHelp({&quot;productData&quot;:{&quot;userId&quot;:142983572},&quot;context&quot;:&quot;course&quot;})" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" menu-item " role="menuitem" lang="" aria-label="Help Center" aria-busy="false">
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Help Center<!--?-->
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item href="https://support.google.com/qwiklabs/contact/Google_Skills" label="Contact Us" target="_blank" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://support.google.com/qwiklabs/contact/Google_Skills" lang="" target="_blank" role="menuitem" class=" menu-item " aria-label="Contact Us">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Contact Us<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item label="Send feedback" onclick="userfeedback.api.startFeedback(
+{
+'productId': '5080217',
+'enableAnonymousFeedback': true,
+'authuser': 'undefined',
+'locale': 'en'
+},
+{
+'user_id': '142983572',
+'current_organization': ''
+})" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" menu-item " role="menuitem" lang="" aria-label="Send feedback" aria-busy="false">
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Send feedback<!--?-->
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item href="https://reportingwidget.google.com/widget/54?cid=1&amp;url=https%3A%2F%2Fwww.skills.google%2Fpaths%2F3546%2Fcourse_templates%2F1562%2Fdocuments%2F647698%3F" label="Report Illegal Content" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://reportingwidget.google.com/widget/54?cid=1&amp;url=https%3A%2F%2Fwww.skills.google%2Fpaths%2F3546%2Fcourse_templates%2F1562%2Fdocuments%2F647698%3F" lang="" role="menuitem" class=" menu-item " aria-label="Report Illegal Content">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Report Illegal Content<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+</ql-menu>
+<ql-menu class="submenu" for="language-submenu-button" id="language-submenu" tabindex="-1" inert="" style="left: -1000px; top: -1000px; opacity: 0; visibility: hidden;" exportparts="body" role="menu" aria-labelledby="language-submenu-button"><template shadowrootmode="open"><!---->
+      <ql-card elevation="3" exportparts="body"><template shadowrootmode="open"><!---->
+      <div part="body" class="card  no-header ">
+        <!--?lit$118375517$-->
+      <div part="header" class="header  hidden ">
+        <slot name="header" part="header-text"></slot>
+        <!--?lit$118375517$-->
+      </div>
+    
+        <div part="body-content" class="content  no-header ">
+          <!--?lit$118375517$--><slot></slot>
+        </div>
+      </div>
+    </template>
+        <slot></slot>
+      </ql-card>
+    </template>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="ar" href="/paths/3546/course_templates/1562/documents/647698?locale=ar" label="العربية‬‎" lang="ar" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=ar" lang="ar" role="menuitem" class=" menu-item " aria-label="العربية‬‎">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->العربية‬‎<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="de" href="/paths/3546/course_templates/1562/documents/647698?locale=de" label="Deutsch" lang="de" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=de" lang="de" role="menuitem" class=" menu-item " aria-label="Deutsch">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Deutsch<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="en" href="/paths/3546/course_templates/1562/documents/647698?locale=en" label="English" lang="en" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=en" lang="en" role="menuitem" class=" menu-item " aria-label="English">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->English<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="es" href="/paths/3546/course_templates/1562/documents/647698?locale=es" label="español (Latinoamérica)" lang="es" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=es" lang="es" role="menuitem" class=" menu-item " aria-label="español (Latinoamérica)">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->español (Latinoamérica)<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="fr" href="/paths/3546/course_templates/1562/documents/647698?locale=fr" label="français" lang="fr" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=fr" lang="fr" role="menuitem" class=" menu-item " aria-label="français">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->français<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="fr_CA" href="/paths/3546/course_templates/1562/documents/647698?locale=fr_CA" label="français (Canada)" lang="fr-CA" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=fr_CA" lang="fr-CA" role="menuitem" class=" menu-item " aria-label="français (Canada)">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->français (Canada)<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="he" href="/paths/3546/course_templates/1562/documents/647698?locale=he" label="עברית" lang="he" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=he" lang="he" role="menuitem" class=" menu-item " aria-label="עברית">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->עברית<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="id" href="/paths/3546/course_templates/1562/documents/647698?locale=id" label="bahasa Indonesia" lang="id" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=id" lang="id" role="menuitem" class=" menu-item " aria-label="bahasa Indonesia">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->bahasa Indonesia<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="it" href="/paths/3546/course_templates/1562/documents/647698?locale=it" label="italiano" lang="it" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=it" lang="it" role="menuitem" class=" menu-item " aria-label="italiano">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->italiano<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="ja" href="/paths/3546/course_templates/1562/documents/647698?locale=ja" label="日本語" lang="ja" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=ja" lang="ja" role="menuitem" class=" menu-item " aria-label="日本語">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->日本語<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="ko" href="/paths/3546/course_templates/1562/documents/647698?locale=ko" label="한국어" lang="ko" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=ko" lang="ko" role="menuitem" class=" menu-item " aria-label="한국어">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->한국어<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="pl" href="/paths/3546/course_templates/1562/documents/647698?locale=pl" label="polski" lang="pl" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=pl" lang="pl" role="menuitem" class=" menu-item " aria-label="polski">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->polski<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="pt_BR" href="/paths/3546/course_templates/1562/documents/647698?locale=pt_BR" label="português (Brasil)" lang="pt-BR" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=pt_BR" lang="pt-BR" role="menuitem" class=" menu-item " aria-label="português (Brasil)">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->português (Brasil)<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="pt_PT" href="/paths/3546/course_templates/1562/documents/647698?locale=pt_PT" label="português (Portugal)" lang="pt-PT" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=pt_PT" lang="pt-PT" role="menuitem" class=" menu-item " aria-label="português (Portugal)">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->português (Portugal)<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="ru" href="/paths/3546/course_templates/1562/documents/647698?locale=ru" label="русский" lang="ru" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=ru" lang="ru" role="menuitem" class=" menu-item " aria-label="русский">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->русский<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="tr" href="/paths/3546/course_templates/1562/documents/647698?locale=tr" label="Türkçe" lang="tr" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=tr" lang="tr" role="menuitem" class=" menu-item " aria-label="Türkçe">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->Türkçe<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="uk" href="/paths/3546/course_templates/1562/documents/647698?locale=uk" label="українська" lang="uk" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=uk" lang="uk" role="menuitem" class=" menu-item " aria-label="українська">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->українська<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="zh" href="/paths/3546/course_templates/1562/documents/647698?locale=zh" label="简体中文" lang="zh" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=zh" lang="zh" role="menuitem" class=" menu-item " aria-label="简体中文">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->简体中文<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+<ql-menu-item data-analytics-action="changed_locale" data-analytics-label="zh_TW" href="/paths/3546/course_templates/1562/documents/647698?locale=zh_TW" label="繁體中文" lang="zh-TW" role="menuitem" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths/3546/course_templates/1562/documents/647698?locale=zh_TW" lang="zh-TW" role="menuitem" class=" menu-item " aria-label="繁體中文">
+        <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$-->繁體中文<!--?-->
+      </a>
+     <!--?lit$118375517$--> </template></ql-menu-item>
+</ql-menu>
+
+<ql-icon-button data-tooltip-text="My account" id="my_account" label="My account" translate="no" type="button" data-original-title="My account" aria-controls="my_account_menu" aria-haspopup="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-label="My account" data-aria-busy="false" value="" data-aria-haspopup="true"><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="My account" aria-haspopup="true">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface"></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$--><slot></slot></ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template>
+<ql-avatar src="https://lh3.googleusercontent.com/a/ACg8ocJyHa6jzw8UAuyuxlM7UjmvqXFaImDFPiE8xHmxYlL_hRVs3A=s320-c"><template shadowrootmode="open"><!----> <div class="avatar" style="background: url(&quot;https://lh3.googleusercontent.com/a/ACg8ocJyHa6jzw8UAuyuxlM7UjmvqXFaImDFPiE8xHmxYlL_hRVs3A=s320-c&quot;) center center / cover no-repeat; width: 40px; height: 40px;"></div> </template></ql-avatar>
+</ql-icon-button>
+<ql-menu for="my_account" id="my_account_menu" tabindex="-1" inert="" style="left: -1000px; top: -1000px; opacity: 0; visibility: hidden;" exportparts="body" role="menu" aria-labelledby="my_account"><template shadowrootmode="open"><!---->
+      <ql-card elevation="3" exportparts="body"><template shadowrootmode="open"><!---->
+      <div part="body" class="card  no-header ">
+        <!--?lit$118375517$-->
+      <div part="header" class="header  hidden ">
+        <slot name="header" part="header-text"></slot>
+        <!--?lit$118375517$-->
+      </div>
+    
+        <div part="body-content" class="content  no-header ">
+          <!--?lit$118375517$--><slot></slot>
+        </div>
+      </div>
+    </template>
+        <slot></slot>
+      </ql-card>
+    </template>
+<div class="learner-profile-account-menu my-account-menu">
+<div class="learner-profile-account-menu__notifications">
+</div>
+<div class="learner-profile-account-menu__profile">
+<ql-avatar size="88" src="https://lh3.googleusercontent.com/a/ACg8ocJyHa6jzw8UAuyuxlM7UjmvqXFaImDFPiE8xHmxYlL_hRVs3A=s320-c"><template shadowrootmode="open"><!----> <div class="avatar" style="background: url(&quot;https://lh3.googleusercontent.com/a/ACg8ocJyHa6jzw8UAuyuxlM7UjmvqXFaImDFPiE8xHmxYlL_hRVs3A=s320-c&quot;) center center / cover no-repeat; width: 88px; height: 88px;"></div> </template></ql-avatar>
+<div class="learner-profile-account-menu__metadata">
+<h4 class="ql-title-large">Shaik Tousif</h4>
+<p class="ql-body-medium text--light">
+</p>
+<div class="ql-body-medium l-mbs">Member since 2026</div>
+<a class="ql-title-small" style="text-decoration:none" href="https://www.skills.google/my_account/payments"><ql-chip icon="poker_chip"><template shadowrootmode="open"><!---->
+      <div part="body" class=" chip default ">
+        <!--?lit$118375517$--> <ql-icon size="14" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: 14px;">
+        <slot><!--?lit$118375517$-->poker_chip</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon> 
+        <slot></slot>
+      </div>
+      <!--?lit$118375517$-->
+    </template>
+0 credits
+</ql-chip>
+</a><div class="learner-profile-account-menu__credits">
+<ql-button href="/subscriptions" label="Buy subscription" text="" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" href="/subscriptions" class=" ql-button default text size--small " data-aria-label="Buy subscription" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Buy subscription" href="https://www.skills.google/subscriptions"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$--><!--?lit$118375517$-->Buy subscription<!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+</div>
+</div>
+</div>
+<div class="learner-profile-account-menu__options">
+<ql-button href="/" icon="dashboard" label="Dashboard" text="" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" href="/" class=" ql-button default text size--small " data-aria-label="Dashboard" data-aria-busy="false" value="" has-icon=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Dashboard" href="https://www.skills.google/"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$-->
+        <ql-icon slot="icon" part="icon" class="mdc-button__icon" aria-hidden="true" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>
+          <!--?lit$118375517$-->dashboard
+        </ql-icon>
+       <!--?lit$118375517$--><!--?lit$118375517$-->Dashboard<!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+<ql-button href="/profile/activity" icon="lists" label="Progress" text="" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" href="/profile/activity" class=" ql-button default text size--small " data-aria-label="Progress" data-aria-busy="false" value="" has-icon=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Progress" href="https://www.skills.google/profile/activity"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$-->
+        <ql-icon slot="icon" part="icon" class="mdc-button__icon" aria-hidden="true" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>
+          <!--?lit$118375517$-->lists
+        </ql-icon>
+       <!--?lit$118375517$--><!--?lit$118375517$-->Progress<!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+<ql-button href="/my_account/profile" icon="settings" label="Settings" text="" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" href="/my_account/profile" class=" ql-button default text size--small " data-aria-label="Settings" data-aria-busy="false" value="" has-icon=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Settings" href="https://www.skills.google/my_account/profile"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$-->
+        <ql-icon slot="icon" part="icon" class="mdc-button__icon" aria-hidden="true" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>
+          <!--?lit$118375517$-->settings
+        </ql-icon>
+       <!--?lit$118375517$--><!--?lit$118375517$-->Settings<!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+<ql-button data-analytics-action="clicked_sign_out" href="/users/sign_out" icon="logout" label="Sign Out" method="delete" text="" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" class=" ql-button default text size--small " data-aria-label="Sign Out" data-aria-busy="false" value="" has-icon=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="button" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><button id="button" class="button" aria-label="Sign Out">
+      <!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </button>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$-->
+        <ql-icon slot="icon" part="icon" class="mdc-button__icon" aria-hidden="true" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>
+          <!--?lit$118375517$-->logout
+        </ql-icon>
+       <!--?lit$118375517$--><!--?lit$118375517$-->Sign Out<!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+</div>
+<div class="learner-profile-account-menu__footer">
+<ql-button href="/privacy_policy" label="Privacy" target="_blank" text="" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" href="/privacy_policy" target="_blank" class=" ql-button default text size--small " data-aria-label="Privacy" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Privacy" href="https://www.skills.google/privacy_policy" target="_blank"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$--><!--?lit$118375517$-->Privacy<!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+<ql-button href="/terms_of_service" label="Terms" text="" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" href="/terms_of_service" class=" ql-button default text size--small " data-aria-label="Terms" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Terms" href="https://www.skills.google/terms_of_service"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$--><!--?lit$118375517$-->Terms<!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+</div>
+</div>
+</ql-menu>
+
+
+
+</div>
+</ql-toolbar>
+</div>
+<div class="body-container__inner">
+<ql-sidenav id="app-nav" items="[{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Dashboard&quot;,&quot;icon&quot;:&quot;dashboard&quot;,&quot;active&quot;:false,&quot;href&quot;:&quot;/&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Dashboard&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Catalog&quot;,&quot;icon&quot;:&quot;book_2&quot;,&quot;active&quot;:false,&quot;href&quot;:&quot;/catalog&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Catalog&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Paths&quot;,&quot;icon&quot;:&quot;conversion_path&quot;,&quot;active&quot;:true,&quot;href&quot;:&quot;/paths&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Paths&quot;}},{&quot;type&quot;:&quot;dropdown&quot;,&quot;label&quot;:&quot;Collections&quot;,&quot;icon&quot;:&quot;category&quot;,&quot;active&quot;:false,&quot;children&quot;:[{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;AI Boost Bites&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/collections/ai-boost-bites&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_collections&quot;,&quot;label&quot;:&quot;AI Boost Bites&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Cloud&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/collections/cloud&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_collections&quot;,&quot;label&quot;:&quot;Cloud&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;DeepMind&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/collections/deepmind&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_collections&quot;,&quot;label&quot;:&quot;DeepMind&quot;}}],&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Collections&quot;}},{&quot;type&quot;:&quot;dropdown&quot;,&quot;label&quot;:&quot;Credentials&quot;,&quot;icon&quot;:&quot;license&quot;,&quot;active&quot;:false,&quot;children&quot;:[{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Certificate&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/credentials/certificate&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_credentials&quot;,&quot;label&quot;:&quot;Certificate&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Skill badge&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/credentials/skill_badge&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_credentials&quot;,&quot;label&quot;:&quot;Skill badge&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Certification&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/credentials/tech_certification&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_credentials&quot;,&quot;label&quot;:&quot;Certification&quot;}}],&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Credentials&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Subscriptions&quot;,&quot;icon&quot;:&quot;subscriptions&quot;,&quot;active&quot;:false,&quot;href&quot;:&quot;/subscriptions&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Subscriptions&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Organizations&quot;,&quot;icon&quot;:&quot;corporate_fare&quot;,&quot;active&quot;:false,&quot;href&quot;:&quot;/learningcenter&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Organizations&quot;}}]"><template shadowrootmode="open"><!---->
+      <div class="container   ">
+        <div class="container__inner">
+          <div class="mobile-back">
+            <ql-icon-button hidden="" icon="menu_open" translate="no" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-label="menu_open" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="menu_open">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$-->menu_open</ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template>
+            </ql-icon-button>
+            <!--?lit$118375517$-->
+            <ql-icon-button class="close-all-button" hidden="" translate="no" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-busy="false" value="" data-aria-label="close"><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="close">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$--><slot></slot></ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template>
+              close
+            </ql-icon-button>
+          </div>
+          <div class="items">
+            <slot name="start"></slot>
+            <!--?lit$118375517$--><!---->
+      <ql-sidenav-item-new autofocus="" type="button" compact="" href="/"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/" lang="" class=" button " aria-label="Dashboard">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->dashboard</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Dashboard</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!----><!---->
+      <ql-sidenav-item-new type="button" compact="" href="/catalog"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/catalog" lang="" class=" button " aria-label="Catalog">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->book_2</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Catalog</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!----><!---->
+      <ql-sidenav-item-new type="button" active="" compact="" href="/paths"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/paths" lang="" class=" button " aria-label="Paths">
+        <!--?lit$118375517$-->
+      <div class="container  active compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->conversion_path</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Paths</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!----><!---->
+      <ql-sidenav-dropdown><template shadowrootmode="open"><!---->
+      <div class="container  forced-closed compact ">
+        <ql-sidenav-item-new class="root-item" type="button" compact=""><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" button " lang="" aria-label="Collections" aria-expanded="false" aria-busy="false">
+          <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->category</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Collections</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template>
+          <ql-icon class="dropdown-chevron" slot="end" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->arrow_drop_down</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+        </ql-sidenav-item-new>
+        <div class="dropdown-children">
+          <div class="dropdown-children-inner">
+            <!--?lit$118375517$--><!---->
+      <ql-sidenav-item-new type="button" compact="" href="/collections/ai-boost-bites"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/collections/ai-boost-bites" lang="" class=" button " aria-label="AI Boost Bites">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->AI Boost Bites</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!----><!---->
+      <ql-sidenav-item-new type="button" compact="" href="/collections/cloud"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/collections/cloud" lang="" class=" button " aria-label="Cloud">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Cloud</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!----><!---->
+      <ql-sidenav-item-new type="button" compact="" href="/collections/deepmind"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/collections/deepmind" lang="" class=" button " aria-label="DeepMind">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->DeepMind</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!---->
+          </div>
+        </div>
+      </div>
+    </template>
+      </ql-sidenav-dropdown>
+    <!----><!---->
+      <ql-sidenav-dropdown><template shadowrootmode="open"><!---->
+      <div class="container  forced-closed compact ">
+        <ql-sidenav-item-new class="root-item" type="button" compact=""><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" button " lang="" aria-label="Credentials" aria-expanded="false" aria-busy="false">
+          <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->license</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Credentials</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template>
+          <ql-icon class="dropdown-chevron" slot="end" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->arrow_drop_down</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+        </ql-sidenav-item-new>
+        <div class="dropdown-children">
+          <div class="dropdown-children-inner">
+            <!--?lit$118375517$--><!---->
+      <ql-sidenav-item-new type="button" compact="" href="/credentials/certificate"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/credentials/certificate" lang="" class=" button " aria-label="Certificate">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Certificate</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!----><!---->
+      <ql-sidenav-item-new type="button" compact="" href="/credentials/skill_badge"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/credentials/skill_badge" lang="" class=" button " aria-label="Skill badge">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Skill badge</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!----><!---->
+      <ql-sidenav-item-new type="button" compact="" href="/credentials/tech_certification"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/credentials/tech_certification" lang="" class=" button " aria-label="Certification">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Certification</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!---->
+          </div>
+        </div>
+      </div>
+    </template>
+      </ql-sidenav-dropdown>
+    <!----><!---->
+      <ql-sidenav-item-new type="button" compact="" href="/subscriptions"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/subscriptions" lang="" class=" button " aria-label="Subscriptions">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->subscriptions</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Subscriptions</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!----><!---->
+      <ql-sidenav-item-new type="button" compact="" href="/learningcenter"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <a href="https://www.skills.google/learningcenter" lang="" class=" button " aria-label="Organizations">
+        <!--?lit$118375517$-->
+      <div class="container  compact ">
+        <!--?lit$118375517$-->
+      <div class="content-wrapper">
+        <div class="icon-container"><!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->corporate_fare</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon></div>
+        <span class="label ql-label-medium"><!--?lit$118375517$-->Organizations</span>
+      </div>
+      <slot name="end"></slot>
+    
+      </div>
+      <md-focus-ring inward="" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+    
+      </a>
+     <!--?lit$118375517$--> </template>
+      </ql-sidenav-item-new>
+    <!---->
+            <slot name="end"></slot>
+          </div>
+        </div>
+        <div class="nested-sidenavs"><!--?lit$118375517$--></div>
+      </div>
+    </template>
+<ql-fab class="navrail-search-button" data-analytics-action="click_button" data-analytics-button-text="Search" data-analytics-label="Search" data-analytics-position="application_sidenav" data-analytics-type="eventParams" expandable="" icon="search" label="Search" slot="start" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <button type="button" part="button" class=" mdc-fab gm-fab google-material-icons expandable " lang="" aria-label="Search" aria-busy="false">
+          <!--?lit$118375517$-->
+      <span class="mdc-fab__ripple"></span>
+      <span class="mdc-fab__icon" translate="no"><!--?lit$118375517$-->search</span>
+      <span class="fab-label"><!--?lit$118375517$-->Search</span>
+    
+        </button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-fab>
+</ql-sidenav>
+
+<div class="body-content">
+<div class="banner">
+<div id="callout-container">
+</div>
+
+</div>
+<div class="page-header">
+<div class="page-main-banner">
+<div class="page-main-banner-breadcrumbs">
+<nav aria-label="Breadcrumb" class="breadcrumbs-container" role="navigation">
+<ol>
+<li class="breadcrumb-item ql-label-medium">
+<ql-icon-button href="/" icon="home_filled" iconfill="" translate="no" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button href="/" class=" ql-icon-button " data-aria-label="home_filled" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!----><div id="button" class="icon-button  standard ">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$-->
+      <a class="link" id="link" href="https://www.skills.google/" aria-label="home_filled">
+        <!--?lit$118375517$--><span class="touch"></span>
+      </a>
+    
+  </div></template>
+          <!--?lit$118375517$--><ql-icon fill="" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols filled " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$-->home_filled</ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-icon-button>
+
+<ql-icon class="breadcrumb-arrow" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>navigate_next</ql-icon>
+</li>
+<li class="breadcrumb-item ql-label-medium">
+<a href="https://www.skills.google/paths/3546">Introduction to Agents and Google’s Agent Ecosystem</a>
+<ql-icon class="breadcrumb-arrow" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>navigate_next</ql-icon>
+</li>
+<li class="breadcrumb-item ql-label-medium">
+<a href="https://www.skills.google/paths/3546/course_templates/1562">Agent Fundamentals</a>
+<ql-icon class="breadcrumb-arrow" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>navigate_next</ql-icon>
+</li>
+<li class="breadcrumb-item ql-label-medium" tabindex="0">
+Agents in action
+</li>
+</ol>
+</nav>
+
+</div>
+<aside aria-label="Free trial" class="page-main-banner-console-free-trial">
+<div class="console-free-trial">
+<p class="console-free-trial-content ql-body-medium">
+Apply your skills in Google Cloud console
+</p>
+<div class="console-free-trial-actions">
+<ql-button data-analytics-action="gcp_cta" data-analytics-position="free trial banner" data-analytics-type="eventParams" elevated="" href="https://console.cloud.google.com/freetrial" label="Get started" target="_blank" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-elevated-button part="button" href="https://console.cloud.google.com/freetrial" target="_blank" class=" ql-button default elevated size--small " data-aria-label="Get started" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$--><md-elevation part="elevation" aria-hidden="true"><template shadowrootmode="open"><!----><span class="shadow"></span></template></md-elevation>
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Get started" href="https://console.cloud.google.com/freetrial" target="_blank"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$--><!--?lit$118375517$-->Get started<!--?--><!--?-->
+        </md-elevated-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+</div>
+</div>
+</aside>
+</div>
+
+<div class="page-banner js-page-banner">
+<div class="content"><span class="js-course-upgrade-banner" data-course-template-id="1562">
+There is a new version of this course available!
+<a class="js-upgrade-button" href="javascript:;" onclick="document.querySelector(&quot;#course-session-upgrade-modal&quot;).open()">
+Learn more to upgrade to the new version.
+</a>
+</span>
+</div>
+<ql-icon-button class="js-close-banner" translate="no" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-busy="false" value="" data-aria-label="close"><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="close">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$--><slot></slot></ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template>close</ql-icon-button>
+</div>
+</div>
+<main id="jump-content" tabindex="-1">
+<ql-drawer-container class="course-container"><template shadowrootmode="open"><!---->
+        <slot name="drawer"></slot>
+        <div class="content">
+          <slot name="drawer-content"></slot>
+          <slot></slot>
+        </div>
+        <!--?lit$118375517$-->
+      </template>
+<ql-drawer-content class="course-activity" slot="drawer-content"><template shadowrootmode="open"><!----><slot></slot></template>
+<div class="course-activity-header">
+<div class="course-toc-cont">
+<ql-contents-menu modules="[{&quot;id&quot;:&quot;94022&quot;,&quot;title&quot;:&quot;Welcome&quot;,&quot;description&quot;:&quot;\u003cp\u003eThis module welcomes learners to the course.\u003c/p\u003e&quot;,&quot;steps&quot;:[{&quot;id&quot;:&quot;654722&quot;,&quot;prompt&quot;:null,&quot;isOptional&quot;:true,&quot;activities&quot;:[{&quot;id&quot;:&quot;647694&quot;,&quot;href&quot;:&quot;/paths/3546/course_sessions/46293824/documents/647694&quot;,&quot;isLocked&quot;:false,&quot;duration&quot;:null,&quot;title&quot;:&quot;Welcome&quot;,&quot;description&quot;:null,&quot;type&quot;:&quot;link&quot;,&quot;isComplete&quot;:true,&quot;inProgress&quot;:false,&quot;score&quot;:null,&quot;disabled&quot;:false,&quot;paid&quot;:false}],&quot;isComplete&quot;:true,&quot;isTestedOut&quot;:false,&quot;allActivitiesRequired&quot;:false}],&quot;activityCount&quot;:1,&quot;expanded&quot;:false},{&quot;id&quot;:&quot;94023&quot;,&quot;title&quot;:&quot;Introduction to AI agents&quot;,&quot;description&quot;:&quot;\u003cp\u003eThis module gives a conceptual overview of AI Agents. Discover how AI Agents use autonomous action and reasoning to solve complex problems. You’ll explore the technical architecture—models, tools, and orchestration—that enables agents to learn, plan, and achieve goals on your behalf.\u003c/p\u003e&quot;,&quot;steps&quot;:[{&quot;id&quot;:&quot;654723&quot;,&quot;prompt&quot;:null,&quot;isOptional&quot;:true,&quot;activities&quot;:[{&quot;id&quot;:&quot;647695&quot;,&quot;href&quot;:&quot;/paths/3546/course_sessions/46293824/documents/647695&quot;,&quot;isLocked&quot;:false,&quot;duration&quot;:null,&quot;title&quot;:&quot;Introduction to AI agents&quot;,&quot;description&quot;:null,&quot;type&quot;:&quot;link&quot;,&quot;isComplete&quot;:true,&quot;inProgress&quot;:false,&quot;score&quot;:null,&quot;disabled&quot;:false,&quot;paid&quot;:false}],&quot;isComplete&quot;:true,&quot;isTestedOut&quot;:false,&quot;allActivitiesRequired&quot;:false}],&quot;activityCount&quot;:1,&quot;expanded&quot;:false},{&quot;id&quot;:&quot;94024&quot;,&quot;title&quot;:&quot;Agent abstraction&quot;,&quot;description&quot;:&quot;\u003cp\u003eThis module introduces the fundamentals of AI agents and why they represent a paradigm shift away from simple LLMs. You’ll learn the difference between language models that can only discuss solutions to agents that can autonomously execute them.\u003c/p\u003e&quot;,&quot;steps&quot;:[{&quot;id&quot;:&quot;654724&quot;,&quot;prompt&quot;:null,&quot;isOptional&quot;:true,&quot;activities&quot;:[{&quot;id&quot;:&quot;647696&quot;,&quot;href&quot;:&quot;/paths/3546/course_sessions/46293824/documents/647696&quot;,&quot;isLocked&quot;:false,&quot;duration&quot;:null,&quot;title&quot;:&quot;Agents abstraction&quot;,&quot;description&quot;:null,&quot;type&quot;:&quot;link&quot;,&quot;isComplete&quot;:true,&quot;inProgress&quot;:false,&quot;score&quot;:null,&quot;disabled&quot;:false,&quot;paid&quot;:false}],&quot;isComplete&quot;:true,&quot;isTestedOut&quot;:false,&quot;allActivitiesRequired&quot;:false}],&quot;activityCount&quot;:1,&quot;expanded&quot;:false},{&quot;id&quot;:&quot;94025&quot;,&quot;title&quot;:&quot;How agents work&quot;,&quot;description&quot;:&quot;\u003cp\u003eThis module reveals the internal architecture that powers every AI agent. You’ll explore how three fundamental components—the model, tools, and orchestration—work together. This powerful combination transforms static language models into autonomous systems capable of continuous, goal-directed action.\u003c/p\u003e&quot;,&quot;steps&quot;:[{&quot;id&quot;:&quot;654725&quot;,&quot;prompt&quot;:null,&quot;isOptional&quot;:true,&quot;activities&quot;:[{&quot;id&quot;:&quot;647697&quot;,&quot;href&quot;:&quot;/paths/3546/course_sessions/46293824/documents/647697&quot;,&quot;isLocked&quot;:false,&quot;duration&quot;:null,&quot;title&quot;:&quot;How agents work&quot;,&quot;description&quot;:null,&quot;type&quot;:&quot;link&quot;,&quot;isComplete&quot;:true,&quot;inProgress&quot;:false,&quot;score&quot;:null,&quot;disabled&quot;:false,&quot;paid&quot;:false}],&quot;isComplete&quot;:true,&quot;isTestedOut&quot;:false,&quot;allActivitiesRequired&quot;:false}],&quot;activityCount&quot;:1,&quot;expanded&quot;:false},{&quot;id&quot;:&quot;94026&quot;,&quot;title&quot;:&quot;Agents in action&quot;,&quot;description&quot;:&quot;\u003cp\u003eThis module equips you with a practical decision-making framework for determining when agents are the right solution. You'll learn to identify scenarios where agents provide exceptional value, recognize anti-patterns where simpler solutions might be better, and make informed architectural decisions for your specific use case.\u003c/p\u003e&quot;,&quot;steps&quot;:[{&quot;id&quot;:&quot;654726&quot;,&quot;prompt&quot;:null,&quot;isOptional&quot;:true,&quot;activities&quot;:[{&quot;id&quot;:&quot;647698&quot;,&quot;href&quot;:&quot;/paths/3546/course_sessions/46293824/documents/647698&quot;,&quot;isLocked&quot;:false,&quot;duration&quot;:null,&quot;title&quot;:&quot;Agents in action&quot;,&quot;description&quot;:null,&quot;type&quot;:&quot;link&quot;,&quot;isComplete&quot;:true,&quot;inProgress&quot;:false,&quot;score&quot;:null,&quot;disabled&quot;:false,&quot;paid&quot;:false}],&quot;isComplete&quot;:true,&quot;isTestedOut&quot;:false,&quot;allActivitiesRequired&quot;:false}],&quot;activityCount&quot;:1,&quot;expanded&quot;:false},{&quot;id&quot;:&quot;94027&quot;,&quot;title&quot;:&quot;Course wrap up&quot;,&quot;description&quot;:&quot;\u003cp\u003eYou've completed the foundational course on AI agents and now possess a clear understanding of what agents are, how they work, and when to use them. This theoretical foundation will serve as your north star as you progress to building real agent systems in upcoming courses.\u003c/p\u003e&quot;,&quot;steps&quot;:[{&quot;id&quot;:&quot;654727&quot;,&quot;prompt&quot;:null,&quot;isOptional&quot;:true,&quot;activities&quot;:[{&quot;id&quot;:&quot;647699&quot;,&quot;href&quot;:&quot;/paths/3546/course_sessions/46293824/documents/647699&quot;,&quot;isLocked&quot;:false,&quot;duration&quot;:null,&quot;title&quot;:&quot;Course wrap up&quot;,&quot;description&quot;:null,&quot;type&quot;:&quot;link&quot;,&quot;isComplete&quot;:true,&quot;inProgress&quot;:false,&quot;score&quot;:null,&quot;disabled&quot;:false,&quot;paid&quot;:false}],&quot;isComplete&quot;:true,&quot;isTestedOut&quot;:false,&quot;allActivitiesRequired&quot;:false},{&quot;id&quot;:&quot;654728&quot;,&quot;prompt&quot;:null,&quot;isOptional&quot;:false,&quot;activities&quot;:[{&quot;id&quot;:&quot;647700&quot;,&quot;href&quot;:&quot;/paths/3546/course_sessions/46293824/quizzes/647700&quot;,&quot;isLocked&quot;:false,&quot;duration&quot;:null,&quot;title&quot;:&quot;Quiz&quot;,&quot;description&quot;:null,&quot;type&quot;:&quot;quiz&quot;,&quot;isComplete&quot;:true,&quot;inProgress&quot;:false,&quot;score&quot;:null,&quot;disabled&quot;:false,&quot;paid&quot;:false}],&quot;isComplete&quot;:true,&quot;isTestedOut&quot;:false,&quot;allActivitiesRequired&quot;:false}],&quot;activityCount&quot;:2,&quot;expanded&quot;:false},{&quot;id&quot;:&quot;next-steps&quot;,&quot;title&quot;:&quot;Your Next Steps&quot;,&quot;description&quot;:null,&quot;steps&quot;:[{&quot;id&quot;:&quot;badge-step&quot;,&quot;prompt&quot;:null,&quot;isOptional&quot;:true,&quot;activities&quot;:[{&quot;id&quot;:&quot;badge&quot;,&quot;href&quot;:&quot;/paths/3546/course_templates/1562/badge&quot;,&quot;isLocked&quot;:false,&quot;duration&quot;:null,&quot;title&quot;:&quot;Completion&quot;,&quot;description&quot;:&quot;Confirms all required activities are complete&quot;,&quot;type&quot;:&quot;credential&quot;,&quot;isComplete&quot;:false,&quot;inProgress&quot;:false,&quot;score&quot;:null,&quot;disabled&quot;:false,&quot;credentialType&quot;:null}],&quot;isComplete&quot;:false,&quot;isTestedOut&quot;:false,&quot;allActivitiesRequired&quot;:false},{&quot;id&quot;:&quot;survey-0-step&quot;,&quot;prompt&quot;:null,&quot;isOptional&quot;:true,&quot;activities&quot;:[{&quot;id&quot;:&quot;survey-0&quot;,&quot;href&quot;:&quot;/paths/3546/course_templates/1562/course_surveys/0&quot;,&quot;isLocked&quot;:false,&quot;duration&quot;:null,&quot;title&quot;:&quot;Survey&quot;,&quot;description&quot;:&quot;Provide feedback on your learning experience&quot;,&quot;type&quot;:&quot;survey&quot;,&quot;isComplete&quot;:false,&quot;inProgress&quot;:false,&quot;score&quot;:null,&quot;disabled&quot;:false}],&quot;isComplete&quot;:false,&quot;isTestedOut&quot;:false,&quot;allActivitiesRequired&quot;:false}],&quot;activityCount&quot;:2,&quot;expanded&quot;:true}]" overviewlink="/paths/3546/course_templates/1562" selectedactivityid="647698" selectedcontenttitle="Agents in action"><template shadowrootmode="open"><!---->
+      <div aria-haspopup="true" class="content-selector   " aria-expanded="false">
+        <md-outlined-text-field class="content-selector-text" label="Contents" readonly="" inputmode="" type="text" autocomplete=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <span class="text-field   ">
+        <!--?lit$118375517$--><md-outlined-field class="field" count="16" error-text="" label="Contents" max="-1" populated="" supporting-text="" has-end=""><template shadowrootmode="open"><!---->
+      <div class="field populated with-end">
+        <div class="container-overflow">
+          <!--?lit$118375517$-->
+          <slot name="container"></slot>
+          <!--?lit$118375517$--> <!--?lit$118375517$--> <!--?lit$118375517$-->
+      <div class="outline">
+        <div class="outline-start"></div>
+        <div class="outline-notch">
+          <div class="outline-panel-inactive"></div>
+          <div class="outline-panel-active"></div>
+          <div class="outline-label"><!--?lit$118375517$-->
+      <span class="label  floating " aria-hidden="false"><!--?lit$118375517$-->Contents</span>
+    </div>
+        </div>
+        <div class="outline-end"></div>
+      </div>
+    
+          <div class="container">
+            <div class="start">
+              <slot name="start"></slot>
+            </div>
+            <div class="middle">
+              <div class="label-wrapper">
+                <!--?lit$118375517$-->
+      <span class="label  hidden resting " aria-hidden="true"><!--?lit$118375517$-->Contents</span>
+     <!--?lit$118375517$-->
+              </div>
+              <div class="content">
+                <slot></slot>
+              </div>
+            </div>
+            <div class="end">
+              <slot name="end"></slot>
+            </div>
+          </div>
+        </div>
+        <!--?lit$118375517$-->
+      </div>
+    </template>
+      <!--?lit$118375517$-->
+      <span class="icon leading" slot="start">
+        <slot name="leading-icon"></slot>
+      </span>
+    
+      <!--?lit$118375517$-->
+      <div class="input-wrapper">
+        <!--?lit$118375517$-->
+        <input class="input" aria-describedby="description" aria-invalid="false" aria-label="Contents" readonly="" type="text">
+        <!--?lit$118375517$-->
+      </div>
+    
+      <!--?lit$118375517$-->
+      <span class="icon trailing" slot="end">
+        <slot name="trailing-icon"></slot>
+      </span>
+    
+      <div id="description" slot="aria-describedby"></div>
+      <slot name="container" slot="container"></slot>
+    </md-outlined-field>
+      </span>
+    </template>
+          <md-icon-button toggle="" slot="trailing-icon" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-pressed="false">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+            <ql-icon icon="arrow_drop_down" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->arrow_drop_down</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+          </md-icon-button>
+        </md-outlined-text-field>
+      </div>
+
+      <div class="menu-container   ">
+        <div class="scrim"></div>
+        <nav class="menu" aria-label="Course contents">
+          <div class="menu-scroll-container">
+            <div class="activity-item   ">
+              <a href="https://www.skills.google/paths/3546/course_templates/1562">
+                <span class="activity-title"><!--?lit$118375517$-->Overview</span>
+                <span class="icons"></span>
+              </a>
+            </div>
+            <!--?lit$118375517$--><!---->
+                <div class="module">
+                  <!--?lit$118375517$-->
+                        <div class="module-title">
+                          <ql-icon icon="label" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->label</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+                          <span><!--?lit$118375517$-->Welcome</span>
+                        </div>
+                      
+                  <ul class="activities-list">
+                    <!--?lit$118375517$--><!---->
+      <li class="activity-item   ">
+        <!--?lit$118375517$--><a href="https://www.skills.google/paths/3546/course_sessions/46293824/documents/647694"><!--?lit$118375517$-->
+      <span class="icons start">
+        <!--?lit$118375517$-->
+              <!--?lit$118375517$-->
+              <!--?lit$118375517$--><ql-icon class="check" icon="check_circle" fill="" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols filled " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->check_circle</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+              <!--?lit$118375517$-->
+            
+      </span>
+      <span class="activity-title"><!--?lit$118375517$-->Welcome</span>
+      <!--?lit$118375517$-->
+      <span class="icons end">
+        <!--?lit$118375517$-->
+      </span>
+    </a>
+      </li>
+    <!---->
+                  </ul>
+                </div>
+              <!----><!---->
+                <div class="module">
+                  <!--?lit$118375517$-->
+                        <div class="module-title">
+                          <ql-icon icon="label" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->label</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+                          <span><!--?lit$118375517$-->Introduction to AI agents</span>
+                        </div>
+                      
+                  <ul class="activities-list">
+                    <!--?lit$118375517$--><!---->
+      <li class="activity-item   ">
+        <!--?lit$118375517$--><a href="https://www.skills.google/paths/3546/course_sessions/46293824/documents/647695"><!--?lit$118375517$-->
+      <span class="icons start">
+        <!--?lit$118375517$-->
+              <!--?lit$118375517$-->
+              <!--?lit$118375517$--><ql-icon class="check" icon="check_circle" fill="" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols filled " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->check_circle</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+              <!--?lit$118375517$-->
+            
+      </span>
+      <span class="activity-title"><!--?lit$118375517$-->Introduction to AI agents</span>
+      <!--?lit$118375517$-->
+      <span class="icons end">
+        <!--?lit$118375517$-->
+      </span>
+    </a>
+      </li>
+    <!---->
+                  </ul>
+                </div>
+              <!----><!---->
+                <div class="module">
+                  <!--?lit$118375517$-->
+                        <div class="module-title">
+                          <ql-icon icon="label" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->label</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+                          <span><!--?lit$118375517$-->Agent abstraction</span>
+                        </div>
+                      
+                  <ul class="activities-list">
+                    <!--?lit$118375517$--><!---->
+      <li class="activity-item   ">
+        <!--?lit$118375517$--><a href="https://www.skills.google/paths/3546/course_sessions/46293824/documents/647696"><!--?lit$118375517$-->
+      <span class="icons start">
+        <!--?lit$118375517$-->
+              <!--?lit$118375517$-->
+              <!--?lit$118375517$--><ql-icon class="check" icon="check_circle" fill="" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols filled " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->check_circle</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+              <!--?lit$118375517$-->
+            
+      </span>
+      <span class="activity-title"><!--?lit$118375517$-->Agents abstraction</span>
+      <!--?lit$118375517$-->
+      <span class="icons end">
+        <!--?lit$118375517$-->
+      </span>
+    </a>
+      </li>
+    <!---->
+                  </ul>
+                </div>
+              <!----><!---->
+                <div class="module">
+                  <!--?lit$118375517$-->
+                        <div class="module-title">
+                          <ql-icon icon="label" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->label</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+                          <span><!--?lit$118375517$-->How agents work</span>
+                        </div>
+                      
+                  <ul class="activities-list">
+                    <!--?lit$118375517$--><!---->
+      <li class="activity-item   ">
+        <!--?lit$118375517$--><a href="https://www.skills.google/paths/3546/course_sessions/46293824/documents/647697"><!--?lit$118375517$-->
+      <span class="icons start">
+        <!--?lit$118375517$-->
+              <!--?lit$118375517$-->
+              <!--?lit$118375517$--><ql-icon class="check" icon="check_circle" fill="" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols filled " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->check_circle</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+              <!--?lit$118375517$-->
+            
+      </span>
+      <span class="activity-title"><!--?lit$118375517$-->How agents work</span>
+      <!--?lit$118375517$-->
+      <span class="icons end">
+        <!--?lit$118375517$-->
+      </span>
+    </a>
+      </li>
+    <!---->
+                  </ul>
+                </div>
+              <!----><!---->
+                <div class="module">
+                  <!--?lit$118375517$-->
+                        <div class="module-title">
+                          <ql-icon icon="label" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->label</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+                          <span><!--?lit$118375517$-->Agents in action</span>
+                        </div>
+                      
+                  <ul class="activities-list">
+                    <!--?lit$118375517$--><!---->
+      <li class="activity-item  active ">
+        <!--?lit$118375517$--><a href="https://www.skills.google/paths/3546/course_sessions/46293824/documents/647698"><!--?lit$118375517$-->
+      <span class="icons start">
+        <!--?lit$118375517$-->
+              <!--?lit$118375517$-->
+              <!--?lit$118375517$--><ql-icon class="check" icon="check_circle" fill="" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols filled " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->check_circle</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+              <!--?lit$118375517$-->
+            
+      </span>
+      <span class="activity-title"><!--?lit$118375517$-->Agents in action</span>
+      <!--?lit$118375517$-->
+      <span class="icons end">
+        <!--?lit$118375517$-->
+      </span>
+    </a>
+      </li>
+    <!---->
+                  </ul>
+                </div>
+              <!----><!---->
+                <div class="module">
+                  <!--?lit$118375517$-->
+                        <div class="module-title">
+                          <ql-icon icon="label" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->label</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+                          <span><!--?lit$118375517$-->Course wrap up</span>
+                        </div>
+                      
+                  <ul class="activities-list">
+                    <!--?lit$118375517$--><!---->
+      <li class="activity-item   ">
+        <!--?lit$118375517$--><a href="https://www.skills.google/paths/3546/course_sessions/46293824/documents/647699"><!--?lit$118375517$-->
+      <span class="icons start">
+        <!--?lit$118375517$-->
+              <!--?lit$118375517$-->
+              <!--?lit$118375517$--><ql-icon class="check" icon="check_circle" fill="" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols filled " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->check_circle</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+              <!--?lit$118375517$-->
+            
+      </span>
+      <span class="activity-title"><!--?lit$118375517$-->Course wrap up</span>
+      <!--?lit$118375517$-->
+      <span class="icons end">
+        <!--?lit$118375517$-->
+      </span>
+    </a>
+      </li>
+    <!----><!---->
+      <li class="activity-item   ">
+        <!--?lit$118375517$--><a href="https://www.skills.google/paths/3546/course_sessions/46293824/quizzes/647700"><!--?lit$118375517$-->
+      <span class="icons start">
+        <!--?lit$118375517$-->
+              <!--?lit$118375517$-->
+              <!--?lit$118375517$--><ql-icon class="check" icon="check_circle" fill="" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols filled " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->check_circle</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+              <!--?lit$118375517$-->
+            
+      </span>
+      <span class="activity-title"><!--?lit$118375517$-->Quiz</span>
+      <!--?lit$118375517$-->
+      <span class="icons end">
+        <!--?lit$118375517$-->
+      </span>
+    </a>
+      </li>
+    <!---->
+                  </ul>
+                </div>
+              <!----><!---->
+                <div class="module">
+                  <!--?lit$118375517$-->
+                        <div class="module-title">
+                          <ql-icon icon="label" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->label</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+                          <span><!--?lit$118375517$-->Your Next Steps</span>
+                        </div>
+                      
+                  <ul class="activities-list">
+                    <!--?lit$118375517$--><!---->
+      <li class="activity-item   ">
+        <!--?lit$118375517$--><a href="https://www.skills.google/paths/3546/course_templates/1562/badge"><!--?lit$118375517$-->
+      <span class="icons start">
+        <!--?lit$118375517$--><ql-icon class="activity-icon" icon="editor_choice" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->editor_choice</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+      </span>
+      <span class="activity-title"><!--?lit$118375517$-->Completion</span>
+      <!--?lit$118375517$-->
+      <span class="icons end">
+        <!--?lit$118375517$-->
+      </span>
+    </a>
+      </li>
+    <!----><!---->
+      <li class="activity-item   ">
+        <!--?lit$118375517$--><a href="https://www.skills.google/paths/3546/course_templates/1562/course_surveys/0"><!--?lit$118375517$-->
+      <span class="icons start">
+        <!--?lit$118375517$--><ql-icon class="activity-icon" icon="rate_review" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->rate_review</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+      </span>
+      <span class="activity-title"><!--?lit$118375517$-->Survey</span>
+      <!--?lit$118375517$--><span class="recommended-tag">Recommended</span>
+      <span class="icons end">
+        <!--?lit$118375517$-->
+      </span>
+    </a>
+      </li>
+    <!---->
+                  </ul>
+                </div>
+              <!---->
+          </div>
+        </nav>
+      </div>
+    </template></ql-contents-menu>
+<div class="course-toc-buttons">
+<div class="download-document">
+<ql-button href="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-DEVFUN-I/2.0/index.html#/page/6a307906e247e7be8e1659ff" icon="download" target="_blank" text="" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" href="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-DEVFUN-I/2.0/index.html#/page/6a307906e247e7be8e1659ff" target="_blank" class=" ql-button default text size--small " data-aria-busy="false" value="" has-icon="" data-aria-label="Download document"><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Download document" target="_blank" href="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-DEVFUN-I/2.0/index.html#/page/6a307906e247e7be8e1659ff"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$-->
+        <ql-icon slot="icon" part="icon" class="mdc-button__icon" aria-hidden="true" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>
+          <!--?lit$118375517$-->download
+        </ql-icon>
+       <!--?lit$118375517$--><!--?lit$118375517$--><slot></slot><!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template>
+Download document
+</ql-button>
+</div>
+
+<div class="feedback-button-container">
+<ql-button class="feedback-button" data-analytics-action="button_click" data-analytics-button-text="Send feedback" data-analytics-type="eventParams" icon="rate_review" label="Send feedback" onclick="ql.sendFeedback();
+userfeedback.api.startFeedback(
+{
+'productId': '5080217',
+'enableAnonymousFeedback': true,
+'authuser': 'undefined',
+'locale': 'en'
+},
+{
+'user_id': '142983572',
+'current_organization': ''
+})" outlined="" type="button" data-analytics-init="true"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-outlined-button part="button" class=" ql-button default outlined size--small " data-aria-label="Send feedback" data-aria-busy="false" value="" has-icon=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$--><div class="outline"></div>
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="button" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><button id="button" class="button" aria-label="Send feedback">
+      <!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </button>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$-->
+        <ql-icon slot="icon" part="icon" class="mdc-button__icon" aria-hidden="true" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>
+          <!--?lit$118375517$-->rate_review
+        </ql-icon>
+       <!--?lit$118375517$--><!--?lit$118375517$-->Send feedback<!--?--><!--?-->
+        </md-outlined-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+</div>
+
+</div>
+</div>
+</div>
+<div class="course-activity-content with-space-for-navigation-buttons" role="region" tabindex="0">
+
+<ql-iframe class="document-iframe l-fill-area" src="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-DEVFUN-I/2.0/index.html#/page/6a307906e247e7be8e1659ff" title="Agents in action"><template shadowrootmode="open"><!---->
+      <iframe title="Agents in action" allow="clipboard-write" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-DEVFUN-I/2.0/index.html#/page/6a307906e247e7be8e1659ff"></iframe>
+      <!--?lit$118375517$-->
+    </template></ql-iframe>
+
+</div>
+<div class="course-navigation-buttons">
+<ql-button aria-label="Previous" class="hide-mobile prev-button" href="/paths/3546/course_sessions/46293824/documents/647697" icon="navigate_before" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-filled-button part="button" href="/paths/3546/course_sessions/46293824/documents/647697" class=" ql-button default filled size--small " data-aria-busy="false" value="" has-icon="" data-aria-label="Previous"><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$--><md-elevation part="elevation" aria-hidden="true"><template shadowrootmode="open"><!----><span class="shadow"></span></template></md-elevation>
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Previous" href="https://www.skills.google/paths/3546/course_sessions/46293824/documents/647697"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$-->
+        <ql-icon slot="icon" part="icon" class="mdc-button__icon" aria-hidden="true" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>
+          <!--?lit$118375517$-->navigate_before
+        </ql-icon>
+       <!--?lit$118375517$--><!--?lit$118375517$--><slot></slot><!--?--><!--?-->
+        </md-filled-button>
+      </div>
+     <!--?lit$118375517$--> </template>Previous</ql-button>
+<div class="next-navigation-buttons">
+
+<ql-button class="next-button" href="/paths/3546/course_sessions/46293824/documents/647699" icon="navigate_next" trailingicon="" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-filled-button part="button" href="/paths/3546/course_sessions/46293824/documents/647699" class=" ql-button default filled size--small " data-aria-busy="false" value="" trailing-icon="" has-icon="" data-aria-label="Next"><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$--><md-elevation part="elevation" aria-hidden="true"><template shadowrootmode="open"><!----><span class="shadow"></span></template></md-elevation>
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Next" href="https://www.skills.google/paths/3546/course_sessions/46293824/documents/647699"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$-->
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$-->
+        <ql-icon slot="icon" part="icon" class="mdc-button__icon" aria-hidden="true" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template>
+          <!--?lit$118375517$-->navigate_next
+        </ql-icon>
+       <!--?lit$118375517$--><!--?lit$118375517$--><slot></slot><!--?--><!--?-->
+        </md-filled-button>
+      </div>
+     <!--?lit$118375517$--> </template>Next</ql-button>
+</div>
+</div>
+</ql-drawer-content>
+</ql-drawer-container>
+
+</main>
+
+<footer slot="drawer-content">
+<nav arialabel="Footer navigation" class="application-footer relaunch-extra">
+
+<div class="footer-container">
+<div class="footer-logo">
+<a class="custom-logo" aria-label="Google Skills" href="https://www.skills.google/"><div class="custom-logo"><img alt="Google Skills" height="24" aria-label="Google Skills" src="./Agents in action - Agents in action _ Google Skills_files/lqJbxogu4tSLez1OvjDcIO8rwow6cPLwvrfIdmQLf6U="></div></a>
+</div>
+<div class="footer-row">
+<a href="https://www.skills.google/">Dashboard</a>
+<a href="https://www.skills.google/catalog">Catalog</a>
+<a href="https://www.skills.google/paths">Paths</a>
+<a href="https://www.skills.google/subscriptions">Subscriptions</a>
+<a href="https://www.skills.google/profile/stay_on_track">Activities</a>
+<a href="https://www.skills.google/profile/badges">Achievements</a>
+<a href="https://www.skills.google/my_account/profile">Settings</a>
+<a rel="nofollow" data-method="delete" href="https://www.skills.google/users/sign_out">Sign out</a>
+</div>
+<div class="footer-row">
+<a class="g-cloud-youtube" target="_blank" rel="noopener" href="https://www.youtube.com/@googlecloud"><ql-icon icon="video_youtube" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->video_youtube</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+Youtube
+</a><a rel="noopener" onclick="hallofmirrors.helpService.startHelp({&quot;productData&quot;:{&quot;userId&quot;:142983572},&quot;context&quot;:&quot;course&quot;}); return false;" href="https://www.skills.google/help">Help Center</a>
+<a href="https://www.skills.google/terms_of_service">Terms</a>
+<a target="_blank" href="https://www.skills.google/privacy_policy">Privacy</a>
+<a aria-hidden="true" class="glue-cookie-notification-bar-control">
+Manage cookies
+</a>
+</div>
+</div>
+
+</nav>
+</footer>
+</div>
+</div>
+</div>
+
+
+<span class="hidden" id="flash-sibling-before"></span>
+<ql-snackbar aria-live="polite" role="alert"><template shadowrootmode="open"><!---->
+      <div class="snackbar ql-body-medium   " style="left: 0px;">
+        <span class="snackbar__text" part="text">
+          <slot></slot>
+        </span>
+        <slot name="end"></slot>
+        <!--?lit$118375517$-->
+      <div aria-label="To access the notification, press Alt+G"></div>
+    
+      </div>
+    </template></ql-snackbar>
+
+<script data-glue-cookie-notification-bar-category="2A" src="./Agents in action - Agents in action _ Google Skills_files/cookienotificationbar.min.js.download"></script>
+
+
+
+<ql-dialog id="connect-certmetrics-modal" nocloseicon="" nodefaultaction="" nodefaultdismiss="" inert=""><template shadowrootmode="open"><!---->
+      <dialog part="wrapper" class=" dialog-wrapper ">
+        <ql-card part="card" elevation="3" role="dialog" aria-modal="true" class="  "><template shadowrootmode="open"><!---->
+      <div part="body" class="card  no-header ">
+        <!--?lit$118375517$-->
+      <div part="header" class="header  hidden ">
+        <slot name="header" part="header-text"></slot>
+        <!--?lit$118375517$-->
+      </div>
+    
+        <div part="body-content" class="content  no-header ">
+          <!--?lit$118375517$--><slot></slot>
+        </div>
+      </div>
+    </template>
+          <!--?lit$118375517$-->
+      <div part="header" class=" header ">
+        <!--?lit$118375517$--> <!--?lit$118375517$-->
+        <h1 id="title" part="title">
+          <!--?lit$118375517$--><!--?lit$118375517$--><!--?-->
+        </h1>
+      </div>
+      <div class="body" part="body">
+        <slot></slot>
+      </div>
+      <div part="actions" class="actions multiple">
+        <!--?lit$118375517$-->
+        <slot name="action"></slot>
+      </div>
+    
+        </ql-card>
+        <!--?lit$118375517$--> <div class=" overlay "></div>
+      </dialog>
+    </template>
+<div class="certmetrics-modal" id="sso-modal-body">
+<div id="sso-header-image">
+<img alt="Authorize Header" src="./Agents in action - Agents in action _ Google Skills_files/certmetrics_modal_connect-41dccb0f7c320144dca93f8f89ac18758cec5014.svg">
+</div>
+<h2 class="ql-headline-4" id="sso-modal-title">
+Recertify in 3 simple steps:
+</h2>
+<ql-card class="info-card" elevation="0" padded=""><template shadowrootmode="open"><!---->
+      <div part="body" class="card  padded no-header ">
+        <!--?lit$118375517$-->
+      <div part="header" class="header  hidden ">
+        <slot name="header" part="header-text"></slot>
+        <!--?lit$118375517$-->
+      </div>
+    
+        <div part="body-content" class="content  no-header ">
+          <!--?lit$118375517$--><slot></slot>
+        </div>
+      </div>
+    </template>
+<div class="recertify-step">
+<ql-icon icon="counter_1" size="24" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: 24px;">
+        <slot><!--?lit$118375517$-->counter_1</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+<span>Link your Google Skills and certification account profiles using the same email to get started.</span>
+</div>
+<div class="recertify-step">
+<ql-icon icon="counter_2" size="24" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: 24px;">
+        <slot><!--?lit$118375517$-->counter_2</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+<span>Instantly see which certifications are eligible for renewal.</span>
+</div>
+<div class="recertify-step">
+<ql-icon icon="counter_3" size="24" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: 24px;">
+        <slot><!--?lit$118375517$-->counter_3</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+<span>Complete courses and skill badges to renew your certifications automatically.</span>
+</div>
+<p class="ql-body-medium">
+By clicking "Accept", I consent to share my name, email, and course completion data with Google Skills' certification partner, CM Connect, to receive continuing education credit for certification renewal.
+</p>
+</ql-card>
+</div>
+<ql-button id="sso-cancel-btn" label="Close" onclick="document.querySelector(&quot;#connect-certmetrics-modal&quot;).close();" slot="action" text="" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" class=" ql-button default text size--small " data-aria-label="Close" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="button" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><button id="button" class="button" aria-label="Close">
+      <!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </button>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$--><!--?lit$118375517$-->Close<!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+<ql-button id="sso-approve-btn" label="Accept" onclick="this.loading = true; document.querySelector('#sso-cancel-btn').disabled = true; document.querySelector('#sso-consent-form').requestSubmit();" raised="" slot="action" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-filled-button part="button" class=" ql-button default filled size--small " data-aria-label="Accept" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$--><md-elevation part="elevation" aria-hidden="true"><template shadowrootmode="open"><!----><span class="shadow"></span></template></md-elevation>
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="button" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><button id="button" class="button" aria-label="Accept">
+      <!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </button>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$--><!--?lit$118375517$-->Accept<!--?--><!--?-->
+        </md-filled-button>
+      </div>
+     <!--?lit$118375517$--> </template></ql-button>
+<form id="sso-consent-form" data-turbo="true" action="https://www.skills.google/oidc/connect_certmetrics_account" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="HzQVnuXLt-T-GE-N-hrTFrBBHMb9PO8Y2CAWjx_AsfLlqv1vHzouaQedZ-4IbO1pEYNIEQg2ekHps2nG3i8NxQ" autocomplete="off"></form>
+</ql-dialog>
+
+<ql-dialog dismissallabel="Not right now" headline="Update to the new version" icon="error" id="course-session-upgrade-modal" inert=""><template shadowrootmode="open"><!---->
+      <dialog part="wrapper" class=" dialog-wrapper ">
+        <ql-card part="card" elevation="3" role="dialog" aria-modal="true" aria-labelledby="title" class="  "><template shadowrootmode="open"><!---->
+      <div part="body" class="card  no-header ">
+        <!--?lit$118375517$-->
+      <div part="header" class="header  hidden ">
+        <slot name="header" part="header-text"></slot>
+        <!--?lit$118375517$-->
+      </div>
+    
+        <div part="body-content" class="content  no-header ">
+          <!--?lit$118375517$--><slot></slot>
+        </div>
+      </div>
+    </template>
+          <!--?lit$118375517$-->
+      <div part="header" class=" header centered ">
+        <!--?lit$118375517$-->
+      <ql-icon-button part="close-button" class="close-icon" translate="no" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-icon-button class=" ql-icon-button " data-aria-busy="false" value="" data-aria-label="close"><template shadowrootmode="open" shadowrootdelegatesfocus><!----><button id="button" class="icon-button  standard " aria-label="close">
+        <!--?lit$118375517$--><md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+        <!--?lit$118375517$--><md-ripple aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+        <!--?lit$118375517$--><span class="icon"><slot></slot></span>
+        <!--?lit$118375517$-->
+        <!--?lit$118375517$--><span class="touch"></span>
+  </button></template>
+          <!--?lit$118375517$--><ql-icon translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$--></slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template><!--?lit$118375517$--><slot></slot></ql-icon>
+        </md-icon-button>
+      </div>
+     <!--?lit$118375517$--> </template>
+        close
+      </ql-icon-button>
+     <!--?lit$118375517$--> <ql-icon class="icon" translate="no"><template shadowrootmode="open"><!---->
+      <span aria-hidden="true" class=" google-symbols " style="font-size: inherit;">
+        <slot><!--?lit$118375517$-->error</slot>
+      </span>
+      <!--?lit$118375517$--><!--?-->
+    </template></ql-icon>
+        <h1 id="title" part="title">
+          <!--?lit$118375517$--><!--?lit$118375517$-->Update to the new version<!--?-->
+        </h1>
+      </div>
+      <div class="body" part="body">
+        <slot></slot>
+      </div>
+      <div part="actions" class="actions multiple">
+        <!--?lit$118375517$-->
+      <ql-button class="dismissal-button" label="Not right now" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-text-button part="button" class=" ql-button default text size--small " data-aria-label="Not right now" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$-->
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="button" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="button" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><button id="button" class="button" aria-label="Not right now">
+      <!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </button>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$--><!--?lit$118375517$-->Not right now<!--?--><!--?-->
+        </md-text-button>
+      </div>
+     <!--?lit$118375517$--> </template>
+      </ql-button>
+    
+        <slot name="action"></slot>
+      </div>
+    
+        </ql-card>
+        <!--?lit$118375517$--> <div class=" overlay "></div>
+      </dialog>
+    </template>
+<p>Your progress will carry over, but the completion percentage might change.</p>
+<ql-button href="/paths/3546/course_templates/1562/preview" label="Update now" slot="action" type="button"><template shadowrootmode="open"><!----> <!--?lit$118375517$-->
+      <div class="buttonContainer" aria-disabled="false">
+        <!--?lit$118375517$-->
+        <md-filled-button part="button" href="/paths/3546/course_templates/1562/preview" class=" ql-button default filled size--small " data-aria-label="Update now" data-aria-busy="false" value=""><template shadowrootmode="open" shadowrootdelegatesfocus><!---->
+      <!--?lit$118375517$--><md-elevation part="elevation" aria-hidden="true"><template shadowrootmode="open"><!----><span class="shadow"></span></template></md-elevation>
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for="link" aria-hidden="true"><template shadowrootmode="open"><!----></template></md-focus-ring>
+      <md-ripple part="ripple" for="link" aria-hidden="true"><template shadowrootmode="open"><!----><div class="surface   "></div></template></md-ripple>
+      <!--?lit$118375517$--><a id="link" class="button" aria-label="Update now" href="https://www.skills.google/paths/3546/course_templates/1562/preview"><!--?lit$118375517$-->
+      <span class="touch"></span>
+      <!--?lit$118375517$--><slot name="icon"></slot>
+      <span class="label"><slot></slot></span>
+      <!--?lit$118375517$-->
+    
+    </a>
+    </template>
+          <!--?lit$118375517$--><!--?lit$118375517$--> <!--?lit$118375517$--><!--?lit$118375517$-->Update now<!--?--><!--?-->
+        </md-filled-button>
+      </div>
+     <!--?lit$118375517$--> </template>
+Preview
+</ql-button>
+</ql-dialog>
+
+
+
+<script>
+  document.addEventListener("turbo:load", function () {
+    ql.initMaterialInputs();
+    ql.tomSelect.init();
+    initTabs();
+    ql.list.init();
+    ql.favoriting.init();
+    ql.header.myAccount.init();
+    initTooltips();
+    ql.autocomplete.init();
+    ql.modals.init();
+    ql.toggleButtons.init();
+    Turbo.session.drive = false;
+    ql.upgradeBanner.init();
+  ql.course_resize_layout.init("Introduction to Agents and Google’s Agent Ecosystem", "Path", "Agent Fundamentals", "Course", "Agents in action");
+  ql.course_navigation.init("46316771");
+  ql.searchHeader.init({isRelaunch: true});
+  (new ql.searchAutocomplete()).init({forHeaderNew: true, topSuggestions: [{"label":"machine learning"},{"label":"cloud architecture"},{"label":"generative ai"},{"label":"data analyst"},{"label":"security fundamentals"}]});
+  ql.mobileOverflowMenu.init();
+  ql.messages.init();
+  ql.jumpContent.init();
+  
+  }, {once: true});
+</script>
+<script>
+  document.addEventListener("turbo:load", () => ql.analyticsV2.init(), {once: true});
+  document.addEventListener("turbo:frame-load", () => ql.analyticsV2.init(), {once: true});
+</script>
+<script>
+  document.addEventListener("turbo:load", function () {
+    ql.celebrations.init({"course_complete":"COURSE COMPLETED","document_complete":"DOCUMENT COMPLETED","experience_label":"Experience points","lab_complete":"LAB COMPLETED","learning_plan_complete":"PATH COMPLETED","lesson_complete":"LESSON COMPLETED","quiz_complete":"QUIZ COMPLETED","video_complete":"VIDEO COMPLETED"});
+    ql.achievements.init();
+  }, {once: true});
+</script>
+
+
+
+
+
+
+</body></html>
