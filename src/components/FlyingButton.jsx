@@ -642,6 +642,7 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
     thrust: [0, 0, 0, 0],
     delay: [0, 0, 0, 0],
     phase: 'rest',
+    pendingAvail: false,
     pt: 0,
     clock: 0,
     seed: Math.random() * 100,
@@ -1194,6 +1195,32 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
     s.landX = clamp(x, lo, hi);
   };
 
+  const notifyFlightComplete = () => {
+    if (s.pendingAvail) {
+      s.pendingAvail = false;
+      if (props.current.onFlightComplete) {
+        props.current.onFlightComplete();
+      } else if (props.current.onClick) {
+        props.current.onClick();
+      }
+    }
+  };
+
+  const triggerFlight = () => {
+    s.pendingAvail = true;
+    if (still()) {
+      notifyFlightComplete();
+      return;
+    }
+    if (s.phase === 'rest') {
+      if (rampOn()) {
+        ride();
+      } else if (launch()) {
+        if (props.current.onLaunch) props.current.onLaunch();
+      }
+    }
+  };
+
   const physics = dt => {
     const P = props.current;
     const wob = clamp(num(P.wobble, 1), 0, 3);
@@ -1212,6 +1239,7 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
         s.phase = 'rest';
         s.pt = 0;
         s.vx = 0;
+        notifyFlightComplete();
       }
       return;
     }
@@ -1337,6 +1365,9 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
         s.vx = 0;
         s.track = null;
         s.back = { from: s.x, to: back, time: clamp(Math.abs(back - s.x) / 200, 0.7, 1.8) };
+        if (s.phase === 'rest') {
+          notifyFlightComplete();
+        }
       }
     }
     total = Number.isFinite(total) ? clamp(total, 0, s.boost || s.phase === 'flip' ? 2.6 : 1.9) : 1;
@@ -1429,6 +1460,7 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
     if (!Number.isFinite(s.y + s.x + s.th + s.vy + s.vx + s.w + totalThrust())) {
       Object.assign(s, { x: s.W / 2, vx: 0, y: -REST, vy: 0, th: 0, w: 0, thrust: [0, 0, 0, 0], phase: 'rest' });
       s.drag = null;
+      notifyFlightComplete();
     }
   };
 
@@ -1612,9 +1644,10 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
     p.in = true;
     p.type = e.pointerType || 'mouse';
     s.suppress = false;
+    const isDirect = e.target === button || button.contains(e.target);
     const f = pointerAt();
-    if (!overCraft(f.x, f.y, s.attached ? 10 : 0)) return;
-    if (p.type !== 'mouse' && s.phase === 'rest' && props.current.trigger !== 'click' && !rampOn()) launch();
+    if (!isDirect && !overCraft(f.x, f.y, s.attached ? 16 : 14)) return;
+    triggerFlight();
     s.press = { x: q.x, y: q.y };
     if (s.carry && p.type === 'mouse') {
       s.pressed = true;
@@ -1634,7 +1667,6 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
     if (s.carry && s.hover) {
       if (s.phase === 'rest' && rampOn()) ride();
       else if (props.current.trigger === 'click' && launch()) s.attached = Boolean(props.current.carryCursor);
-      if (props.current.onClick) props.current.onClick(e);
     }
   };
 
@@ -1645,14 +1677,34 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
       e.preventDefault();
       return;
     }
-    if (s.phase !== 'rest') return;
-    if (rampOn()) {
-      ride();
-      return;
-    }
-    if (launch() && s.pointer.type === 'mouse' && s.pointer.in && s.hover) {
+    triggerFlight();
+    if (s.pointer.type === 'mouse' && s.pointer.in && s.hover) {
       s.attached = Boolean(props.current.carryCursor);
     }
+  };
+
+  const onTouchStart = e => {
+    if (!e.touches || e.touches.length === 0) return;
+    const t = e.touches[0];
+    const q = local({ clientX: t.clientX, clientY: t.clientY });
+    s.pointer.x = q.x;
+    s.pointer.y = q.y;
+    s.pointer.in = true;
+    s.pointer.type = 'touch';
+    s.suppress = false;
+    const isDirect = e.target === button || button.contains(e.target);
+    const f = pointerAt();
+    if (!isDirect && !overCraft(f.x, f.y, 20)) return;
+    triggerFlight();
+    s.press = { x: q.x, y: q.y };
+  };
+
+  const onTouchEnd = e => {
+    if (s.drag) {
+      endDrag(e);
+      return;
+    }
+    s.press = null;
   };
 
   root.addEventListener('pointermove', onMove);
@@ -1661,6 +1713,8 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
   root.addEventListener('pointerdown', onDown);
   root.addEventListener('pointerup', onUp);
   root.addEventListener('pointercancel', onUp);
+  root.addEventListener('touchstart', onTouchStart, { passive: true });
+  root.addEventListener('touchend', onTouchEnd, { passive: true });
   button.addEventListener('click', onClick);
 
   const ro = new ResizeObserver(measure);
@@ -1677,6 +1731,7 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
       place();
       if (!s.running) draw(0);
     },
+    launchCraft: triggerFlight,
     destroy() {
       ro.disconnect();
       dropStrip();
@@ -1687,6 +1742,8 @@ function createEngine({ root, canvas, button, cursor, ramp, props }) {
       root.removeEventListener('pointerdown', onDown);
       root.removeEventListener('pointerup', onUp);
       root.removeEventListener('pointercancel', onUp);
+      root.removeEventListener('touchstart', onTouchStart);
+      root.removeEventListener('touchend', onTouchEnd);
       button.removeEventListener('click', onClick);
       if (sim) sim.dispose();
     }
@@ -1997,6 +2054,8 @@ function createSim(gl) {
 export default function FlyingButton({
   children = 'Take off',
   onClick,
+  onLaunch,
+  onFlightComplete,
   theme = 'dark',
   size = 'medium',
   radius,
@@ -2054,6 +2113,8 @@ export default function FlyingButton({
     thrustColor: thrust,
     smokeColor: smokeTone,
     theme,
+    onLaunch,
+    onFlightComplete,
     onClick
   };
 
@@ -2114,7 +2175,9 @@ export default function FlyingButton({
         ref={buttonRef}
         type="button"
         className="flying-button__craft"
-        onClick={e => propsRef.current.onClick && propsRef.current.onClick(e)}
+        onClick={() => {
+          if (engineRef.current) engineRef.current.launchCraft();
+        }}
       >
         <span className="flying-button__face" aria-hidden="true" />
         <span className="flying-button__label">{children}</span>

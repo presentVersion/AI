@@ -704,6 +704,104 @@ h1 {
   font-size: 13px;
 }
 
+.flight-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  margin: 16px auto 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+.flight-status-indicator.flying {
+  background: rgba(47, 214, 232, 0.12);
+  border: 1px solid rgba(47, 214, 232, 0.4);
+  color: var(--cy);
+  box-shadow: 0 0 20px rgba(47, 214, 232, 0.2);
+}
+.flight-status-indicator.availed {
+  background: rgba(62, 232, 181, 0.12);
+  border: 1px solid rgba(62, 232, 181, 0.4);
+  color: #3ee8b5;
+  box-shadow: 0 0 20px rgba(62, 232, 181, 0.2);
+}
+.flight-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  animation: pulse-dot 1.5s infinite;
+}
+@keyframes pulse-dot {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.registration-availed-card {
+  margin: 28px auto 0;
+  max-width: 540px;
+  padding: 26px 28px;
+  background: linear-gradient(135deg, rgba(29, 18, 80, 0.75), rgba(7, 5, 23, 0.95));
+  border: 1px solid rgba(47, 214, 232, 0.35);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 28px rgba(47, 214, 232, 0.15);
+  animation: fade-in-up 0.5s ease-out;
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reg-success-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+.reg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(62, 232, 181, 0.15);
+  border: 1px solid rgba(62, 232, 181, 0.35);
+  border-radius: 9999px;
+  color: #3ee8b5;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.reg-time {
+  color: var(--mute);
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+.registration-availed-card h3 {
+  font-size: 22px;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+.registration-availed-card p {
+  color: var(--mute);
+  font-size: 14px;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+.reg-direct-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
 /* resources */
 .folders-grid {
   display: grid;

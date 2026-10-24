@@ -25,6 +25,13 @@ const REG_URL = 'https://forms.gle/REPLACE-WITH-YOUR-FORM-ID';
 export default function App() {
   const { isRegistered, register, reset } = useRegistrationAccess();
   const [ambientActive, setAmbientActive] = useState(true);
+  const [flightState, setFlightState] = useState(isRegistered ? 'availed' : 'idle');
+
+  useEffect(() => {
+    if (isRegistered && flightState === 'idle') {
+      setFlightState('availed');
+    }
+  }, [isRegistered]);
 
   // Reveal on scroll observer for .rv elements
   useEffect(() => {
@@ -199,9 +206,15 @@ export default function App() {
                   smokeColor="#cfc9ff"
                   buttonColor="#5b3df0"
                   textColor="#ffffff"
-                  onClick={() => {
+                  onLaunch={() => setFlightState('flying')}
+                  onFlightComplete={() => {
+                    setFlightState('availed');
                     register();
-                    window.open(REG_URL, '_blank', 'noopener');
+                    try {
+                      window.open(REG_URL, '_blank', 'noopener,noreferrer');
+                    } catch (e) {
+                      console.warn('Popup blocked:', e);
+                    }
                   }}
                 >
                   Register now
@@ -212,11 +225,49 @@ export default function App() {
                 href={REG_URL}
                 style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}
                 tabIndex={0}
-                onClick={() => register()}
+                onClick={() => {
+                  register();
+                  setFlightState('availed');
+                }}
               >
                 Register now
               </a>
             </div>
+
+            {flightState === 'flying' && (
+              <div className="flight-status-indicator flying" role="status" aria-live="polite">
+                <span className="flight-pulse" />
+                <span>Flight sequence in progress — registration form avails upon touchdown...</span>
+              </div>
+            )}
+
+            {flightState === 'availed' && (
+              <div className="registration-availed-card" role="region" aria-label="Registration Form Availed">
+                <div className="reg-success-header">
+                  <span className="reg-badge">
+                    <svg style={{ width: 14, height: 14 }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                    Registration Form Availed
+                  </span>
+                  <span className="reg-time">Day 1 · Day 2 · Day 3 Access</span>
+                </div>
+                <h3>AI Agent Orchestra Registration</h3>
+                <p>Your flight has landed and registration access has been unlocked. Complete the form to secure your seat.</p>
+                <a
+                  href={REG_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn pri big reg-direct-btn"
+                  onClick={() => register()}
+                >
+                  Open Google Registration Form
+                  <svg className="i" style={{ width: 18, height: 18, marginLeft: 8 }} viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                  </svg>
+                </a>
+              </div>
+            )}
 
             <small>Placeholder link. The registration form is not ready yet.</small>
           </div>
@@ -251,7 +302,15 @@ export default function App() {
               type="button"
               className="btn"
               style={{ fontSize: '13px', padding: '6px 14px' }}
-              onClick={isRegistered ? reset : register}
+              onClick={() => {
+                if (isRegistered) {
+                  reset();
+                  setFlightState('idle');
+                } else {
+                  register();
+                  setFlightState('availed');
+                }
+              }}
             >
               {isRegistered ? 'Simulate Unregistered' : 'Quick Unlock (Simulate Registration)'}
             </button>
