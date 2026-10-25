@@ -1,37 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import Hero from './components/Hero';
-import Flipbook from './components/Flipbook';
-import FlyingButton from './components/FlyingButton';
-import GlassFolder from './components/glass-folder-cards';
+import React, { useEffect, useState, useCallback } from 'react';
 import GhostFibers from './components/GhostFibers';
+import Ignite from './components/Ignite';
+import Prologue from './components/Prologue';
+import Scene from './components/Scene';
+import Finale from './components/Finale';
+import SoundToggle from './components/SoundToggle';
+import ProgressRail from './components/ProgressRail';
+
+import { SoundProvider, useSound } from './hooks/useSound';
+import { LenisProvider, useLenis } from './hooks/useLenis';
 import { useRegistrationAccess } from './hooks/useRegistrationAccess';
+
 import './styles/theme.css';
+import './styles/cinematic.css';
 import './components/FlyingButton.css';
 
-// Event custom marble art recipe in theme colours
-const EVENT_ART = {
-  style: 'marble',
-  colors: ['#070517', '#1d1250', '#5b3df0', '#2fd6e8', '#3ee8b5', '#8b5cf6', '#eef0ff'],
-  scale: 0.7,
-  warp: 3.2,
-  angle: -0.5,
-  gloss: 0.5,
-  veins: 0.5
-};
+function AppContent() {
+  const { stop, start, scrollTo } = useLenis();
+  const { playUiConfirm } = useSound();
 
-// Placeholder URLs & variables to flag, not invent
-const REG_URL = 'https://forms.gle/REPLACE-WITH-YOUR-FORM-ID';
-
-export default function App() {
-  const { isRegistered, register, reset } = useRegistrationAccess();
-  const [ambientActive, setAmbientActive] = useState(true);
-  const [flightState, setFlightState] = useState(isRegistered ? 'availed' : 'idle');
-
-  useEffect(() => {
-    if (isRegistered && flightState === 'idle') {
-      setFlightState('availed');
+  const [isIgnited, setIsIgnited] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    try {
+      return sessionStorage.getItem('aio_ignited') === '1';
+    } catch {
+      return false;
     }
-  }, [isRegistered]);
+  });
+
+  // Stop Lenis scrolling during ignition; resume once ignited
+  useEffect(() => {
+    if (!isIgnited) {
+      stop();
+    } else {
+      start();
+    }
+  }, [isIgnited, stop, start]);
+
+  const handleIgniteComplete = useCallback(() => {
+    setIsIgnited(true);
+    start();
+  }, [start]);
+
+  const handleReplayIntro = (e) => {
+    e.preventDefault();
+    playUiConfirm();
+    try {
+      sessionStorage.removeItem('aio_ignited');
+    } catch {}
+    setIsIgnited(false);
+    window.scrollTo({ top: 0 });
+  };
+
+  const handleNavLink = (targetId) => (e) => {
+    e.preventDefault();
+    playUiConfirm();
+    scrollTo(targetId, { offset: -64 });
+  };
 
   // Reveal on scroll observer for .rv elements
   useEffect(() => {
@@ -48,9 +73,8 @@ export default function App() {
     );
 
     document.querySelectorAll('.rv').forEach((el) => observer.observe(el));
-
     return () => observer.disconnect();
-  }, [isRegistered]);
+  }, [isIgnited]);
 
   return (
     <>
@@ -76,353 +100,73 @@ export default function App() {
         />
       </div>
 
-      {/* Sticky Navigation */}
-      <nav className="top">
-        <a className="logo" href="#top">
-          <svg className="i" viewBox="0 0 24 24">
-            <path d="m8 7-5 5 5 5M16 7l5 5-5 5" />
-          </svg>
-          Coders Club
-        </a>
-        <div className="links">
-          <a href="#brochure">Brochure</a>
-          <a href="#details">Details</a>
-          <a href="#venue">Venue</a>
-          <a href="#resources">Resources</a>
-          <a className="reg" href="#register">Register</a>
-        </div>
-      </nav>
+      {/* Global Fixed Sound Mute Toggle - visible after ignition */}
+      {isIgnited && <SoundToggle />}
 
-      {/* Hero Section */}
-      <Hero />
+      {/* Progress Rail (I, II, III Beads) - visible after ignition */}
+      {isIgnited && <ProgressRail />}
 
-      {/* Brochure Section */}
-      <section id="brochure">
-        <div className="wrap">
-          <p className="eyebrow rv">The 3-day score</p>
-          <h2 className="rv">Participant guide & event score</h2>
-          <p className="sub rv">
-            Watch the score take flight in 3D with flowing orchestra pages, then take your seat to explore the complete 10-page participant guide.
-          </p>
-          <div className="rv">
-            <Flipbook />
-          </div>
-        </div>
-      </section>
-
-      {/* Event Details Section */}
-      <section id="details">
-        <div className="wrap">
-          <p className="eyebrow rv">Event details</p>
-          <h2 className="rv">Three days, three movements.</h2>
-          <p className="sub rv">
-            Each day builds on the one before, from learning the tools, to understanding agents, to conducting one of your own.
-          </p>
-
-          <div className="cards">
-            <article className="card rv">
-              <div className="n">I</div>
-              <i>Day 1 · Learn + Create</i>
-              <h3>From Prompt to Portfolio</h3>
-              <p>An AI tools overview, a UI recreation challenge and a personal portfolio site, built by prompting AI.</p>
-              <span className="t">First half-day, about 3 hours (proposed)</span>
-            </article>
-
-            <article className="card rv">
-              <div className="n">II</div>
-              <i>Day 2 · Understand + Connect</i>
-              <h3>From Chatbot to Agent</h3>
-              <p>How chatbots differ from agents, a live workflow demonstration on a visual tool such as n8n, and a mini experiment.</p>
-              <span className="t">About 2 hours (proposed)</span>
-            </article>
-
-            <article className="card rv">
-              <div className="n">III</div>
-              <i>Day 3 · Build + Present</i>
-              <h3>Conduct Your Own AI Agent</h3>
-              <p>A full-day hackathon: pick a problem, form teams, build a prototype with an interface and an agentic workflow, then present it live.</p>
-              <span className="t">Full day (proposed)</span>
-            </article>
-          </div>
-
-          <div className="facts rv">
-            <div>
-              <b>Who it is for</b>
-              <span>Students</span>
-            </div>
-            <div>
-              <b>When</b>
-              <span>Dates are fixed once the club approves the plan.</span>
-            </div>
-            <div>
-              <b>Flexible</b>
-              <span>The days can run separately if a continuous 3-day event is not possible.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Venue Section */}
-      <section id="venue">
-        <div className="wrap">
-          <div className="venue rv">
+      {/* Sticky Top Navigation - reveals after ignition */}
+      {isIgnited && (
+        <nav className="top">
+          <a className="logo" href="#prologue" onClick={handleNavLink('#prologue')}>
             <svg className="i" viewBox="0 0 24 24">
-              <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
-              <circle cx="12" cy="10" r="3" />
+              <path d="m8 7-5 5 5 5M16 7l5 5-5 5" />
             </svg>
-            <div>
-              <h3>Venue</h3>
-              <p>Labs and venues are allocated by the Organizing team, with permission from the principal.</p>
-              <span className="ph">Venue and room: to be announced</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Registration Section */}
-      <section id="register">
-        <div className="wrap">
-          <div className="regbox rv">
-            <p className="eyebrow" style={{ justifyContent: 'center' }}>Join the orchestra</p>
-            <h2>Register for AI Agent Orchestra</h2>
-            <p className="sub">Registration is a Google Form, shared through QR codes and links on the posters.</p>
-
-            {/* React Bits FlyingButton */}
-            <div data-slot="flying-button">
-              <div style={{ position: 'relative', height: 440, width: '100%', maxWidth: 640, margin: '0 auto' }}>
-                <FlyingButton
-                  theme="dark"
-                  size="large"
-                  altitude={170}
-                  hoverTime={2.4}
-                  jets={2}
-                  thrusters
-                  trigger="hover"
-                  carryCursor
-                  smoke={1}
-                  turbulence={1}
-                  wobble={1}
-                  thrustColor="#2fd6e8"
-                  smokeColor="#cfc9ff"
-                  buttonColor="#5b3df0"
-                  textColor="#ffffff"
-                  onLaunch={() => setFlightState('flying')}
-                  onFlightComplete={() => {
-                    setFlightState('availed');
-                    register();
-                    try {
-                      window.open(REG_URL, '_blank', 'noopener,noreferrer');
-                    } catch (e) {
-                      console.warn('Popup blocked:', e);
-                    }
-                  }}
-                >
-                  Register now
-                </FlyingButton>
-              </div>
-              <a
-                id="reg"
-                href={REG_URL}
-                style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}
-                tabIndex={0}
-                onClick={() => {
-                  register();
-                  setFlightState('availed');
-                }}
-              >
-                Register now
-              </a>
-            </div>
-
-            {flightState === 'flying' && (
-              <div className="flight-status-indicator flying" role="status" aria-live="polite">
-                <span className="flight-pulse" />
-                <span>Flight sequence in progress — registration form avails upon touchdown...</span>
-              </div>
-            )}
-
-            {flightState === 'availed' && (
-              <div className="registration-availed-card" role="region" aria-label="Registration Form Availed">
-                <div className="reg-success-header">
-                  <span className="reg-badge">
-                    <svg style={{ width: 14, height: 14 }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M20 6L9 17l-5-5" />
-                    </svg>
-                    Registration Form Availed
-                  </span>
-                  <span className="reg-time">Day 1 · Day 2 · Day 3 Access</span>
-                </div>
-                <h3>AI Agent Orchestra Registration</h3>
-                <p>Your flight has landed and registration access has been unlocked. Complete the form to secure your seat.</p>
-                <a
-                  href={REG_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn pri big reg-direct-btn"
-                  onClick={() => register()}
-                >
-                  Open Google Registration Form
-                  <svg className="i" style={{ width: 18, height: 18, marginLeft: 8 }} viewBox="0 0 24 24">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                  </svg>
-                </a>
-              </div>
-            )}
-
-            <small>Placeholder link. The registration form is not ready yet.</small>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources Section with Access Gating & GlassFolder Cards */}
-      <section id="resources">
-        <div className="wrap">
-          <p className="eyebrow rv">After you register</p>
-          <h2 className="rv">Your 3-day resources.</h2>
-          <p className="sub rv">Registered students get access to the resources for all three days.</p>
-
-          {/* Registration Access Gating Feedback Banner */}
-          <div className="resource-status-bar rv">
-            <div className={`resource-status-badge ${isRegistered ? '' : 'locked'}`}>
-              <svg className="i" style={{ width: 16, height: 16 }} viewBox="0 0 24 24">
-                {isRegistered ? (
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4" />
-                ) : (
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                )}
-              </svg>
-              <span>
-                {isRegistered
-                  ? 'Registration detected: All workshop files, handbooks and hackathon briefs are unlocked.'
-                  : 'Register above to unlock the official student materials, or browse the previews below.'}
-              </span>
-            </div>
-
+            Coders Club
+          </a>
+          <div className="links">
+            <a href="#prologue" onClick={handleNavLink('#prologue')}>Prologue</a>
+            <a href="#scene1" onClick={handleNavLink('#scene1')}>The 3 Days</a>
+            <a href="#brochure" onClick={handleNavLink('#brochure')}>Brochure</a>
+            <a href="#details" onClick={handleNavLink('#details')}>Details</a>
+            <a href="#resources" onClick={handleNavLink('#resources')}>Resources</a>
+            <a className="reg" href="#register" onClick={handleNavLink('#register')}>Register</a>
             <button
               type="button"
-              className="btn"
-              style={{ fontSize: '13px', padding: '6px 14px' }}
-              onClick={() => {
-                if (isRegistered) {
-                  reset();
-                  setFlightState('idle');
-                } else {
-                  register();
-                  setFlightState('availed');
-                }
-              }}
+              className="btn replay-intro-btn"
+              style={{ fontSize: '12px', padding: '4px 10px', marginLeft: 8 }}
+              onClick={handleReplayIntro}
+              title="Replay the cinematic ignition opening"
             >
-              {isRegistered ? 'Simulate Unregistered' : 'Quick Unlock (Simulate Registration)'}
+              Replay Intro
             </button>
           </div>
+        </nav>
+      )}
 
-          {/* Three GlassFolder cards */}
-          <div className="folders-grid" data-slot="glass-folders">
-            {/* Folder 1: Day 1 */}
-            <div className="rv">
-              <GlassFolder
-                label="Day 1 · Prompt to Portfolio"
-                tone="dark"
-                action="none"
-                width={330}
-                art={EVENT_ART}
-                seed={1}
-                appearDelay={0}
-                files={[
-                  {
-                    name: 'Day 1 handbook (HTML)',
-                    meta: 'Handbook · 31 KB',
-                    href: '/modules/Day-1-UI-and-Web-Dev-Handbook.html',
-                    art: EVENT_ART
-                  },
-                  {
-                    name: 'UI Recreation Challenge',
-                    meta: 'Interactive · Spec',
-                    href: '/modules/Day-1-UI-and-Web-Dev-Handbook.html'
-                  },
-                  {
-                    name: 'Portfolio Template',
-                    meta: 'HTML/CSS Kit',
-                    href: '/modules/Day-1-UI-and-Web-Dev-Handbook.html'
-                  }
-                ]}
-              />
+      {/* Main Experience Flow */}
+      <main>
+        {/* Step 1: Ignition (Press and Hold Opening) */}
+        {!isIgnited ? (
+          <Ignite onIgniteComplete={handleIgniteComplete} />
+        ) : (
+          <>
+            {/* Step 2: Prologue (Hero Reveal, Title, Conductor First Speech, Scroll Cue) */}
+            <Prologue isIgnited={isIgnited} />
+
+            {/* Step 3: Pinned Parallax Scenes for the Three Days */}
+            <div className="scene-container">
+              <Scene day={1} />
+              <Scene day={2} />
+              <Scene day={3} />
             </div>
 
-            {/* Folder 2: Day 2 */}
-            <div className="rv">
-              <GlassFolder
-                label="Day 2 · Chatbot to Agent"
-                tone="dark"
-                action="none"
-                width={330}
-                art={EVENT_ART}
-                seed={42}
-                appearDelay={140}
-                files={[
-                  {
-                    name: 'Day 2 module (HTML)',
-                    meta: 'Module 1 · 137 KB',
-                    href: '/modules/Module-1-Introduction-to-AI-Agents.html',
-                    art: EVENT_ART
-                  },
-                  {
-                    name: 'Agent Abstraction',
-                    meta: 'Module 2 · 104 KB',
-                    href: '/modules/Module-2-Agent-Abstraction.html'
-                  },
-                  {
-                    name: 'How Agents Work',
-                    meta: 'Module 3 · 135 KB',
-                    href: '/modules/Module-3-How-Agents-Work.html'
-                  },
-                  {
-                    name: 'Agents in Action',
-                    meta: 'Module 4 · 114 KB',
-                    href: '/modules/Module-4-Agents-in-Action.html'
-                  }
-                ]}
-              />
-            </div>
-
-            {/* Folder 3: Day 3 */}
-            <div className="rv">
-              <GlassFolder
-                label="Day 3 · Conduct Your Agent"
-                tone="dark"
-                action="none"
-                width={330}
-                art={EVENT_ART}
-                seed={99}
-                appearDelay={280}
-                files={[
-                  {
-                    name: 'Hackathon brief (HTML)',
-                    meta: 'Brief · Document',
-                    href: '/modules/hackathon-brief.html',
-                    art: EVENT_ART
-                  },
-                  {
-                    name: 'Course Wrap-up',
-                    meta: 'Module 5 · 109 KB',
-                    href: '/modules/Module-5-Course-Wrap-up.html'
-                  },
-                  {
-                    name: 'Team Submission Rubric',
-                    meta: 'Evaluation PDF',
-                    href: '/modules/hackathon-brief.html'
-                  }
-                ]}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer>
-        <div className="wrap">Coders Club · AI Agent Orchestra</div>
-      </footer>
+            {/* Step 4: Finale (Score Flipbook, Details, Venue, FlyingButton Register, Glass Folders) */}
+            <Finale />
+          </>
+        )}
+      </main>
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <SoundProvider>
+      <LenisProvider>
+        <AppContent />
+      </LenisProvider>
+    </SoundProvider>
   );
 }

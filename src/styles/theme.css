@@ -52,7 +52,7 @@ body {
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.32;
+  opacity: 0.85;
   transition: opacity 1.2s ease;
 }
 

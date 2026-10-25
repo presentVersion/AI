@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './OrchestraBook.css';
+import { useSound } from '../hooks/useSound';
 
 export default function Flipbook() {
+  const { playUiConfirm } = useSound();
   // Phases:
   // 'idle'     -> Waiting for user (mobile or desktop) to scroll down to brochure section
   // 'rapid'    -> Anime-style rapid page flutter from right to left
@@ -63,6 +65,7 @@ export default function Flipbook() {
   }, [phase]);
 
   const handleStageClick = () => {
+    playUiConfirm();
     if (phase === 'idle' || phase === 'rapid') {
       setPhase('slowing');
     } else if (phase === 'slowing') {
@@ -74,10 +77,12 @@ export default function Flipbook() {
 
   const skipToCover = (e) => {
     e.stopPropagation();
+    playUiConfirm();
     setPhase('landing');
   };
 
   const replaySequence = () => {
+    playUiConfirm();
     setPhase('rapid');
   };
 
