@@ -360,6 +360,20 @@ h1 {
 }
 
 /* brochure */
+@media (max-width: 600px) {
+  #brochure .wrap {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 4px;
+  }
+  #brochure .eyebrow,
+  #brochure h2,
+  #brochure .sub {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
 #flip {
   position: relative;
   background: radial-gradient(120% 120% at 50% 10%, #161239, #070517 70%);

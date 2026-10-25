@@ -100,9 +100,9 @@ export default function App() {
       <section id="brochure">
         <div className="wrap">
           <p className="eyebrow rv">The 3-day score</p>
-          <h2 className="rv">Event brochure</h2>
+          <h2 className="rv">Participant guide & event score</h2>
           <p className="sub rv">
-            Turn the pages to see how the three days fit together. Pinch, double-tap or press + to zoom in and read clearly.
+            Watch the score take flight in 3D with flowing orchestra pages, then take your seat to explore the complete 10-page participant guide.
           </p>
           <div className="rv">
             <Flipbook />
