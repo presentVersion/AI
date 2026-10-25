@@ -218,19 +218,17 @@ export function SoundProvider({ children }) {
   const playCharge = useCallback(() => {
     unlockAudio();
     const sound = chargeSoundRef.current;
-    if (sound && !sound.playing()) {
+    if (sound) {
+      sound.stop();
+      sound.volume(0.7);
       sound.play();
-      sound.fade(0, 0.7, 300);
     }
   }, [unlockAudio]);
 
-  const stopCharge = useCallback((fadeMs = 250) => {
+  const stopCharge = useCallback(() => {
     const sound = chargeSoundRef.current;
-    if (sound && sound.playing()) {
-      sound.fade(sound.volume(), 0, fadeMs);
-      setTimeout(() => {
-        if (sound.volume() === 0) sound.stop();
-      }, fadeMs);
+    if (sound) {
+      sound.stop();
     }
   }, []);
 

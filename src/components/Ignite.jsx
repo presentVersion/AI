@@ -33,8 +33,16 @@ export default function Ignite({ onIgniteComplete }) {
     return { x: window.innerWidth / 2, y: window.innerHeight * 0.65 };
   }, []);
 
+  // Ensure charge sound is stopped when component unmounts
+  useEffect(() => {
+    return () => {
+      stopCharge();
+    };
+  }, [stopCharge]);
+
   // Trigger radial light flood & transition into Prologue
   const triggerIgnition = useCallback((origin) => {
+    stopCharge(); // Immediately shut down ignition audio
     setIgnited(true);
     playSlash();
 
@@ -50,7 +58,7 @@ export default function Ignite({ onIgniteComplete }) {
       flood.style.setProperty('--origin-y', `${yPct}%`);
     }
 
-    // Start background soundtrack: Enter Pharloom
+    // Now start the background soundtrack: Enter Pharloom
     startBackgroundMusic(0.45);
 
     if (reduceMotion) {
@@ -100,16 +108,15 @@ export default function Ignite({ onIgniteComplete }) {
         ease: 'power1.inOut'
       }, '-=0.15');
     }, 120);
-  }, [playSlash, playEnter, startBackgroundMusic, reduceMotion, onIgniteComplete, getRingCenter]);
+  }, [stopCharge, playSlash, playEnter, startBackgroundMusic, reduceMotion, onIgniteComplete, getRingCenter]);
 
   // Press-and-hold engine with sound and ripple hookups
   const { progress, isHolding, bind, reset } = useHold({
     durationSec: 1.8,
     reverseSec: 0.4,
     onStart: () => {
+      // ONLY the ignition charge sound plays while holding
       playCharge();
-      // Ensure audio context and background music are primed
-      startBackgroundMusic(0.2);
     },
     onCancel: () => {
       stopCharge();
@@ -138,7 +145,7 @@ export default function Ignite({ onIgniteComplete }) {
       }
     },
     onComplete: (ptr) => {
-      stopCharge(50);
+      stopCharge();
       triggerIgnition(getRingCenter());
     }
   });
@@ -197,6 +204,7 @@ export default function Ignite({ onIgniteComplete }) {
 
   const handleSkip = (e) => {
     e.stopPropagation();
+    stopCharge();
     playUiConfirm();
     triggerIgnition(getRingCenter());
   };
