@@ -34,7 +34,7 @@ export default function Finale() {
       {/* Brochure Section */}
       <section id="brochure">
         <div className="wrap">
-          <p className="eyebrow rv">The 3-day score</p>
+          <p className="eyebrow rv">The score</p>
           <h2 className="rv">Participant guide & event score</h2>
           <p className="sub rv">
             Watch the score take flight in 3D with flowing orchestra pages, then take your seat to explore the complete 10-page participant guide.
@@ -58,23 +58,27 @@ export default function Finale() {
       <section id="details">
         <div className="wrap">
           <p className="eyebrow rv">Event details</p>
-          <h2 className="rv">Three days, three movements.</h2>
+          <h2 className="rv">One day, two rounds, three movements.</h2>
           <p className="sub rv">
-            Each day builds on the one before, from learning the tools, to understanding agents, to conducting one of your own.
+            Structured as a 2-round crescendo: from building benchmark portfolios in Round 1 to deploying autonomous multi-agent solutions for revealed problem statements in Round 2.
           </p>
 
           <div className="facts rv">
             <div>
-              <b>Who it is for</b>
-              <span>Students</span>
+              <b>Structure</b>
+              <span>2 Dynamic Rounds</span>
             </div>
             <div>
-              <b>When</b>
-              <span>Dates are fixed once the club approves the plan.</span>
+              <b>Round 1 · Portfolios</b>
+              <span>Teams craft portfolios from references. Deployed & submitted to portal; winning portfolios become spectacle benchmarks.</span>
+            </div>
+            <div>
+              <b>Round 2 · Hackathon</b>
+              <span>Problem statements revealed for Round 1 qualifiers (adaptive: unified problem statement if qualifiers are minimal).</span>
             </div>
             <div>
               <b>Flexible</b>
-              <span>The days can run separately if a continuous 3-day event is not possible.</span>
+              <span>Movement pacing adapts dynamically across the single-day schedule.</span>
             </div>
           </div>
         </div>
@@ -172,7 +176,7 @@ export default function Finale() {
                     </svg>
                     Registration Form Availed
                   </span>
-                  <span className="reg-time">Day 1 · Day 2 · Day 3 Access</span>
+                  <span className="reg-time">Movement 1 · Movement 2 · Movement 3 Access</span>
                 </div>
                 <h3>AI Agent Orchestra Registration</h3>
                 <p>Your flight has landed and registration access has been unlocked. Complete the form to secure your seat.</p>
@@ -203,8 +207,8 @@ export default function Finale() {
       <section id="resources">
         <div className="wrap">
           <p className="eyebrow rv">After you register</p>
-          <h2 className="rv">Your 3-day resources.</h2>
-          <p className="sub rv">Registered students get access to the resources for all three days.</p>
+          <h2 className="rv">Your resources.</h2>
+          <p className="sub rv">Registered students get access to the resources for all three movements.</p>
 
           <div className="resource-status-bar rv">
             <div className={`resource-status-badge ${isRegistered ? '' : 'locked'}`}>
@@ -244,7 +248,7 @@ export default function Finale() {
           <div className="folders-grid" data-slot="glass-folders">
             <div className="rv">
               <GlassFolder
-                label="Day 1 · Prompt to Portfolio"
+                label="Movement 1 · Round 1: Prompt to Portfolio"
                 tone="dark"
                 action="none"
                 width={330}
@@ -255,7 +259,7 @@ export default function Finale() {
                 onFileSelect={() => playUiConfirm()}
                 files={[
                   {
-                    name: 'Day 1 handbook (HTML)',
+                    name: 'Movement 1 handbook (HTML)',
                     meta: 'Handbook · 31 KB',
                     href: '/modules/Day-1-UI-and-Web-Dev-Handbook.html',
                     art: EVENT_ART
@@ -276,7 +280,7 @@ export default function Finale() {
 
             <div className="rv">
               <GlassFolder
-                label="Day 2 · Chatbot to Agent"
+                label="Movement 2 · Chatbot to Agent & Reveal"
                 tone="dark"
                 action="none"
                 width={330}
@@ -287,7 +291,7 @@ export default function Finale() {
                 onFileSelect={() => playUiConfirm()}
                 files={[
                   {
-                    name: 'Day 2 module (HTML)',
+                    name: 'Movement 2 module (HTML)',
                     meta: 'Module 1 · 137 KB',
                     href: '/modules/Module-1-Introduction-to-AI-Agents.html',
                     art: EVENT_ART
@@ -313,7 +317,7 @@ export default function Finale() {
 
             <div className="rv">
               <GlassFolder
-                label="Day 3 · Conduct Your Agent"
+                label="Movement 3 · Round 2: Conduct Your Agent"
                 tone="dark"
                 action="none"
                 width={330}

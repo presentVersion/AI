@@ -595,14 +595,14 @@ export default function Hero({ onRegisterClick, onBrochureClick }) {
         <div>
           <p className="eyebrow rise">Coders Club presents</p>
           <h1 className="rise d1">AI Agent<br />Orchestra</h1>
-          <p className="lede rise d2">A 3-day event to educate students and make them aware of agentic development.</p>
+          <p className="lede rise d2">A one-day event to educate students and make them aware of agentic development.</p>
           <p className="body rise d3">
-            Learn how AI tools, chatbots and agents differ, then build and conduct an AI agent of your own. Three days, three movements, from your first prompt to a live demo.
+            Learn how AI tools, chatbots and agents differ, then build and conduct an AI agent of your own. One day, two rounds, three movements: from your portfolio benchmark to a live autonomous demo.
           </p>
           <div className="moves rise d4">
-            <div className="mv"><i>Movement I</i><b>Day 1</b><span>Learn + Create</span></div>
-            <div className="mv"><i>Movement II</i><b>Day 2</b><span>Understand + Connect</span></div>
-            <div className="mv"><i>Movement III</i><b>Day 3</b><span>Build + Present</span></div>
+            <div className="mv"><b>Movement 1</b><span>Round 1: Portfolio Benchmark</span></div>
+            <div className="mv"><b>Movement 2</b><span>Agents & Problem Reveal</span></div>
+            <div className="mv"><b>Movement 3</b><span>Round 2: Hackathon Finale</span></div>
           </div>
           <div className="cta-row rise d5">
             <a className="btn pri" href="#register" onClick={onRegisterClick}>Register</a>

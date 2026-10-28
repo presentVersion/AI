@@ -155,10 +155,13 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
 .cbot{position:absolute;left:44px;right:44px;bottom:50px;z-index:4}
 .ttl{font:400 104px/.9 var(--serif);letter-spacing:-.03em;margin:0;text-shadow:0 6px 40px rgba(60,20,160,.8)}
 .ttl .w1{display:block;color:#fff}
-.ttl .w2{display:block;background:linear-gradient(100deg,#fff 0%,#cfbfff 40%,#7eeaf6 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:6px}
+.ttl .w2{display:block;color:#7eeaf6;background:linear-gradient(100deg,#ffffff 0%,#cfbfff 40%,#7eeaf6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-bottom:6px}
 .ttl .ch{display:inline-block}
+.ttl .w2 .ch{display:inline-block;color:#7eeaf6;-webkit-text-fill-color:#7eeaf6}
 .vis .ttl .ch{animation:chIn .9s var(--ease) both;animation-delay:calc(var(--c)*55ms + 250ms)}
+.vis .ttl .w2{animation:w2In .85s var(--ease) both;animation-delay:600ms}
 @keyframes chIn{from{opacity:0;transform:translateY(40px) rotate(4deg);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+@keyframes w2In{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
 .ctag{margin:16px 0 20px;font:400 18.5px/1.45 var(--serif);color:#e9e4ff;max-width:440px;text-shadow:0 2px 14px rgba(0,0,0,.8)}
 .crow{display:flex;align-items:center;justify-content:space-between;gap:14px}
 .cbadge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(10,6,40,.55);backdrop-filter:blur(8px);font:600 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase}
@@ -207,7 +210,7 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
 .tbd{display:flex;gap:12px;align-items:flex-start;padding:13px 15px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);font-size:13px;line-height:1.5;color:var(--mute)}
 .tbd .i{font-size:20px;color:var(--cy);margin-top:2px}
 
-/* ---- P4 day2 chain ---- */
+/* ---- P4 movement2 chain ---- */
 .chain{display:flex;align-items:center;gap:6px;margin:2px 0 14px}
 .nd{flex:1;text-align:center;padding:12px 4px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.05);font:600 12.5px var(--sans)}
 .nd .i{display:block;margin:0 auto 5px;font-size:20px;color:var(--glow)}
@@ -229,7 +232,7 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
 .five div{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:baseline;padding:8px 13px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-size:12.5px;line-height:1.4;color:var(--mute)}
 .five b{font:600 13px var(--sans);color:var(--cy)}
 
-/* ---- P6 day3 ---- */
+/* ---- P6 movement3 ---- */
 .stairs{display:grid;gap:9px;margin:0 0 12px}
 .ph3{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:center;padding:11px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(90deg,rgba(139,92,246,calc(.08 + var(--k)*.07)),rgba(255,255,255,.02));margin-left:calc((3 - var(--k))*0px)}
 .ph3 .n{font:400 30px/1 var(--serif);color:var(--cy);text-align:center}
@@ -354,8 +357,8 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
   <div class="cfr"></div>
   <div class="ctop a" style="--i:1"><span>Coders Club presents</span></div>
   <div class="cbot">
-    <h1 class="ttl" aria-label="AI Agent Orchestra"><span class="w1" data-split="AI Agent"></span><span class="w2" data-split="Orchestra" data-off="8"></span></h1>
-    <p class="ctag a" style="--i:5">A 3-day event to educate students and make them aware of agentic development.</p>
+    <h1 class="ttl" aria-label="AI Agent Orchestra"><span class="w1" data-split="AI Agent">AI Agent</span><span class="w2">Orchestra</span></h1>
+    <p class="ctag a" style="--i:5">A one-day event to educate students and make them aware of agentic development.</p>
     <div class="crow a" style="--i:7"><span class="cbadge"><svg class="i"><use href="#i-spark"/></svg>Participant's guide</span><span class="copen">Open the book<svg class="i"><use href="#i-arrow"/></svg></span></div>
   </div>
 </section>
@@ -365,11 +368,11 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
   <div class="pad">
     <p class="eyebrow a" style="--i:0">Welcome, participant</p>
     <h2 class="t a" style="--i:1">Take your seat in <span class="grad">the orchestra.</span></h2>
-    <p class="lead a" style="--i:2">AI Agent Orchestra is a Coders Club event for students. Over three days you learn how AI tools, chatbots and agents differ, then build and conduct an AI agent of your own.</p>
+    <p class="lead a" style="--i:2">AI Agent Orchestra is a Coders Club event for students. Over three movements across two dynamic rounds, you build benchmark portfolios, understand autonomous workflows, and conduct an AI agent of your own.</p>
     <div class="out3">
-      <div class="o3 a" style="--i:3"><span class="n">I</span><div><b>A working portfolio prototype</b><p class="pp">Turn prompts into interfaces on Day 1.</p></div></div>
-      <div class="o3 a" style="--i:4"><span class="n">II</span><div><b>How an AI workflow fits together</b><p class="pp">See trigger, AI, decision and action connect on Day 2.</p></div></div>
-      <div class="o3 a" style="--i:5"><span class="n">III</span><div><b>A demo you built with a team</b><p class="pp">Present an AI-powered prototype on Day 3.</p></div></div>
+      <div class="o3 a" style="--i:3"><span class="n">I</span><div><b>Round 1: Portfolio Benchmark</b><p class="pp">Build &amp; deploy portfolios from references; qualifiers are glorified on the portal.</p></div></div>
+      <div class="o3 a" style="--i:4"><span class="n">II</span><div><b>Agents &amp; Problem Reveal</b><p class="pp">See trigger, AI, decision &amp; action connect; Round 2 problem statements revealed.</p></div></div>
+      <div class="o3 a" style="--i:5"><span class="n">III</span><div><b>Round 2: Hackathon Finale</b><p class="pp">Qualifiers solve the problem statement with live autonomous agent demos.</p></div></div>
     </div>
     <div class="codebox a" style="--i:6;margin-top:2px"><span class="ln" style="--l:0"><span class="c">//</span> learn it.</span><span class="ln" style="--l:1"><span class="c">//</span> connect it.</span><span class="ln" style="--l:2"><span class="c">//</span> conduct it.<i class="caret"></i></span></div>
     <div class="hair a" style="--i:7">
@@ -379,7 +382,7 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
         <text x="0" y="52">p</text><text x="474" y="52">f</text>
         <g class="nodes"><g><circle cx="130" cy="37.8" r="7" fill="#06041a" stroke="#35e4f4" stroke-width="2"/><circle class="pulse" cx="130" cy="37.8" r="7" fill="#35e4f4"/></g><g><circle cx="250" cy="28.3" r="7" fill="#06041a" stroke="#35e4f4" stroke-width="2"/><circle class="pulse" cx="250" cy="28.3" r="7" fill="#35e4f4"/></g><g><circle cx="370" cy="18.8" r="7" fill="#06041a" stroke="#35e4f4" stroke-width="2"/><circle class="pulse" cx="370" cy="18.8" r="7" fill="#35e4f4"/></g></g>
       </svg>
-      <div class="hl" style="padding:0 20px 0 36px"><div><b>Day 1</b>Learn + Create</div><div><b>Day 2</b>Understand + Connect</div><div><b>Day 3</b>Build + Present</div></div>
+      <div class="hl" style="padding:0 20px 0 36px"><div><b>Movement 1</b>Learn + Create</div><div><b>Movement 2</b>Understand + Connect</div><div><b>Movement 3</b>Build + Present</div></div>
     </div>
   </div>
 </section>
@@ -388,21 +391,21 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
 <section class="pg" data-title="The three movements" data-deco="2">
   <div class="pad">
     <p class="eyebrow a" style="--i:0">The score</p>
-    <h2 class="t a" style="--i:1">Three days, <span class="grad">three movements.</span></h2>
-    <p class="lead a" style="--i:2" >Each day builds on the one before. The music swells from your first prompt to a live demo.</p>
+    <h2 class="t a" style="--i:1">One day, two rounds, <span class="grad">three movements.</span></h2>
+    <p class="lead a" style="--i:2" >Each movement builds on the one before: Round 1 qualifies teams through portfolio engineering, and Round 2 challenges qualifiers to solve revealed problem statements.</p>
     <div class="tl">
-      <div class="it a" style="--i:3"><span class="num">I</span><span class="mv">Movement I · Learn + Create</span><h3>Day 1: From Prompt to Portfolio</h3><p class="pp">Meet the AI tools, take the UI recreation challenge and build a digital portfolio.</p><span class="tm">First half-day · about 3 hours (proposed)</span></div>
-      <div class="it a" style="--i:4"><span class="num">II</span><span class="mv">Movement II · Understand + Connect</span><h3>Day 2: From Chatbot to Agent</h3><p class="pp">Learn what makes an agent, watch a live workflow and run a mini experiment.</p><span class="tm">About 2 hours (proposed)</span></div>
-      <div class="it a" style="--i:5"><span class="num">III</span><span class="mv">Movement III · Build + Present</span><h3>Day 3: Conduct Your Own AI Agent</h3><p class="pp">Form a team, build and test a prototype, then present it live.</p><span class="tm">Full day (proposed)</span></div>
+      <div class="it a" style="--i:3"><span class="num">I</span><span class="mv">Movement I · Round 1: Portfolio Challenge</span><h3>Movement 1: From Prompt to Portfolio</h3><p class="pp">Build from design references and deploy live portfolios to the portal. Winning portfolios become spectacle benchmarks.</p><span class="tm">Round 1 · about 3 hours (proposed)</span></div>
+      <div class="it a" style="--i:4"><span class="num">II</span><span class="mv">Movement II · Understand &amp; Problem Reveal</span><h3>Movement 2: From Chatbot to Agent</h3><p class="pp">Understand agents, visual workflows, and reveal Round 2 problem statements (unified if qualifiers are minimal).</p><span class="tm">Round 2 Prep · about 2 hours (proposed)</span></div>
+      <div class="it a" style="--i:5"><span class="num">III</span><span class="mv">Movement III · Round 2: Hackathon Finale</span><h3>Movement 3: Conduct Your Own AI Agent</h3><p class="pp">Round 1 qualifiers build, stress-test, and conduct live autonomous agent prototypes.</p><span class="tm">Round 2 Hackathon sprint</span></div>
     </div>
-    <div class="tbd a" style="--i:6"><svg class="i"><use href="#i-cal"/></svg><div>Dates and venue are announced once the plan is approved. The days can also run separately if a continuous 3-day event is not possible.</div></div>
+    <div class="tbd a" style="--i:6"><svg class="i"><use href="#i-cal"/></svg><div>Dates and venue are announced once the plan is approved. The movements can also run flexibly across the day.</div></div>
   </div>
 </section>
 
-<!-- 3 · DAY 1 -->
-<section class="pg" data-title="Day 1 · From Prompt to Portfolio" data-deco="3">
+<!-- 3 · MOVEMENT 1 -->
+<section class="pg" data-title="Movement 1 · From Prompt to Portfolio" data-deco="3">
   <div class="pad">
-    <p class="eyebrow a" style="--i:0">Movement I · Day 1</p>
+    <p class="eyebrow a" style="--i:0">Movement 1</p>
     <h2 class="t a" style="--i:1">From Prompt <span class="grad">to Portfolio</span></h2>
     <span class="pill a" style="--i:2"><svg class="i"><use href="#i-clock"/></svg>First half-day · about 3 hours (proposed)</span>
     <ol class="mods">
@@ -410,21 +413,21 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
       <li class="mod a" style="--i:4"><span class="ic"><svg class="i"><use href="#i-layout"/></svg></span><div><b>UI recreation challenge</b><p class="pp">Recreate or improve a given website design with AI tools. Focus on layout, typography, colours, responsiveness and interactions.</p></div></li>
       <li class="mod a" style="--i:5"><span class="ic"><svg class="i"><use href="#i-user"/></svg></span><div><b>Digital portfolio</b><p class="pp">Build a personal portfolio that shows your projects and skills. Follow the reference or make your own version.</p></div></li>
     </ol>
-    <div class="strip a" style="--i:6"><svg class="i"><use href="#i-trophy"/></svg><div><b>Timed challenge.</b> Winners are chosen on the best web development outcome. The best implementations are showcased.</div></div>
+    <div class="strip a" style="--i:6"><svg class="i"><use href="#i-trophy"/></svg><div><b>Round 1 Portal Submission:</b> Portfolios are deployed &amp; submitted to the portal. Round 1 winners are glorified — their stunning portfolios become spectacle benchmark examples for everyone!</div></div>
     <div class="codebox a" style="--i:7"><b>An example prompt</b>
       <span class="ln" style="--l:0"><span class="k">Build</span> a responsive portfolio page.</span>
       <span class="ln" style="--l:1">Dark theme, serif headings, a hero with my name,</span>
       <span class="ln" style="--l:2">three project cards and smooth hover effects.</span>
       <span class="ln" style="--l:3">Make it work well on a phone.<i class="caret"></i></span></div>
     <div class="sp"></div>
-    <div class="out a" style="--i:8"><span class="ic"><svg class="i"><use href="#i-check"/></svg></span><div><h4>Outcome</h4><p>A working portfolio prototype and practical experience turning prompts into interfaces. The Day 1 Handbook in your resources walks you from zero to a finished page.</p></div></div>
+    <div class="out a" style="--i:8"><span class="ic"><svg class="i"><use href="#i-check"/></svg></span><div><h4>Outcome &amp; Round 1 Qualification</h4><p>A deployed, live personal developer portfolio submitted to the portal. Winning and qualifying portfolios advance to Round 2 to receive the revealed problem statements.</p></div></div>
   </div>
 </section>
 
-<!-- 4 · DAY 2 -->
-<section class="pg" data-title="Day 2 · From Chatbot to Agent" data-deco="4">
+<!-- 4 · MOVEMENT 2 -->
+<section class="pg" data-title="Movement 2 · From Chatbot to Agent" data-deco="4">
   <div class="pad">
-    <p class="eyebrow a" style="--i:0">Movement II · Day 2</p>
+    <p class="eyebrow a" style="--i:0">Movement 2</p>
     <h2 class="t a" style="--i:1">From Chatbot <span class="grad">to Agent</span></h2>
     <span class="pill a" style="--i:2"><svg class="i"><use href="#i-clock"/></svg>About 2 hours (proposed)</span>
     <div class="chain a" style="--i:3">
@@ -437,6 +440,11 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
       <li class="mod a" style="--i:4"><span class="ic"><svg class="i"><use href="#i-chat"/></svg></span><div><b>AI chatbots vs AI agents</b><p class="pp">What makes an agent different from a chatbot: models, tools, triggers, workflows and actions, with practical examples.</p></div></li>
       <li class="mod a" style="--i:5"><span class="ic"><svg class="i"><use href="#i-flow"/></svg></span><div><b>Live workflow demonstration</b><p class="pp">A visual automation tool such as n8n shows a simple trigger, AI, decision, action workflow. If feasible, a basic website or form connects to it, so one input gives a real, visible result.</p></div></li>
       <li class="mod a" style="--i:6"><span class="ic"><svg class="i"><use href="#i-flask"/></svg></span><div><b>Mini experiment</b><p class="pp">Modify a prepared workflow or prompt and test how different inputs change the output. See how validation and predefined rules control actions.</p></div></li>
+      <li class="mod a" style="--i:7"><span class="ic"><svg class="i"><use href="#i-spark"/></svg></span><div><b>Round 2 problem statement reveal</b><p class="pp">The official challenge is unlocked on the portal for Round 1 qualifiers. If qualifiers advancing to Round 2 are minimal, a single unified statement is given to all (with flexibility for adjustments).</p></div></li>
+      <li class="mod a" style="--i:7"><span class="ic"><svg class="i"><use href="#i-spark"/></svg></span><div><b>Round 2 problem statement reveal</b><p class="pp">The official challenge is unlocked on the portal for Round 1 qualifiers. If qualifiers advancing to Round 2 are minimal, a single unified statement is given to all (with flexibility for adjustments).</p></div></li>
+      <li class="mod a" style="--i:7"><span class="ic"><svg class="i"><use href="#i-spark"/></svg></span><div><b>Round 2 problem statement reveal</b><p class="pp">The official challenge is unlocked on the portal for Round 1 qualifiers. If qualifiers advancing to Round 2 are minimal, a single unified statement is given to all (with flexibility for adjustments).</p></div></li>
+
+      <li class="mod a" style="--i:7"><span class="ic"><svg class="i"><use href="#i-spark"/></svg></span><div><b>Round 2 problem statement reveal</b><p class="pp">The official challenge is unlocked on the portal for Round 1 qualifiers. If qualifiers advancing to Round 2 are minimal, a single unified statement is given to all (with flexibility for adjustments).</p></div></li>
     </ol>
     <div class="codebox a" style="--i:7"><b>An example workflow</b>
       <span class="ln" style="--l:0"><span class="k">trigger </span> a student submits a form</span>
@@ -488,14 +496,14 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
   </div>
 </section>
 
-<!-- 6 · DAY 3 -->
-<section class="pg" data-title="Day 3 · Conduct Your Own AI Agent" data-deco="6">
+<!-- 6 · MOVEMENT 3 -->
+<section class="pg" data-title="Movement 3 · Conduct Your Own AI Agent" data-deco="6">
   <div class="pad">
-    <p class="eyebrow a" style="--i:0">Movement III · Day 3</p>
+    <p class="eyebrow a" style="--i:0">Movement 3</p>
     <h2 class="t sm a" style="--i:1">Conduct Your <span class="grad">Own AI Agent</span></h2>
     <span class="pill a" style="--i:2"><svg class="i"><use href="#i-clock"/></svg>Full day (proposed)</span>
     <div class="stairs">
-      <div class="ph3 a" style="--i:3;--k:0"><span class="n">1</span><div><b>Problem and team formation</b><p class="pp">A practical problem is introduced. Teams form, pick a manageable solution and define the user, the workflow and the outcome.</p><i></i></div></div>
+      <div class="ph3 a" style="--i:3;--k:0"><span class="n">1</span><div><b>Round 2 Problem Statement Briefing</b><p class="pp">Qualifiers receive the revealed problem statement (single unified statement if minimal qualifiers) and architect an autonomous agent solution.</p><i></i></div></div>
       <div class="ph3 a" style="--i:4;--k:1"><span class="n">2</span><div><b>Build the prototype</b><p class="pp">Create a simple web interface with AI-assisted development and an agentic workflow from a prepared tool or template. Use simulated data where live integrations are unavailable.</p><i></i></div></div>
       <div class="ph3 a" style="--i:5;--k:2"><span class="n">3</span><div><b>Test and improve</b><p class="pp">Test the whole user journey, fix workflow errors, improve the interface and prepare a short live demo.</p><i></i></div></div>
       <div class="ph3 a" style="--i:6;--k:3"><span class="n">4</span><div><b>Final showcase</b><p class="pp">Present your problem, solution and working prototype in a short live demonstration.</p><i></i></div></div>
@@ -512,17 +520,17 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
   <div class="pad">
     <p class="eyebrow a" style="--i:0">After you register</p>
     <h2 class="t a" style="--i:1">Your <span class="grad">resources</span></h2>
-    <p class="lead a" style="--i:2;font-size:15px">One folder per day. Open them from the resources section of the event website.</p>
-    <div class="fold a" style="--i:3"><h3>Day 1 <small>Handbook</small></h3>
+    <p class="lead a" style="--i:2;font-size:15px">One folder per movement. Open them from the resources section of the event website.</p>
+    <div class="fold a" style="--i:3"><h3>Movement 1 <small>Handbook</small></h3>
       <div class="file"><svg class="i"><use href="#i-file"/></svg><span><b>UI &amp; Web Dev Handbook</b> · tools, prompt structure, AI IDEs, component libraries</span></div></div>
-    <div class="fold a" style="--i:4"><h3>Day 2 <small>Modules 1–5</small></h3>
+    <div class="fold a" style="--i:4"><h3>Movement 2 <small>Modules 1–5</small></h3>
       <div class="file"><svg class="i"><use href="#i-file"/></svg><span><b>1</b> · Introduction to AI Agents</span></div>
       <div class="file"><svg class="i"><use href="#i-file"/></svg><span><b>2</b> · Agent Abstraction</span></div>
       <div class="file"><svg class="i"><use href="#i-file"/></svg><span><b>3</b> · How Agents Work</span></div>
       <div class="file"><svg class="i"><use href="#i-file"/></svg><span><b>4</b> · Agents in Action</span></div>
       <div class="file"><svg class="i"><use href="#i-file"/></svg><span><b>5</b> · Course Wrap-up</span></div></div>
-    <div class="fold a" style="--i:5"><h3>Day 3 <small>Hackathon</small></h3>
-      <div class="file soon"><svg class="i"><use href="#i-file"/></svg><span><b>Hackathon brief</b> · shared before Day 3</span></div></div>
+    <div class="fold a" style="--i:5"><h3>Movement 3 <small>Hackathon</small></h3>
+      <div class="file soon"><svg class="i"><use href="#i-file"/></svg><span><b>Hackathon brief</b> · shared before Movement 3</span></div></div>
   </div>
 </section>
 
@@ -533,7 +541,7 @@ h2.t{font:400 41px/1.06 var(--serif);letter-spacing:-.012em;margin:0 0 12px}
     <h2 class="t a" style="--i:1">Three steps <span class="grad">to your seat.</span></h2>
     <div class="steps">
       <div class="st a" style="--i:2"><span class="n">1</span><div><b>Register</b><p class="pp">Registration is a Google Form, shared through QR codes and links on the posters.</p></div></div>
-      <div class="st a" style="--i:3"><span class="n">2</span><div><b>Warm up with the Day 1 Handbook</b><p class="pp">Open it, try one prompt and see what the AI builds. No experience is needed.</p></div></div>
+      <div class="st a" style="--i:3"><span class="n">2</span><div><b>Warm up with the Movement 1 Handbook</b><p class="pp">Open it, try one prompt and see what the AI builds. No experience is needed.</p></div></div>
       <div class="st a" style="--i:4"><span class="n">3</span><div><b>Watch for the dates</b><p class="pp">Dates and venue are shared with registered students as soon as they are fixed.</p></div></div>
     </div>
     <div class="chips a" style="--i:5"><span class="chip">For students</span><span class="chip ph">Dates: to be announced</span><span class="chip ph">Venue: to be announced</span></div>

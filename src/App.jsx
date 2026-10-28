@@ -117,7 +117,7 @@ function AppContent() {
           </a>
           <div className="links">
             <a href="#prologue" onClick={handleNavLink('#prologue')}>Prologue</a>
-            <a href="#scene1" onClick={handleNavLink('#scene1')}>The 3 Days</a>
+            <a href="#scene1" onClick={handleNavLink('#scene1')}>The Movements</a>
             <a href="#brochure" onClick={handleNavLink('#brochure')}>Brochure</a>
             <a href="#details" onClick={handleNavLink('#details')}>Details</a>
             <a href="#resources" onClick={handleNavLink('#resources')}>Resources</a>
@@ -145,7 +145,7 @@ function AppContent() {
             {/* Step 2: Prologue (Hero Reveal, Title, Conductor First Speech, Scroll Cue) */}
             <Prologue isIgnited={isIgnited} />
 
-            {/* Step 3: Pinned Parallax Scenes for the Three Days */}
+            {/* Step 3: Pinned Parallax Scenes for the Three Movements */}
             <div className="scene-container">
               <Scene day={1} />
               <Scene day={2} />

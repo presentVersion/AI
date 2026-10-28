@@ -9,46 +9,46 @@ gsap.registerPlugin(ScrollTrigger);
 const SCENE_DATA = {
   1: {
     id: 'scene1',
-    movement: 'Movement I',
-    dayTitle: 'Day 1 · Learn + Create',
-    headline: 'From Prompt to Portfolio',
-    duration: 'First half-day, about 3 hours (proposed)',
+    movement: 'Movement 1',
+    dayTitle: 'Round 1: Learn + Create',
+    headline: 'From Prompt to Portfolio (Round 1 Challenge)',
+    duration: 'Round 1 · ~3 hrs (proposed)',
     terminalPath: 'conductor@orchestra:~/movement-1$',
     lines: [
       'Every instrument in this hall is an AI tool — LLMs, generative UI, and coding agents.',
-      'First, you will learn to speak their language: precision prompting that bends raw models to your exact intent.',
-      'Next, the recreation challenge: take a modern web interface, deconstruct its patterns, and rebuild it in minutes.',
-      'By sundown, your own personal developer portfolio is compiled, styled, and deployed live to the web.',
-      'Your first movement concludes. The instruments fall quiet — and your portfolio plays.'
+      'Teams build modern developer portfolios from reference UI designs, deconstructing layout and styling patterns.',
+      'All portfolios are deployed live and submitted directly to the portal for evaluation and community showcase.',
+      'Round 1 winners are glorified on the portal — stunning qualifying portfolios become spectacle benchmarks for everyone.',
+      'The top qualifying teams earn passage to Round 2 to tackle the revealed problem statements.'
     ]
   },
   2: {
     id: 'scene2',
-    movement: 'Movement II',
-    dayTitle: 'Day 2 · Understand + Connect',
+    movement: 'Movement 2',
+    dayTitle: 'Understand + Problem Reveal',
     headline: 'From Chatbot to Agent',
-    duration: 'About 2 hours (proposed)',
+    duration: 'Round 2 Prep · ~2 hrs (proposed)',
     terminalPath: 'conductor@orchestra:~/movement-2$',
     lines: [
       'A chatbot answers when spoken to. An agent perceives, decides, and acts on its own.',
       'The anatomy of agency: Trigger. Model reasoning. Tool invocation. Autonomous action.',
-      'Watch the wires ignite as we connect webhooks, visual workflows in n8n, and external APIs into a unified nervous system.',
+      'Round 2 problem statements are revealed on the website. If qualifiers are minimal, one unified problem statement is given to all.',
       'You will run a live multi-step agent experiment — watching real data flow autonomously from prompt to production.',
       'The orchestra harmonizes. You are no longer just prompting an AI — you are conducting an agentic orchestra.'
     ]
   },
   3: {
     id: 'scene3',
-    movement: 'Movement III',
-    dayTitle: 'Day 3 · Build + Present',
-    headline: 'Conduct Your Own AI Agent',
-    duration: 'Full day hackathon (proposed)',
+    movement: 'Movement 3',
+    dayTitle: 'Round 2: Build + Present',
+    headline: 'Conduct Your Own AI Agent (Hackathon Finale)',
+    duration: 'Round 2 Hackathon (proposed)',
     terminalPath: 'conductor@orchestra:~/movement-3$',
     lines: [
-      'The grand finale begins. Now, the baton is placed directly into your hands.',
-      'Assemble your ensemble. Choose a real problem, architect your agentic workflow, and divide the execution.',
-      'A full-day hackathon: build the user interface, wire the backend autonomous agents, and stress-test the pipeline.',
-      'When the clock stops, take the stage. Demonstrate what the AI automates live, and explain what is still simulated.',
+      'The grand finale begins. Round 1 qualifiers step forward to solve the revealed problem statement with autonomous agents.',
+      'Assemble your ensemble. Architect your agentic workflow, connect tools & webhooks, and divide execution.',
+      'A focused hackathon sprint: engineer the interface, wire the backend agents, and stress-test the autonomous pipeline.',
+      'When the clock stops, take the stage. Demonstrate live autonomous execution and explain what remains simulated.',
       'Conductor, the hall is silent. The spotlight is yours. Step forward and conduct your AI agent.'
     ]
   }

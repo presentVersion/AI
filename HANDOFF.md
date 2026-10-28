@@ -1,7 +1,7 @@
 # Handoff brief: AI Agent Orchestra participant flipbook (Coders Club)
 
 ## What exists
-- `AI-Agent-Orchestra-Participants-Flipbook.html`: single offline file (fonts, your hero video and poster are embedded). 10 pages: cover (your video), welcome, three movements, Day 1, Day 2, what makes an agent, Day 3, resources, next steps, back cover.
+- `AI-Agent-Orchestra-Participants-Flipbook.html`: single offline file (fonts, your hero video and poster are embedded). 10 pages: cover (your video), welcome, three movements, Movement 1, Movement 2, what makes an agent, Movement 3, resources, next steps, back cover.
 - `AI-Agent-Orchestra-Participants-Guide.pdf`: static 10-page version (cover uses a still from your video).
 - `flipbook-source.zip`: template.html (pages + CSS), app.js (book engine + particles), build.js, assets/ (hero.webm, poster.jpg), fonts/.
 
@@ -22,7 +22,7 @@ Edit page text in template.html, section by section (each `<section class="pg">`
 - Registration link is not a real URL yet (cover and back cover say "link on the posters").
 - Dates and venue are "to be announced" (as in the proposal).
 - Tested in headless Chromium only (desktop 1440x900 and phone 390x844). Not tested on a real touch device. Old Safari without WebM VP9 shows the still poster instead of the video.
-- Day 3 "Hackathon brief" file does not exist yet.
+- Movement 3 "Hackathon brief" file does not exist yet.
 
 ## Other open work: the event website (not finished)
 - Folder: scratchpad/build3 (template.html, build.js, out/entry.js with GhostFibers, FlyingButton, Glass folder cards bundled via esbuild).

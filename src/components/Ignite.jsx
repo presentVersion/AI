@@ -224,7 +224,7 @@ export default function Ignite({ onIgniteComplete }) {
       <div className="ignite-header">
         <p className="ignite-brand">Coders Club Presents</p>
         <h1 className="ignite-title">AI Agent Orchestra</h1>
-        <p className="ignite-subtitle">A 3-Day Cinematic Odyssey into Agentic AI</p>
+        <p className="ignite-subtitle">A One-Day Cinematic Odyssey into Agentic AI</p>
       </div>
 
       {/* Center Thumb Zone Button with Concentric Rings */}

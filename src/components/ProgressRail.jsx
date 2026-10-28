@@ -57,7 +57,7 @@ export default function ProgressRail() {
         type="button"
         className={`rail-bead ${activeScene === 1 ? 'active' : ''}`}
         onClick={() => handleBeadClick(1)}
-        aria-label="Scroll to Movement I: Day 1"
+        aria-label="Scroll to Movement 1"
         title="Movement I"
       >
         I
@@ -66,7 +66,7 @@ export default function ProgressRail() {
         type="button"
         className={`rail-bead ${activeScene === 2 ? 'active' : ''}`}
         onClick={() => handleBeadClick(2)}
-        aria-label="Scroll to Movement II: Day 2"
+        aria-label="Scroll to Movement 2"
         title="Movement II"
       >
         II
@@ -75,7 +75,7 @@ export default function ProgressRail() {
         type="button"
         className={`rail-bead ${activeScene === 3 ? 'active' : ''}`}
         onClick={() => handleBeadClick(3)}
-        aria-label="Scroll to Movement III: Day 3"
+        aria-label="Scroll to Movement 3"
         title="Movement III"
       >
         III

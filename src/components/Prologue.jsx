@@ -25,7 +25,7 @@ export default function Prologue({ isIgnited }) {
     }
 
     if (reduceMotion) {
-      setDialogText('A 3-day event to educate students and make them aware of agentic development.');
+      setDialogText('A one-day event to educate students and make them aware of agentic development.');
       return;
     }
 
@@ -52,7 +52,7 @@ export default function Prologue({ isIgnited }) {
 
     // Type out the second sentence after a moment
     const timeout = setTimeout(() => {
-      const fullText = 'A 3-day event to educate students and make them aware of agentic development.';
+      const fullText = 'A one-day event to educate students and make them aware of agentic development.';
       setIsTyping(true);
       let idx = 0;
       const typer = setInterval(() => {
@@ -117,7 +117,7 @@ export default function Prologue({ isIgnited }) {
           </h1>
 
           <p className="prologue-lede">
-            Learn how AI tools, chatbots and agents differ, then build and conduct an AI agent of your own. Three days, three movements.
+            Learn how AI tools, chatbots and agents differ, then build and conduct an AI agent of your own. One day, three movements.
           </p>
         </div>
       </div>
